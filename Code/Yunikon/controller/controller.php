@@ -1,5 +1,5 @@
 <?php
 
 function home(){
-    require "view/home.php"
+    require "view/home.php";
 }

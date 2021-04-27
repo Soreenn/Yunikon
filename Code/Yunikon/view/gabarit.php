@@ -5,12 +5,12 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Shine - Responsive Template | Template Stock</title>
+		<title><?=$title?></title>
 
 		
 		<!-- WEB FONTS -->
@@ -33,33 +33,37 @@
 		<div id="loader-wrapper">
 			<div id="loader"><div class="sk-spinner sk-spinner-cube-grid"><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div></div></div>
 		</div>	
-		
-	<!-- HEADER -->
-		<section id="header">
-			<div class="container">
-				<div class="row text-center">
-					<div class="col-md-8">
-						<img class="logo" src="/view/content/images/logo.png" />
-						<h1 class="white-text">L'univers manga et animé</h1>
-						<h5 class="white-text">1ère édition 2021 au 2M2C de Montreux</h5>
-						<div id="countdown" class="white-text"></div>
-					</div>
-				</div>
-			</div>
-			<div class="animation">
-			<a class="arrow-down-animation" data-scroll href="#about"><i class="fa fa-angle-down"></i></a>
-			</div>
-		</section>
-	<!-- HEADER ENDS -->
-	
+
+		<nav class="navbar navbar-transparent">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Login</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+	<?= $content; ?>
+
 	<!-- SUBSCRIBE -->
 		<section id="subscribe">
 			<div class="container">
-				<i data-sr="ease-in over 1s, reset" class="fa fa-envelope icontop"></i>
 				<div class="row text-center">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Sign up to our Newsletter</h2>
-						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Stay up2date with climb-up</h5>
+						<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Inscription a la Newsletter</h2>
+						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Restez informés des nouvelles !</h5>
 						<!-- MAILCHIMP FORM -->
 						<form id="mc_form" role="form">
 							<input data-sr="enter top over 1s, wait 0.3s, move 24px, reset" type="email" class="form-control" id="mc-email" name="mc-email" placeholder="Your Email" />
@@ -95,6 +99,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="/view/content/js/bootstrap.min.js"></script>
+		<!-- Countdown -->
+		<script src="/view/content/js/countdown.js"></script>
 		<!-- SMOOTH SCROLL -->
 		<script src="/view/content/js/smooth-scroll.min.js"></script>
 		<!-- PARALLAX IMG -->

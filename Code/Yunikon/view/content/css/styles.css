@@ -10,8 +10,82 @@
 	padding: 0px;
 }
 
+.wrapper {
+	position: relative;
+	padding: 0 15px;
+}
+
+#banner {
+	height: 50vh;
+	width: 100vw;
+	position: relative;
+}
+
+#responsive-nav {
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	
+}
+
+#logo {
+	position: absolute;
+	top: 15px;
+	left: 60px;
+	z-index: 1;
+}
+.navbar {
+  margin-bottom: 0px;
+  z-index: 1;
+  position: absolute;
+      top: 0px;
+      width: 100%;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    color: white;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+        text-decoration: none;
+        background-color: transparent !important;
+  }
+
+.countdown-1 {
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+  }
+  
+  .countdown-1 .days,
+  .countdown-1 .minutes,
+  .countdown-1 .hours,
+  .countdown-1 .seconds {
+	width: 80px;
+  }
+  
+  .countdown-1 .amount,
+  .countdown-1 .labelTime {
+	display: block;
+	font-size: 18px;
+	text-align: center;
+  }
+  
+  .countdown-1 .amount {
+	font-size: 27px;
+	font-weight: bold;
+  }
+
+#home {
+	height: 100vh;
+	padding: 0px;
+
+}
+
 body {
-    background: #fff;
+    background: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -129,6 +203,7 @@ section {
 /* HEADER */
 
 #header {
+	opacity: 95%;
 	background: url(/view/content/images/bg_slide_1.jpg) no-repeat center center;
 	background-size: cover;
 	height: 100vh;
@@ -214,9 +289,20 @@ section {
 /* SUBSCRIBE */
 
 #subscribe {
-	background: url(../images/bg-subscribe.jpg) no-repeat fixed center center / cover rgba(0, 0, 0, 0);
+	opacity: 95%;
+	background: url(../images/bg_subscribe_1.jpg) no-repeat fixed center center / cover rgba(0, 0, 0, 0);
+	background-size: cover;
+	height: 50vh;
 	padding: 0px;
-	min-height: 430px;
+
+}
+
+#subscribe .container {
+	background: url(../images/body-bg1.png) repeat 0 0;
+	height: 50vh;
+	width: 100% !important;
+	padding: 0px;	
+	z-index: 998;
 }
 
 #subscribe .icontop {
