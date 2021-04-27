@@ -18,7 +18,9 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 		
 		<!-- BOOTSTRAP -->
-		<link href="/view/content/css/bootstrap.min.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<!-- FONT AWESOME -->
 		<link rel="stylesheet" href="/view/content/css/font-awesome.min.css">
 		<!-- CUSTOM STYLING -->
@@ -34,6 +36,7 @@
 			<div id="loader"><div class="sk-spinner sk-spinner-cube-grid"><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div></div></div>
 		</div>	
 
+		<header class="sticky-top" data-spy="affix" data-offset-top="0">
 		<nav class="navbar navbar-transparent">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,12 +51,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+	  <li><a data-scroll href="#home">Home</a></li>
+        </li>
+	  <li><a data-scroll href="#subscribe">Newsletter</a></li>
+        </li>
         <li><a href="#">Login</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</header>
 
 	<?= $content; ?>
 

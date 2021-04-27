@@ -46,10 +46,11 @@ $currentPage = "#home";
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-md-8 col-md-offset-2">
+						<img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src = "/view/content/images/Yunikon_Banner.jpg">
+						<br>
+						<br>
 						<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Ouverture de la 1ère édition de Yunikon !</h1>
 						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Inscriptions ouvertes dès maintenant</h5>
-						<br>
-						<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Participez à la Yunikon 2021 et à bien d'autres événements !</h1>
 						<br>
 						<button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="button-leweb">Je m'incris dès maintenant !</button>
 						<br>
