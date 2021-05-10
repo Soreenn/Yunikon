@@ -233,3 +233,34 @@ assez simple de manière a rajouter des features.
 Seront paliés part :
 L'utilisation de Github pour partager les fichier ainsi que leur copie en local chez
 chacuns des membres Yunikon.
+
+## Planification initial :
+
+### Sprint 1 :
+
+Du 26/04 au 09/05
+
+Le repository contient le fichier 'documentation projet.md', dans lequel les section suivantes ont un contenu significatif:
+
+- Description du projet   
+- Dans quel contexte le projet est-il réalisé ?   
+- Organisation   
+- Objectifs   
+- Planification initiale   
+- Stratégie de test   
+-  Analyse des risques   
+- Journal de bord
+
+### Sprint 2
+
+Du 10/05 au 23/05
+
+Idée globale : Création des vues et de la base de données, connexion à la base de donnée dans le code (Possiblement modèle)
+
+### Sprint 3
+
+Idée globale : Gestion du controller et intégration du CRUD : register, login, activation de compte, changement de mot de passe, ...
+
+### Sprint 4
+
+Idée globale : Paufinage, réglages de bugs, ajouts non importants, optimisation, ...
