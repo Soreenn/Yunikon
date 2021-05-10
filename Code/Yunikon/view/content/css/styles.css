@@ -65,11 +65,8 @@
 }
 
 .nav.navbar-nav.navbar-right li a {
-    color: white;
-}
-
-#home .nav.navbar-nav.navbar-right {
-	color: black;
+	font-size: 15px;
+	color :white;
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
@@ -106,6 +103,18 @@
 
 #home {
 	height: 100vh;
+	padding: 0px;
+
+}
+
+#register {
+	height: 90vh;
+	padding: 0px;
+
+}
+
+#login {
+	height: 90vh;
 	padding: 0px;
 
 }

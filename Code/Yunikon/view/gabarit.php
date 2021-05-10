@@ -55,7 +55,7 @@
         </li>
 	  <li><a data-scroll href="#subscribe">Newsletter</a></li>
         </li>
-        <li><a href="#">Login</a></li>
+        <li><a href="register">Register</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -64,26 +64,6 @@
 </header>
 
 	<?= $content; ?>
-
-	<!-- SUBSCRIBE -->
-		<section id="subscribe">
-			<div class="container">
-				<div class="row text-center">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Inscription a la Newsletter</h2>
-						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Restez informés des nouvelles !</h5>
-						<!-- MAILCHIMP FORM -->
-						<form id="mc_form" role="form">
-							<input data-sr="enter top over 1s, wait 0.3s, move 24px, reset" type="email" class="form-control" id="mc-email" name="mc-email" placeholder="Your Email" />
-							<button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" type="submit" class="button-leweb">Submit</button>
-							<label for="mc-email" class="mc-email"></label>
-						</form>
-						<!-- MAILCHIMP FORM ENDS -->
-					</div>
-				</div>
-			</div>	
-		</section>
-	<!-- SUBSCRIBE ENDS -->
 	
 	<!-- FOOTER -->
 		<footer id="footer">
