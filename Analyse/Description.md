@@ -255,12 +255,16 @@ Le repository contient le fichier 'documentation projet.md', dans lequel les sec
 
 Du 10/05 au 23/05
 
-Idée globale : Création des vues et de la base de données, connexion à la base de donnée dans le code (Possiblement modèle)
+Idée globale : Création de la page de connexion et d'inscription fonctionnelle avec intégrations de données
 
 ### Sprint 3
 
-Idée globale : Gestion du controller et intégration du CRUD : register, login, activation de compte, changement de mot de passe, ...
+Du 24/05 au 06/06
+
+Idée globale : Achats et gestions de stands fonctionnels et activation de compte
 
 ### Sprint 4
 
-Idée globale : Paufinage, réglages de bugs, ajouts non importants, optimisation, ...
+Du 07/06 au 20/06
+
+Idée globale : Countdown fonctionnel, changement de mot de passe SMS + Email et protection double authentification
