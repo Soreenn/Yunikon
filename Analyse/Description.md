@@ -255,13 +255,13 @@ Le repository contient le fichier 'documentation projet.md', dans lequel les sec
 
 Du 10/05 au 23/05
 
-Idée globale : Création de la page de connexion et d'inscription fonctionnelle avec intégrations de données
+Idée globale : Création de la page de connexion et d'inscription fonctionnelle, intégrations de données, création d'événements, affichage d'événements pour les utilisateurs et achat de de billets
 
 ### Sprint 3
 
 Du 24/05 au 06/06
 
-Idée globale : Achats et gestions de stands fonctionnels et activation de compte
+Idée globale : Location de stands et gestions de stands fonctionnels et activation de compte par email/sms
 
 ### Sprint 4
 
