@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal</title>
+    <!-- external libs from cdnjs -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- PivotTable.js libs from ../dist -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js"></script>
+
+    <script src='_icescrum_api.js'></script>
+    <style>
+        #spinner {
+            width: 80px;
+            height: 80px;
+            left: 0px;
+            top: 0px;
+            opacity: 1;
+        }
+
+        .code {
+            font-family: "Courier New";
+            font-weight: bolder;
+            padding: 4px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="pl-5 m-2 mt-4 text-center">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-small btn-light float-left" data-toggle="modal" data-target="#exampleModal">
+        Aide
+    </button>
+    <h1 id="spnProjName"></h1>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aide de Timesheet</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-left">
+                    <ul>
+                        <li>Pour une vue 'journal de travail': remplacer 'count' par 'Sum', puis sélectionner 'temps_effectif_tâche'</li>
+                        <li>Faire des drag-n-drop des champs qui vous intéressent dans la zone des en-têtes de ligne ou de colonne</li>
+                        <li>Précisions sur certains champs:
+                            <ul>
+                                <li>'effort_estimé_story' est en points, pas en temps</li>
+                                <li>'value' correspond à la business value</li>
+                                <li>'semaine' est au format YYWW. Exemple: semaine 9 de 2021 => 2109</li>
+                                <li>'facile' est vrai pour une tâche qui a pris moins de la moitié du temps initialement estimé</li>
+                                <li>'durdur' est vrai pour une tâche dont le temps effectif est plus d'une fois et demi le temps initialement estimé</li>
+                                <li>'surprise' est vrai pour une tâche qui a été créée après qu'au moins une tâche de la story a été terminée</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divBadConfig" class="container d-none text-left m-5 p-3 bg-warning">
+        <h3>Oooops!!</h3>
+        <p>Si vous voyez ce texte, c'est que cette page a besoin d'informations compémentaires de votre part pour fonctionner.</p>
+        <p>Vous devez créer un fichier nommé <span class="code">_icescrum_api.js</span> dans le dossier où se trouve <span class="code">Timesheet.html</span></p>
+        <p>Dans ce fichier, vous devez mettre:</p>
+        <ol>
+            <li>
+                Votre token d'accès à l'API Icescrum. Cela donne quelque chose genre:
+                <span class="code">var iceScrumToken = '91030e0ea9a9ab58...'</span>
+                <p class="small text-secondary">Vous générez ou retrouvez votre token dans votre profil IceScrum ("My Account") sous l'onglet 'API token'</p>
+            </li>
+            <li>
+                Le code Icescrum de votre projet, genre:
+                <span class="code">projectId = 'XXXXXX'</span>
+                <p class="small text-secondary">Vous trouverez la valeur à mettre à la place des XXXXXX dans la barre d'adresse de votre navigateur quand vous êtes sur votre projet Icescrum (https://icescrum.cpnv.ch/p/XXXXXX/#/project)</p>
+            </li>
+        </ol>
+        <p>Attention: ajoutez <span class="code">*_icescrum_api*</span> dans le fichier <span class="code">.gitignore</span> de votre repository.</p>
+        <p>Si vous ne le faites pas, votre token sera publié sur Github!</p>
+    </div>
+    <div id="spnLoading">
+        <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading GIF by Mashable" id="spinner"> Chargement de données depuis IceScrum...
+    </div>
+</div>
+<div id="output" style="margin: 30px;"></div>
+<div style="font-size: x-small">Powered by l'excellentissime <a href="https://github.com/nicolaskruchten/pivottable">pivottable.js</a> de Nicolas Kruchten</div>
+</body>
+</html>
+<script>
+
+    // ============ Initialization =================
+    // Configuration check
+    if (typeof (iceScrumToken) !== 'undefined' && typeof (projectId) !== 'undefined')
+    {
+        var API_base_url = 'https://icescrum.cpnv.ch/ws/project/' + projectId
+        loadData()
+    } else
+    {
+        divBadConfig.classList.remove('d-none')
+        spnLoading.classList.add('d-none')
+    }
+
+    // Project name
+    fetch(API_base_url + '/?icescrum-token=' + iceScrumToken).then(function (response) {
+        return response.json()
+    }).then(function (data) {
+        spnProjName.innerText = 'Projet ' + data.name
+        document.title = 'Projet ' + data.name
+    })
+
+    function loadData()
+    {
+        let tasks = [] // all tasks, including urgent and recurrent ones. Tasks will be duplicated if they have multiple tags (one instance per tag value)
+        let stories = [] // the stories of the project. We need them so that we can get their type and value that are not in the task's parent story
+        let storyStarts = [] // the date at which the work has started on this story. Can't use story.inProgressDate, which is the date when the task was placed in the sprint backlog
+
+        // story-less tasks:
+        stories[10] = {name: '(Urgentes)', tasks: []}
+        stories[11] = {name: '(Récurrentes)', tasks: []}
+
+        // Get all stories
+        fetch(API_base_url + '/story?icescrum-token=' + iceScrumToken).then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            data.forEach(function (story) {
+                // use id as index for easy find
+                stories[story.id] = {name: story.name, type: story.type == 0 ? 'user' : (story.type == 3 ? 'tech' : 'rec/urg'), value: story.value, estimatedDate: story.estimatedDate}
+            })
+        }).then(function () { // get all tasks
+            fetch(API_base_url + '/task?icescrum-token=' + iceScrumToken).then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data)
+                data.forEach(function (task) {
+                    // Determine the actual start of work on the story
+                    if (task.parentStory && task.inProgressDate)
+                    {
+                        if (storyStarts[task.parentStory.id])
+                        {
+                            if (task.inProgressDate < storyStarts[task.parentStory.id])
+                            {
+                                storyStarts[task.parentStory.id] = task.inProgressDate
+                            }
+                        } else
+                        {
+                            storyStarts[task.parentStory.id] = task.inProgressDate
+                        }
+                    }
+                    // If the task is started, it goes to the pivot
+                    if (task.spent > 0)
+                    {
+                        tasks.push(...prepareTaskForPivot(task, stories)) // must spread before pushing, otherwise we build an array of array of objects (try it if you don't believe it)
+                    }
+                })
+            }).then(function () {
+                // compute additional fields
+                tasks.forEach(function (task) {
+                    // tag bad estimates
+                    let ratio = task.temps_effectif_tâche / task.temps_estimé_tâche
+                    task.facile = ratio < 0.5
+                    task.durdur = ratio > 1.5
+
+                    if (task.story_id > 0)
+                    {
+                        task.surprise = task.date_created > storyStarts[task.story_id] // task was a surprise if it was created AFTER some tasks were already completed in this story
+                    }
+                })
+                // now feed those tasks to the pivot table
+                $("#output").pivotUI(tasks,
+                    {
+                        rows: ["story", "tâche"],
+                        cols: ["effectuée_par"]
+                    }
+                );
+                spnLoading.classList.add('d-none') // spinner off
+            })
+        }).catch(function (erreur) {
+            alert("Erreur de connexion au serveur IceScrum\n\nSi internet est ok (=vous pouvez atteindre icescrum.cpnv.ch avec votre navigateur), alors c'est probablement que le code du projet est faux ou que votre token est pourri")
+            window.close()
+        })
+    }
+
+    /**
+     * Returns an array of task objects. The array will have 1 task if the task has no tag or just one:  "tags": [],  or "tags": ["Ajax"]"
+     * It will have one item per tag value if threr are more: "tags": ["Ajax","forlater"]"
+     * @param task : the task received from the API
+     * @param stories : contains things that are not in task.parentStory
+     * @returns {[]}
+     */
+    function prepareTaskForPivot(task, stories)
+    {
+        res = []
+
+        // determine story name
+        storyname = '?'
+        if (task.type == 10) storyname = 'Urgente'
+        if (task.type == 11) storyname = 'Récurrente'
+        if (task.parentStory) storyname = task.parentStory.name
+
+        base = {
+            tâche: task.name,
+            story: storyname,
+            // story_id: task.parentStory ? task.parentStory.id : 0,
+            // release: task.sprint.parentRelease ? task.sprint.parentRelease.name : '?',
+            sprint: task.sprint.index,
+            effectuée_par: task.responsible ? task.responsible.firstName : '',
+            temps_effectif: task.spent ? task.spent : '',
+            temps_estimé: task.initial ? task.initial : '',
+            type_story: task.parentStory ? stories[task.parentStory.id].type : 'rec/urg',
+            // effort_estimé_story: task.parentStory ? task.parentStory.effort : 0,
+            // value: task.parentStory ? stories[task.parentStory.id].value : 0,
+            terminée_le: task.doneDate ? task.doneDate.substring(0, 10) : '?',
+            // date_created: task.dateCreated,
+            semaine: task.doneDate ? getNumberOfWeek(task.doneDate.substring(0, 10)) : '?',
+            remarque: task.notes ? task.notes : ''
+        }
+
+        // let's work on those tags now
+        if (task.tags.length == 0)
+        { // no tags -> one row without column tag for this task
+            res.push(base)
+        } else
+        {
+            task.tags.forEach(function (tag) { // one row for each tag for this task
+                taginstance = {...base} // build a clone
+                taginstance.tag = tag
+                res.push(taginstance)
+            })
+        }
+        return res
+    }
+
+    /**
+     * return the week number in format YYWW
+     * credit to https://stackoverflow.com/questions/8224459/how-to-create-a-date-object-from-string-in-javascript
+     * @param date
+     * @returns {number}
+     */
+    function getNumberOfWeek(date)
+    {
+        date = new Date(Date.parse(date))
+        const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+        const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
+        return 100 * (date.getFullYear() % 100) + Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+    }
+
+</script>
