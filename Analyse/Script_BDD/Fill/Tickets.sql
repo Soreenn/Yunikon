@@ -1,0 +1,15 @@
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (1, 1, '2021-03-25', '2020-07-27', 28, 'Phlycten keratoconjunct', 1, 1);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (2, 2, '2020-08-13', '2020-12-19', 12, 'Central scotoma', 2, 2);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (3, 3, '2020-09-12', '2021-08-10', 7, 'Fam hx-psychiatric cond', 3, 3);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (4, 4, '2020-12-07', '2020-11-14', 8, 'Psychogenic pain NEC', 4, 4);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (5, 5, '2020-11-04', '2020-12-21', 15, 'Ca in situ GI NEC/NOS', 5, 5);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (6, 6, '2021-01-14', '2021-09-01', 30, 'Opn wnd larynx w trachea', 6, 6);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (7, 7, '2021-04-19', '2021-05-01', 27, 'Pelvic organ inj NOS-cl', 7, 7);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (8, 8, '2021-04-02', '2020-06-13', 15, 'Accid in resident instit', 8, 8);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (9, 9, '2020-07-20', '2021-09-15', 13, 'Early complic trauma NEC', 9, 9);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (10, 10, '2021-01-25', '2022-04-25', 27, 'Drug induce headache NEC', 10, 10);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (11, 11, '2020-07-01', '2020-07-09', 6, 'Opn wound auditory canal', 11, 11);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (12, 12, '2020-11-04', '2021-10-12', 8, 'Adv eff cardiovasc NEC', 12, 12);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (13, 13, '2020-11-26', '2020-08-25', 25, 'Anoxic brain damage', 13, 13);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (14, 14, '2020-06-20', '2022-01-11', 10, 'Ob surg compl NEC-unspec', 14, 14);
+insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (15, 15, '2020-11-19', '2020-10-06', 8, 'Abdmnal pain rt lwr quad', 15, 15);

@@ -1,0 +1,15 @@
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (1, 1, '2021-04-28', '2022-05-09', 1, 1);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (2, 2, '2020-08-29', '2021-03-26', 2, 2);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (3, 3, '2021-01-10', '2020-05-21', 3, 3);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (4, 4, '2021-04-14', '2021-10-24', 4, 4);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (5, 5, '2020-08-07', '2022-04-12', 5, 5);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (6, 6, '2020-11-13', '2020-09-11', 6, 6);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (7, 7, '2020-10-29', '2022-04-07', 7, 7);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (8, 8, '2020-09-11', '2021-04-29', 8, 8);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (9, 9, '2020-05-24', '2021-11-01', 9, 9);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (10, 10, '2020-08-03', '2022-02-06', 10, 10);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (11, 11, '2020-07-28', '2021-03-31', 11, 11);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (12, 12, '2020-10-22', '2021-09-16', 12, 12);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (13, 13, '2020-07-25', '2020-10-17', 13, 13);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (14, 14, '2020-07-08', '2020-07-31', 14, 14);
+insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Exhibitor_id, Stand_id) values (15, 15, '2020-05-28', '2022-03-29', 15, 15);

@@ -1,0 +1,15 @@
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (1, 'jelington0@tmall.com', 'qQMulQA3R5G', '588 693 6998', 'Jenn', 'Elington');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (2, 'hsorton1@theatlantic.com', 'yyyY6a5', '684 588 1453', 'Hedwiga', 'Sorton');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (3, 'ekimblin2@google.com.hk', '5bdmSkDy', '999 555 9504', 'Emeline', 'Kimblin');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (4, 'dlucken3@yandex.ru', 'o2tN7BYm3', '368 648 1677', 'Donni', 'Lucken');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (5, 'umccuis4@livejournal.com', 'rSe8nLBzK', '459 488 1923', 'Udale', 'McCuis');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (6, 'anuss5@ovh.net', 'jiKz9g8HrNXh', '863 948 8506', 'Anselma', 'Nuss');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (7, 'jrouff6@fema.gov', 'LnWNLweFng', '174 699 8562', 'Jorrie', 'Rouff');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (8, 'tturban7@archive.org', 'TUummzdiu6jS', '349 424 6675', 'Tansy', 'Turban');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (9, 'swallworke8@skyrock.com', '6ljM53B', '398 533 4325', 'Sam', 'Wallworke');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (10, 'sabilowitz9@arizona.edu', 'lqhk8jUME', '209 520 4814', 'Shaina', 'Abilowitz');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (11, 'mbuggea@netlog.com', 'xJLflsUj', '631 222 7020', 'Maisie', 'Bugge');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (12, 'sabbotsb@printfriendly.com', 'Dfl1lSq', '850 619 4332', 'Scotty', 'Abbots');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (13, 'mfairholmec@php.net', 'ZeREAkJ', '901 323 5300', 'Meridel', 'Fairholme');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (14, 'wcasswelld@simplemachines.org', '2q8qzW1pd', '319 886 3161', 'Wendell', 'Casswell');
+insert into Users (id, eMail, password, phoneNumber, name, lastName) values (15, 'zeastame@weather.com', 'RxlxZM3', '647 775 1815', 'Zed', 'Eastam');
