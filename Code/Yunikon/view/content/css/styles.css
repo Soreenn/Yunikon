@@ -10,6 +10,10 @@
 	padding: 0px;
 }
 
+.center_div{
+    margin-top: 15%;
+}
+
 .affix {
     top: 0;
     width: 100%;
@@ -114,7 +118,7 @@
 }
 
 #login {
-	height: 90vh;
+	height: 65vh;
 	padding: 0px;
 
 }
