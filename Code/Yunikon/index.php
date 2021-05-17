@@ -7,20 +7,22 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require "controller/controller.php";
 
+// Remove get parameters
+$uri = strtok($_SERVER["REQUEST_URI"], '?');
+// Remove ending /
+$uri = (strlen($uri) > 1) ? preg_replace("/\/$/", '', $uri) : $uri;
+
 switch ($_SERVER["REQUEST_URI"]) {
     case "/" :
     case "/home" :
-    case "/home/" :
         home();
         break;
         case "/register" :
-            case "/register/" :
-                register();
-                break;
-                case "/login" :
-                    case "/login/" :
-                        login();
-                        break;
+            register();
+            break;
+        case "/login" :
+            login();
+            break;
     default:
         lost();
         break;

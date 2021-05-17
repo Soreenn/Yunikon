@@ -8,6 +8,10 @@ function register(){
     require "view/register.php";
 }
 
+function lost(){
+    
+}
+
 function login(){
     require "view/login.php";
 }
