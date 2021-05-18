@@ -119,6 +119,12 @@
 
 }
 
+#homeEvent {
+	height: 100vh;
+	padding: 0px;
+	margin-right: 20em;
+}
+
 #register {
 	height: 90vh;
 	padding: 0px;
