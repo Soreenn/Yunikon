@@ -36,7 +36,7 @@ function DBConnexion()
     $charset = 'utf8';
     $dbName = 'yunikon';
     $userName = 'root';
-    $userPwd = ''; // Votre mot de passe hein
+    $userPwd = 'Shinome12'; // Votre mot de passe hein
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try {

@@ -82,12 +82,14 @@ if (session_status() === PHP_SESSION_NONE) {
 							<li>
 								<a href="/register">Register</a>
 							</li>
+						<?php else : ?>
+							<li>
+								<a href="/logout">Logout</a>
 							</li>
 						<?php endif; ?>
 						<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 							<li>
 								<a href="/login">Login</a>
-							</li>
 							</li>
 						<?php else : ?>
 							<li>
