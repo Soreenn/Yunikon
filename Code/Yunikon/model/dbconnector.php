@@ -35,7 +35,7 @@ function DBConnexion()
     $port = 3306;
     $charset = 'utf8';
     $dbName = 'yunikon';
-    $userName = 'root';
+    $userName = 'Yunikon';
     $userPwd = ''; // Votre mot de passe hein
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
