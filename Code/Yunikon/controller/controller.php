@@ -15,3 +15,7 @@ function lost(){
 function login(){
     require "view/login.php";
 }
+
+function event(){
+    require "view/event.php";
+}

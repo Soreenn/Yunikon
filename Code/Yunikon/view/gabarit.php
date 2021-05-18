@@ -57,6 +57,8 @@
 	  <li><a data-scroll href="#subscribe">Newsletter</a></li>
 	  <?php endif ; ?>
         </li>
+		<li><a href="/event">Event</a>
+		</li>
         <li><a href="/register">Register</a></li>
         </li>
 		<li><a href="/login">Login</a></li>
