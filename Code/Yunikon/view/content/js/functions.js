@@ -18,7 +18,7 @@ DONT CHANGE ANY CODE UNDER THIS LINE - DONT CHANGE ANY CODE UNDER THIS LINE - DO
 // PRELOADER	
 	setTimeout(function(){
 		$('body').addClass('loaded');
-	}, 3000);
+	}, 0);
 	
 // SCROLL REVEAL
 	window.sr = new scrollReveal();
