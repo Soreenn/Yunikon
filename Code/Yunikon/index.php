@@ -23,8 +23,12 @@ switch ($_SERVER["REQUEST_URI"]) {
         case "/login" :
             login();
             break;
+
         case "/registerRequest" :
             registerRequest($_POST);
+
+        case "/event" :
+            event();
             break;
     default:
         lost();

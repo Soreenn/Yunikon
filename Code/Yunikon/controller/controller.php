@@ -59,3 +59,8 @@ function createSession($userEmailAddress, $firstname, $lastname)
     $_SESSION['firstname'] = $firstname;
     $_SESSION['lastname'] = $lastname;
 }
+
+function event(){
+    require "view/event.php";
+}
+

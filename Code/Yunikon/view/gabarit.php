@@ -55,6 +55,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 	<header class="sticky-top" data-spy="affix" data-offset-top="0">
 		<nav class="navbar navbar-transparent">
+
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -95,6 +96,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div><!-- /.container-fluid -->
 		</nav>
 	</header>
+
 
 	<?= $content; ?>
 
