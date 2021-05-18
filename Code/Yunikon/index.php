@@ -23,6 +23,9 @@ switch ($_SERVER["REQUEST_URI"]) {
         case "/login" :
             login();
             break;
+        case "/event" :
+            event();
+            break;
     default:
         lost();
         break;
