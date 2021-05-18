@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS `Yunikon`.`Users` ;
 CREATE TABLE IF NOT EXISTS `Yunikon`.`Users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `eMail` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `phoneNumber` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,

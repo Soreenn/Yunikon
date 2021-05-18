@@ -3,7 +3,7 @@ function executeQuerySelect($query)
 {
     $queryResult = null;
 
-    $dbConnexion = openDBConnexion();//open database connexion
+    $dbConnexion = DBConnexion();//open database connexion
     if ($dbConnexion != null) {
         $statement = $dbConnexion->prepare($query);//prepare query
         $statement->execute();//execute query
@@ -17,7 +17,7 @@ function executeQueryIUD($query)
 {
     $queryResult = null;
 
-    $dbConnexion = openDBConnexion();//open database connexion
+    $dbConnexion = DBConnexion();//open database connexion
     if ($dbConnexion != null) {
         $statement = $dbConnexion->prepare($query);//prepare query
         $queryResult = $statement->execute();//execute query

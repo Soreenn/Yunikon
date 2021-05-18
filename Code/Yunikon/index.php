@@ -23,6 +23,9 @@ switch ($_SERVER["REQUEST_URI"]) {
         case "/login" :
             login();
             break;
+        case "/registerRequest" :
+            registerRequest($_POST);
+            break;
     default:
         lost();
         break;
