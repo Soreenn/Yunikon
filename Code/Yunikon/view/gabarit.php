@@ -93,7 +93,7 @@ if (session_status() === PHP_SESSION_NONE) {
 							</li>
 						<?php else : ?>
 							<li>
-								<>Bienvenue <?= $_SESSION['firstname'] ?> <?= $_SESSION['lastname'] ?></p>
+								<a>Bienvenue <?= $_SESSION['firstname'] ?></a>
 							</li>
 						<?php endif; ?>
 					</ul>
