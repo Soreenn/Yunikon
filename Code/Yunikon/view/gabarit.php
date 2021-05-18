@@ -75,6 +75,9 @@ if (session_status() === PHP_SESSION_NONE) {
 							<li><a data-scroll href="#subscribe">Newsletter</a></li>
 						<?php endif; ?>
 						</li>
+						<li>
+							<a href="/event">Event list</a>
+						</li>
 						<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 							<li>
 								<a href="/register">Register</a>
