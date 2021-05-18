@@ -13,23 +13,27 @@ $uri = strtok($_SERVER["REQUEST_URI"], '?');
 $uri = (strlen($uri) > 1) ? preg_replace("/\/$/", '', $uri) : $uri;
 
 switch ($_SERVER["REQUEST_URI"]) {
-    case "/" :
-    case "/home" :
+    case "/":
+    case "/home":
         home();
         break;
-        case "/register" :
-            register();
-            break;
-        case "/login" :
-            login();
-            break;
-
-        case "/registerRequest" :
-            registerRequest($_POST);
-
-        case "/event" :
-            event();
-            break;
+    case "/register":
+        register();
+        break;
+    case "/login":
+        login();
+        break;
+    case "/registerRequest":
+        registerRequest($_POST);
+    case "/event":
+        event();
+        break;
+    case "/loginRequest":
+        loginRequest($_POST);
+        break;
+    case "/logout":
+        logout();
+        break;
     default:
         lost();
         break;

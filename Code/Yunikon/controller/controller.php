@@ -53,6 +53,31 @@ function registerRequest($registerData)
     }
 }
 
+function loginRequest($loginData)
+{
+    //if a login request was submitted
+    if (isset($loginData['email']) && isset($loginData['password'])) {
+        //extract login parameters
+        $userEmailAddress = $loginData['email'];
+        $userPsw = $loginData['password'];
+        //try to check if user/psw are matching with the database
+        require "./model/model.php";
+        if (isLoginCorrect($userEmailAddress, $userPsw)) {
+            $userInfo = getUserInfo($userEmailAddress);
+            $firstname = $userInfo[0]['name'];
+            $lastname = $userInfo[0]['lastname'];
+            createSession($userEmailAddress, $firstname, $lastname);
+            $_GET['loginError'] = false;
+            header("Location: /home");
+        } else { //if the user/psw does not match, login form appears again
+            $_GET['loginError'] = true;
+            header("Location: /login");
+        }
+    } else { //the user does not yet fill the form
+        header("Location: /login");
+    }
+}
+
 function createSession($userEmailAddress, $firstname, $lastname)
 {
     $_SESSION['userEmailAddress'] = $userEmailAddress;
@@ -62,5 +87,12 @@ function createSession($userEmailAddress, $firstname, $lastname)
 
 function event(){
     require "view/event.php";
+}
+
+function logout()
+{
+    $_SESSION = array();
+    session_destroy();
+    header("Location: /home");
 }
 

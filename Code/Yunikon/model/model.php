@@ -9,3 +9,37 @@ function RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone
     $registerResult = executeQueryIUD($register);
     return $registerResult;
 }
+
+function isLoginCorrect($userEmailAddress, $userPsw)
+{
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT * FROM users WHERE eMail = ' . $strSeparator . $userEmailAddress . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+    if (count($queryResult) == 1) {
+        $userHashPsw = $queryResult[0]['password'];
+        if (password_verify($userPsw, $userHashPsw) == true) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+    } else {
+        $result = false;
+    }
+
+    return $result;
+}
+
+function getUserInfo($userEmailAddress)
+{
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT * FROM users WHERE eMail = ' . $strSeparator . $userEmailAddress . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+    
+    return $queryResult;
+}
