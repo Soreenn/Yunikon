@@ -50,15 +50,15 @@ $currentPage = "#login";
                     <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/polymanga-2019.jpg">
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/polymanga-2019.jpg">
+                    <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Paris-Games-Week-2020-Annulation.jpg">
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/polymanga-2019.jpg">
+                    <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Japan_Expo_Logo_2.svg.png">
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/polymanga-2019.jpg">
+                    <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Japan_Impact_Logo.png">
                 </div>
             </div>
         </div>
