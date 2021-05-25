@@ -69,7 +69,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a data-scroll href="#home">Home</a></li>
+						<li><a href="/home">Home</a></li>
 						</li>
 						<?php if ($_SERVER["REQUEST_URI"] == "/" || $_SERVER["REQUEST_URI"] == "/home/") : ?>
 							<li><a data-scroll href="#subscribe">Newsletter</a></li>
