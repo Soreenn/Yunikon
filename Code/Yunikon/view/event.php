@@ -62,7 +62,6 @@ $currentPage = "#login";
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
