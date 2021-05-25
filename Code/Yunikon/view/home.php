@@ -52,9 +52,9 @@ $currentPage = "#home";
 						<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Ouverture de la 1ère édition de Yunikon !</h1>
 						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Inscriptions ouvertes dès maintenant</h5>
 						<br>
-						<a href="/register/"><button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="button-leweb">Je m'incris dès maintenant !</button></a>
+						<a href="/register"><button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="button-leweb">Je m'incris dès maintenant !</button></a>
 						<br>
-						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Déjà un compte ? Connectez-vous !</small>
+						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Déjà un compte ? <a href="/login">Connectez-vous !</a></small>
 					</div>
 				</div>
   </div>
@@ -69,7 +69,7 @@ $currentPage = "#home";
 						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Restez informés des nouvelles !</h5>
 						<!-- MAILCHIMP FORM -->
 						<form id="mc_form" role="form">
-							<input data-sr="enter top over 1s, wait 0.3s, move 24px, reset" type="email" class="form-control" id="mc-email" name="mc-email" placeholder="Your Email" />
+							<input  data-sr="enter top over 1s, wait 0.3s, move 24px, reset" type="email" class="form-control" id="mc-email" name="mc-email" placeholder="Your Email">
 							<button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" type="submit" class="button-leweb">Submit</button>
 							<label for="mc-email" class="mc-email"></label>
 						</form>

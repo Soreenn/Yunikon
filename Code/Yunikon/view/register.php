@@ -46,7 +46,7 @@ $currentPage = "#register";
 					<br>
 					<input type="submit" value="Je m'inscris dès maintenant!" class="button-leweb">
 					<br>
-					<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Déjà un compte ? Connectez-vous !</small>
+					<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Déjà un compte ? <a href="/login">Connectez-vous !</a></small>
 				</form>
 			</div>
 		</div>

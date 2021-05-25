@@ -21,7 +21,7 @@ $currentPage = "#login";
 						<input type="reset" value="Effacer" class="button-leweb">
 						<input type="submit" value="Connexion" class="button-leweb">
 						<br>
-						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Déjà un compte ? Connectez-vous !</small>
+						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Pas encore de compte ? <a href="/register">Créez un compte !</a></small>
 						</form>
 					</div>
 				</div>
