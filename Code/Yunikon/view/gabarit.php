@@ -25,13 +25,11 @@ if (session_status() === PHP_SESSION_NONE) {
 	<!-- BOOTSTRAP -->
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<!-- FONT AWESOME -->
 	<link rel="stylesheet" href="/view/content/css/font-awesome.min.css">
 	<!-- CUSTOM STYLING -->
 	<link href="/view/content/css/styles.css" rel="stylesheet">
-	<!-- PRELOADER -->
-	<link href="/view/content/css/loader.css" rel="stylesheet">
+
 
 </head>
 
