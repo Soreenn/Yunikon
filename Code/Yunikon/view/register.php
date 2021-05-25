@@ -3,7 +3,7 @@ ob_start();
 $title = "Register";
 $currentPage = "#register";
 ?>
-
+<div id="content-wrap">
 <section id="register">
 	<div class="container">
 		<div class="row text-center">
@@ -52,7 +52,7 @@ $currentPage = "#register";
 		</div>
 	</div>
 </section>
-
+</div>
 <?php
 $content = ob_get_clean();
 require "view/gabarit.php";
