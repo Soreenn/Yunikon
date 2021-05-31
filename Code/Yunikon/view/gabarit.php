@@ -74,7 +74,7 @@ if (session_status() === PHP_SESSION_NONE) {
 						<?php endif; ?>
 						</li>
 						<li>
-							<a href="/event">Event list</a>
+							<a href="/eventList">Event list</a>
 						</li>
 						<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 							<li>

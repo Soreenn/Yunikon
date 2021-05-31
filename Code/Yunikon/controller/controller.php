@@ -85,8 +85,8 @@ function createSession($userEmailAddress, $firstname, $lastname)
     $_SESSION['lastname'] = $lastname;
 }
 
-function event(){
-    require "view/event.php";
+function eventList(){
+    require "view/eventList.php";
 }
 
 function logout()
@@ -96,3 +96,6 @@ function logout()
     header("Location: /home");
 }
 
+function event(){
+    require "view/event.php";
+}

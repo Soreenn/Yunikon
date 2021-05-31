@@ -349,6 +349,48 @@ section {
 	animation: leweb_fade_move_down 2s ease-in-out infinite;
    }
 
+   #traitre {
+	opacity: 95%;
+	background: url(../images/venez-feter-les-4-ans-de-gaijin-dash-au-festival-polymanga-2019-e8917c51__1920_1080__0-438-1280-849.jpg) no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+	padding: 0px;
+}
+
+#traitre .container {
+	background: url(../images/body-bg1.png) repeat 0 0;
+	height: 100vh;
+	width: 100% !important;
+	padding: 0px;	
+	z-index: 998;
+}
+
+#traitre .col-md-8 {
+	top: 20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 999;
+}
+
+#traitre .logo {
+	margin-bottom: 15px;
+}
+
+#traitre .fa-angle-down {
+	text-align: center;
+	font-size: 48px;
+	color: #fff;
+	
+	-webkit-animation: leweb_fade_move_down 2s ease-in-out infinite;
+	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
+	animation: leweb_fade_move_down 2s ease-in-out infinite;
+   }
+
 #header .fa-angle-down {
 	text-align: center;
 	font-size: 48px;
