@@ -57,7 +57,7 @@ $currentPage = "#login";
                         <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Japan_Expo_Logo_2.svg.png">
                     </div>
                     <div class="col-md-4 col-md-offset-4">
-                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Japan_Impact_Logo.png">
+                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/987b2cc3315d480aa390dc683f43e3b5f96814b5.jpg">
                     </div>
                 </div>
             </div>
