@@ -22,21 +22,22 @@ insert into Events (id, name, startingDate, endingDate, location, description) v
 insert into Events (id, name, startingDate, endingDate, location, description) values (15, 'Little Inc', '2022-02-12', '2023-06-28', 'Yelizovo', 'Passenger on bus injured in collision w unsp mv in traf');
 
 -- Users
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (1, 'jelington0@tmall.com', 'qQMulQA3R5G', '588 693 6998', 'Jenn', 'Elington');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (2, 'hsorton1@theatlantic.com', 'yyyY6a5', '684 588 1453', 'Hedwiga', 'Sorton');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (3, 'ekimblin2@google.com.hk', '5bdmSkDy', '999 555 9504', 'Emeline', 'Kimblin');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (4, 'dlucken3@yandex.ru', 'o2tN7BYm3', '368 648 1677', 'Donni', 'Lucken');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (5, 'umccuis4@livejournal.com', 'rSe8nLBzK', '459 488 1923', 'Udale', 'McCuis');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (6, 'anuss5@ovh.net', 'jiKz9g8HrNXh', '863 948 8506', 'Anselma', 'Nuss');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (7, 'jrouff6@fema.gov', 'LnWNLweFng', '174 699 8562', 'Jorrie', 'Rouff');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (8, 'tturban7@archive.org', 'TUummzdiu6jS', '349 424 6675', 'Tansy', 'Turban');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (9, 'swallworke8@skyrock.com', '6ljM53B', '398 533 4325', 'Sam', 'Wallworke');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (10, 'sabilowitz9@arizona.edu', 'lqhk8jUME', '209 520 4814', 'Shaina', 'Abilowitz');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (11, 'mbuggea@netlog.com', 'xJLflsUj', '631 222 7020', 'Maisie', 'Bugge');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (12, 'sabbotsb@printfriendly.com', 'Dfl1lSq', '850 619 4332', 'Scotty', 'Abbots');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (13, 'mfairholmec@php.net', 'ZeREAkJ', '901 323 5300', 'Meridel', 'Fairholme');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (14, 'wcasswelld@simplemachines.org', '2q8qzW1pd', '319 886 3161', 'Wendell', 'Casswell');
-insert into Users (id, eMail, password, phoneNumber, name, lastName) values (15, 'zeastame@weather.com', 'RxlxZM3', '647 775 1815', 'Zed', 'Eastam');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (1, 'efewkes0@webeden.co.uk', 'AA9MfbNk44M0', '6716536846', 'Esther', 'Fewkes', 0, 'Toxicology-peritoneum', 'Aufderhar-Marks');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (2, 'amantione1@bigcartel.com', 'tEVmlNR3H', '6013144413', 'Agnola', 'Mantione', 1, 'Thyroid vessel ligation', 'Anderson, Hammes and Cummings');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (3, 'kleele2@hud.gov', 'h5hRnA', '3786981316', 'Kinna', 'Leele', 1, 'Arterial pressure monit', 'Schuppe-Heaney');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (4, 'epudge3@dion.ne.jp', 'xLURldUC4', '2778304007', 'Erskine', 'Pudge', 0, 'Omt with indirect forces', 'Lynch, Muller and Kihn');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (5, 'mmarjanovic4@aboutads.info', 'fDEKCu', '4092679240', 'Moore', 'Marjanovic', 1, 'Destruct esophag les NEC', 'Lemke-Hayes');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (6, 'swaadenburg5@cnet.com', 'lrjhRR', '6988898901', 'Sullivan', 'Waadenburg', 1, 'Nasal sept grft-epistax', 'Schinner-Schmitt');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (7, 'valldritt6@discuz.net', 'AxLfNL51YK', '7448678386', 'Vanya', 'Alldritt', 0, 'Episiotomy', 'Denesik and Sons');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (8, 'dsmylie7@xing.com', 'shnzqmGb', '6284037486', 'Dru', 'Smylie', 1, 'Renal operation NEC', 'Leannon Inc');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (9, 'eschneider8@pbs.org', 'WJNNHSk', '6625473558', 'Esmeralda', 'Schneider', 0, 'Ureteral meatotomy', 'Schumm, Gusikowski and Goodwin');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (10, 'rwhorf9@ted.com', 'uzbhhQTu', '9449183880', 'Ruthann', 'Whorf', 1, 'Semin ves dx proced NEC', 'Schuster Inc');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (11, 'wbungeya@umn.edu', 'dvOh8jbHTUY', '1647405762', 'Witty', 'Bungey', 1, 'Biopsy of diaphragm', 'Greenholt-Block');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (12, 'hlubbockb@qq.com', 'C02rLEGzOjxq', '1643142666', 'Heloise', 'Lubbock', 1, 'Vag hysterectomy NEC/NOS', 'Weber, DuBuque and Botsford');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (13, 'qamysc@macromedia.com', 'scSstd1gWw5g', '7943978742', 'Quintus', 'Amys', 0, 'Parasitology-bili/pancr', 'Welch-Bradtke');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (14, 'cholsteind@nasa.gov', 'GjuDOeEJtQe', '6101586226', 'Catharina', 'Holstein', 0, 'Mammography NEC', 'Krajcik, Gulgowski and Adams');
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (15, 'ashoosmithe@nba.com', 'tWSZmf', '2082348514', 'Annabel', 'Shoosmith', 1, 'Hand plastic op NEC', 'Medhurst, Wisozk and Leuschke');
+
 
 -- Stands
 insert into Stands (id, U_Number, size, description) values (1, 1, 19, 'Trabecul carneae cord op');
@@ -69,23 +70,6 @@ insert into Stands (id, U_Number, size, description) values (27, 27, 29, 'Pancre
 insert into Stands (id, U_Number, size, description) values (28, 28, 16, 'Control bladd hemorrhage');
 insert into Stands (id, U_Number, size, description) values (29, 29, 16, 'Multiple sinus incision');
 insert into Stands (id, U_Number, size, description) values (30, 30, 10, 'Ovarian cyst marsupializ');
-
--- Exhibitors
-insert into Exhibitors (id, eMail, name, company, description) values (1, 'gibbeson0@tinyurl.com', 'Geneva', 'Cogidoo', 'Removal spine stim lead');
-insert into Exhibitors (id, eMail, name, company, description) values (2, 'ajacquot1@chicagotribune.com', 'Anson', 'Centimia', 'Remove corneal implant');
-insert into Exhibitors (id, eMail, name, company, description) values (3, 'pertelt2@usda.gov', 'Patsy', 'Ozu', 'Type 2 tympanoplasty');
-insert into Exhibitors (id, eMail, name, company, description) values (4, 'lmuzzullo3@zdnet.com', 'Lincoln', 'Dynabox', 'Lap hern ant abd-gft NEC');
-insert into Exhibitors (id, eMail, name, company, description) values (5, 'jbenedick4@timesonline.co.uk', 'Jeremy', 'Roomm', 'Thumb reconstruction NEC');
-insert into Exhibitors (id, eMail, name, company, description) values (6, 'hisabell5@devhub.com', 'Harriet', 'Chatterbridge', 'Thyroid reimplantation');
-insert into Exhibitors (id, eMail, name, company, description) values (7, 'jvater6@scribd.com', 'Josepha', 'Topicblab', 'Tarsal tunnel release');
-insert into Exhibitors (id, eMail, name, company, description) values (8, 'kmcilwain7@businesswire.com', 'Kerk', 'LiveZ', 'Urethral reanastomosis');
-insert into Exhibitors (id, eMail, name, company, description) values (9, 'ncarlens8@hc360.com', 'Nessi', 'Bluezoom', 'Substern thyroidect NOS');
-insert into Exhibitors (id, eMail, name, company, description) values (10, 'ebonavia9@a8.net', 'Esmeralda', 'Skalith', 'Skull transilluminat');
-insert into Exhibitors (id, eMail, name, company, description) values (11, 'crowberrya@europa.eu', 'Camile', 'Oyoba', 'Parasitology-blood');
-insert into Exhibitors (id, eMail, name, company, description) values (12, 'obilbrookb@blogs.com', 'Oren', 'Yozio', 'Interphalangeal fusion');
-insert into Exhibitors (id, eMail, name, company, description) values (13, 'fheustacec@kickstarter.com', 'Forrester', 'Tazzy', 'Mouth incision NOS');
-insert into Exhibitors (id, eMail, name, company, description) values (14, 'sbanfilld@dot.gov', 'Shelley', 'Quinu', 'Control anal hemorrhage');
-insert into Exhibitors (id, eMail, name, company, description) values (15, 'bsprigine@cnet.com', 'Bebe', 'Tagopia', 'Pedicle attach to mouth');
 
 -- Tickets
 insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, User_id) values (1, 1, '2021-03-25', '2020-07-27', 28, 'Phlycten keratoconjunct', 1, 1);
