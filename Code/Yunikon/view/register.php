@@ -3,7 +3,7 @@ ob_start();
 $title = "Register";
 $currentPage = "#register";
 ?>
-<div id="content-wrap">
+
 <section id="register">
 	<div class="container">
 		<div class="row text-center">
@@ -19,11 +19,6 @@ $currentPage = "#register";
 						<label for="firstname">Prénom</label>
 						<input class="form-control" type="text" name="firstname" id="firstname">
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre prénom restera privé.</small>
-					</div>
-					<div class="form-group form-group-sm">
-						<label for="name">Nom affiché</label>
-						<input class="form-control" type="text" name="name" id="name">
-						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Nom qui sera affiché.</small>
 					</div>
 					<div class="form-group form-group-sm">
 						<label for="email">Email</label>
@@ -52,7 +47,7 @@ $currentPage = "#register";
 		</div>
 	</div>
 </section>
-</div>
+
 <?php
 $content = ob_get_clean();
 require "view/gabarit.php";
