@@ -11,31 +11,37 @@ $currentPage = "#register";
 				<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>
 				<form method="POST" action="/registerRequest">
 					<div class="form-group form-group-sm">
-						<label for="lastname">Nom</label>
+						<label for="lastname"></label>
+						<b>Nom</b>
 						<input class="form-control" type="text" name="lastname" id="lastname">
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre nom restera privé.</small>
 					</div>
 					<div class="form-group form-group-sm">
-						<label for="firstname">Prénom</label>
+						<label for="firstname"></label>
+						<b>Prénom</b>
 						<input class="form-control" type="text" name="firstname" id="firstname">
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre prénom restera privé.</small>
 					</div>
 					<div class="form-group form-group-sm">
-						<label for="email">Email</label>
+						<label for="email"></label>
+						<b>Email</b>
 						<input class="form-control" type="text" name="email" id="email">
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre email restera privé.</small>
 					</div>
 					<div class="form-group form-group-sm">
-						<label for="phone">Téléphone</label>
+						<label for="phone"></label>
+						<b>Téléphone</b>
 						<input class="form-control" type="number" name="phone" id="phone">
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre numéro restera privé.</small>
 					</div>
 					<div class="form-group form-group-sm">
-						<label for="password">Mot de passe</label>
+						<label for="password"></label>
+						<b>Mot de passe</b>
 						<input class="form-control" type="password" name="password" id="password">
 					</div>
 					<div class="form-group form-group-sm">
-						<label for="passwordConfirm">Confirmez le mot de passe</label>
+						<label for="passwordConfirm"></label>
+						<b>Confirmez le mot de passe</b>
 						<input class="form-control" type="password" name="passwordConfirm" id="passwordConfirm">
 					</div>
 					<br>

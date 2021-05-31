@@ -11,11 +11,13 @@ $currentPage = "#login";
 					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Connectez-vous à l'espace client !</h1>
 					<form method="POST" action="/loginRequest">
 						<div class="form-group form-group-lg">
-							<label for="email">Email</label>
+							<label for="email"></label>
+							<b>Email</b>
 							<input class="form-control" type="text" name="email" id="email">
 						</div>
 						<div class="form-group form-group-lg">
-							<label for="password">Mot de passe</label>
+							<label for="password"></label>
+							<b>Mot de passe</b>
 							<input class="form-control" type="password" name="password" id="password">
 						</div>
 						<input type="reset" value="Effacer" class="button-leweb">
