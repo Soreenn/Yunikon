@@ -6,7 +6,7 @@
       $elem: options.$elem || undefined,
       elemSelector: options.elemSelector || 'data-countdown',
       startDate: options.startDate || new Date(),
-      endDate: options.endDate || new Date(2021, 6, 24),
+      endDate: options.endDate || new Date("2021-06-21"),
       leadingZero: options.leadingZero !== undefined ? options.leadingZero : true,
       setCssProperties: options.setCssProperties !== undefined ? options.setCssProperties : true,
       separateDigits: options.separateDigits !== undefined ? options.separateDigits : true,
