@@ -35,12 +35,14 @@
 	display: flex;
 	padding: 20px;
 	width: 700px;
+	height: 400px;
 	justify-content: center;
 	align-content: center;
 	align-items: center;
 	margin-top: 100px;
 	margin-left: auto;
 	z-index: 1;
+	object-fit: contain;
 }
 
 .wrapper {
