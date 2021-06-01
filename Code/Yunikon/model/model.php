@@ -43,3 +43,15 @@ function getUserInfo($userEmailAddress)
     
     return $queryResult;
 }
+
+function getUserExhibitor($userEmailAddress)
+{
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT exhibitor FROM users WHERE eMail = ' . $strSeparator . $userEmailAddress . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+    
+    return $queryResult;
+}

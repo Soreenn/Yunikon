@@ -96,6 +96,12 @@ function logout()
     header("Location: /home");
 }
 
+function exhibitor(){
+require_once "./model/model.php";
+$res = getUserExhibitor(@$_SESSION['userEmailAddress']);
+return $res;
+}
+
 function event(){
     require "view/event.php";
 }
