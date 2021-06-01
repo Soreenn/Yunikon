@@ -4,6 +4,7 @@ $title = "Login";
 $currentPage = "#login";
 ?>
 
+<!-- HEADER -->
 <section id="traitre">
     <div class="container">
         <div class="row text-center">
@@ -37,6 +38,33 @@ $currentPage = "#login";
     <div class="animation">
         <a class="arrow-down-animation" data-scroll href="#homeEvent"><i class="fa fa-angle-down"></i></a>
     </div>
+    </section>
+    <!-- HEADER ENDS -->
+
+    <div id="content-wrap">
+    <section id="homeEvent">
+        <div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/maxresdefault1.jpg">
+                    </div>
+                    <div class="col-md-4 col-md-offset-4">
+                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/unnamed.jpg">
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Capture.jpg">
+                    </div>
+                     <div class="col-md-4 col-md-offset-4">
+                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Fukumi-Convention-Stand-1024x769.jpg">
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 <?php
 $content = ob_get_clean();
