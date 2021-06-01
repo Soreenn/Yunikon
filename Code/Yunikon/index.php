@@ -37,6 +37,9 @@ switch ($_SERVER["REQUEST_URI"]) {
     case "/event":
         event();
         break;
+    case "/add-event":
+        addEvent();
+        break;
     default:
         lost();
         break;

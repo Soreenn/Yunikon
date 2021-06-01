@@ -105,3 +105,7 @@ return $res;
 function event(){
     require "view/event.php";
 }
+
+function addEvent(){
+    require "view/add-event.php";   
+}

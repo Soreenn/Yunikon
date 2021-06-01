@@ -40,36 +40,38 @@ insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, 
 
 
 -- Stands
-insert into Stands (id, U_Number, size, description) values (1, 1, 19, 'Trabecul carneae cord op');
-insert into Stands (id, U_Number, size, description) values (2, 2, 17, 'Tube & uterus x-ray NEC');
-insert into Stands (id, U_Number, size, description) values (3, 3, 10, 'Fat graft to breast');
-insert into Stands (id, U_Number, size, description) values (4, 4, 19, 'Nasophary contrast x-ray');
-insert into Stands (id, U_Number, size, description) values (5, 5, 19, 'Fit arm prosthesis NOS');
-insert into Stands (id, U_Number, size, description) values (6, 6, 27, 'Trabecul carneae cord op');
-insert into Stands (id, U_Number, size, description) values (7, 7, 28, 'Endosc retro cholangio');
-insert into Stands (id, U_Number, size, description) values (8, 8, 19, 'Hemorrhoid cauterizat');
-insert into Stands (id, U_Number, size, description) values (9, 9, 15, 'Other thyroid operations');
-insert into Stands (id, U_Number, size, description) values (10, 10, 11, 'Loc exc bony palate les');
-insert into Stands (id, U_Number, size, description) values (11, 11, 25, 'Manual rupt joint adhes');
-insert into Stands (id, U_Number, size, description) values (12, 12, 14, 'Allo hem stem ct w/o pur');
-insert into Stands (id, U_Number, size, description) values (13, 13, 30, 'Ins noninfl penis prosth');
-insert into Stands (id, U_Number, size, description) values (14, 14, 24, 'Insert sengstaken tube');
-insert into Stands (id, U_Number, size, description) values (15, 15, 13, 'Knee structure division');
-insert into Stands (id, U_Number, size, description) values (16, 16, 20, 'Ptosis rep-levat mus adv');
-insert into Stands (id, U_Number, size, description) values (17, 17, 12, 'Exc lacrimal gland NOS');
-insert into Stands (id, U_Number, size, description) values (18, 18, 20, 'Lap ing hern-graft NOS');
-insert into Stands (id, U_Number, size, description) values (19, 19, 24, 'Oth tib/fib repair/plast');
-insert into Stands (id, U_Number, size, description) values (20, 20, 28, 'Rev interspine device');
-insert into Stands (id, U_Number, size, description) values (21, 21, 11, 'Femoral biopsy');
-insert into Stands (id, U_Number, size, description) values (22, 22, 22, 'Perc robotic assist proc');
-insert into Stands (id, U_Number, size, description) values (23, 23, 18, 'Adrenal lesion excision');
-insert into Stands (id, U_Number, size, description) values (24, 24, 20, 'Imp cardiomyostimul sys');
-insert into Stands (id, U_Number, size, description) values (25, 25, 25, 'Other isotope function');
-insert into Stands (id, U_Number, size, description) values (26, 26, 26, 'Rep anuls fibros NEC/NOS');
-insert into Stands (id, U_Number, size, description) values (27, 27, 29, 'Pancreatic tube irrigat');
-insert into Stands (id, U_Number, size, description) values (28, 28, 16, 'Control bladd hemorrhage');
-insert into Stands (id, U_Number, size, description) values (29, 29, 16, 'Multiple sinus incision');
-insert into Stands (id, U_Number, size, description) values (30, 30, 10, 'Ovarian cyst marsupializ');
+insert into stands (id, U_Number, size, description, Event_id) values (1, 1, 11, 'Oral cavity dx proc NEC', 4);
+insert into stands (id, U_Number, size, description, Event_id) values (2, 2, 10, 'Oth metacarp/carp incis', 10);
+insert into stands (id, U_Number, size, description, Event_id) values (3, 3, 18, 'Intra-ab bowel manip NOS', 2);
+insert into stands (id, U_Number, size, description, Event_id) values (4, 4, 19, 'Imp epiretinal prosth', 9);
+insert into stands (id, U_Number, size, description, Event_id) values (5, 5, 14, 'Joint biopsy NEC', 4);
+insert into stands (id, U_Number, size, description, Event_id) values (6, 6, 15, 'Arbovirus enceph vaccin', 10);
+insert into stands (id, U_Number, size, description, Event_id) values (7, 7, 10, 'Sex transformat op NEC', 12);
+insert into stands (id, U_Number, size, description, Event_id) values (8, 8, 17, 'Parathyroid scan', 7);
+insert into stands (id, U_Number, size, description, Event_id) values (9, 9, 21, 'Penile biopsy', 9);
+insert into stands (id, U_Number, size, description, Event_id) values (10, 10, 15, 'Cardiac mapping', 9);
+insert into stands (id, U_Number, size, description, Event_id) values (11, 11, 21, 'Remov other genit device', 10);
+insert into stands (id, U_Number, size, description, Event_id) values (12, 12, 11, 'Excis cul-de-sac lesion', 3);
+insert into stands (id, U_Number, size, description, Event_id) values (13, 13, 10, 'Repair vess w tis patch', 3);
+insert into stands (id, U_Number, size, description, Event_id) values (14, 14, 9, 'Pack ext auditory canal', 11);
+insert into stands (id, U_Number, size, description, Event_id) values (15, 15, 22, 'Remov abdomen device NEC', 3);
+insert into stands (id, U_Number, size, description, Event_id) values (16, 16, 15, 'Excision of wrist NEC', 9);
+insert into stands (id, U_Number, size, description, Event_id) values (17, 17, 21, 'Contr mammary ductogram', 15);
+insert into stands (id, U_Number, size, description, Event_id) values (18, 18, 17, 'Triad knee repair', 9);
+insert into stands (id, U_Number, size, description, Event_id) values (19, 19, 16, 'Open uterine biopsy', 6);
+insert into stands (id, U_Number, size, description, Event_id) values (20, 20, 14, 'Thoracic spine x-ray NEC', 11);
+insert into stands (id, U_Number, size, description, Event_id) values (21, 21, 19, 'Other destru pancrea les', 14);
+insert into stands (id, U_Number, size, description, Event_id) values (22, 22, 15, 'Reopen laminectomy site', 5);
+insert into stands (id, U_Number, size, description, Event_id) values (23, 23, 18, 'Cardiotomy', 12);
+insert into stands (id, U_Number, size, description, Event_id) values (24, 24, 19, 'Retrograde pyelogram', 1);
+insert into stands (id, U_Number, size, description, Event_id) values (25, 25, 18, 'Conjunctivoplasty NEC', 3);
+insert into stands (id, U_Number, size, description, Event_id) values (26, 26, 17, 'Remove ureteral ligature', 6);
+insert into stands (id, U_Number, size, description, Event_id) values (27, 27, 21, 'Lap unilat oophorectomy', 3);
+insert into stands (id, U_Number, size, description, Event_id) values (28, 28, 14, 'Thoraco robotic ast proc', 3);
+insert into stands (id, U_Number, size, description, Event_id) values (29, 29, 17, 'Tot brch extrac w forcep', 2);
+insert into stands (id, U_Number, size, description, Event_id) values (30, 30, 16, 'Cl fx reduc-metatar/tar', 14);
+
+
 
 -- Tickets
 insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, Users_id) values (1, 1, '2021-03-25', '2020-07-27', 28, 'Phlycten keratoconjunct', 1, 1);
