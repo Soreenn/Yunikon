@@ -40,6 +40,9 @@ switch ($_SERVER["REQUEST_URI"]) {
     case "/add-event":
         addEvent();
         break;
+    case "/registerEvent":
+        createEvent($_POST);
+        break;        
     default:
         lost();
         break;
