@@ -306,6 +306,11 @@ hr{
         margin-bottom: 1px;
     }
 }
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 
 .form-control {
     border-radius: 1px;
