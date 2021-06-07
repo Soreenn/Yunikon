@@ -33,13 +33,13 @@ function createEvent($eventData)
         $eventEnding = $eventData['addEnding'];
         $eventLocation = $eventData['addLocation'];
         $eventDescription = $eventData['addDescription'];
-        $eventImage = $eventData['addImage'];
 
-        $file_name = $_FILES['eventImage']['name'];
-        $file_tmp = $_FILES['eventImage']['tmp_name'];
-        $extension = pathinfo($_FILES["eventImage"]["name"], PATHINFO_EXTENSION);
+
+        $file_name = $_FILES['addImage']['name'];
+        $file_tmp = $_FILES['addImage']['tmp_name'];
+        $extension = pathinfo($_FILES["addImage"]["name"], PATHINFO_EXTENSION);
         if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
-            $name = "view/content/img/" .  date("d-m-y-H-i-s") . $file_name;
+            $name = "view/content/events/images/" .  date("d-m-y-H-i-s") . $file_name;
             move_uploaded_file($file_tmp, $name);
         } else {
             header_remove();

@@ -4,7 +4,7 @@ $title = "Home";
 $currentPage = "#home";
 ?>
 <!-- HEADER -->
-<div id="!content-wrap">
+<div  id="!content-wrap">
 	<section id="header">
 		<div class="container">
 			<div class="row text-center">
@@ -45,9 +45,9 @@ $currentPage = "#home";
 
 	<section id="home">
 		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-8 col-md-offset-2">
-					<img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Yunikon_Banner.jpg">
+			<div class="col-md-8 col-md-offset-2 row text-center">
+				<div style="margin-top: 13%">
+					<img class="" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" style="object-fit: contain; width: 100%;" src="/view/content/images/Yunikon_Banner.jpg">
 					<br>
 					<br>
 					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Ouverture de la 1ère édition de Yunikon !</h1>
@@ -63,13 +63,13 @@ $currentPage = "#home";
 
 	<!-- SUBSCRIBE -->
 	<section id="subscribe">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-8 col-md-offset-2">
+	<div class="container">
+			<div class="col-md-8 col-md-offset-2 row text-center" style="width:100%;">
+				<div style="margin-top: 13%">
 					<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Inscription a la Newsletter</h2>
 					<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Restez informés des nouvelles !</h5>
 					<!-- MAILCHIMP FORM -->
-					<form id="mc_form" role="form">
+					<form id="mc_form" role="form" style="object-fit: contain; width: 104%;">
 						<input data-sr="enter top over 1s, wait 0.3s, move 24px, reset" type="email" class="form-control" id="mc-email" name="mc-email" placeholder="Your Email">
 						<button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" type="submit" class="button-leweb">Submit</button>
 						<label for="mc-email" class="mc-email"></label>
