@@ -841,6 +841,8 @@ section {
 	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
 	animation: leweb_fade_move_down 2s ease-in-out infinite;
    }
+
+
 #header .fa-angle-down {
 	text-align: center;
 	font-size: 48px;
