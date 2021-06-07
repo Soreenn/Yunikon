@@ -43,6 +43,51 @@ $currentPage = "#login";
 		</div>
 	</section>
 	<!-- HEADER ENDS -->
+<section id="register">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-sm-8 col-sm-offset-2">
+				<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>
+                <form>
+                    <div class="form-group form-group-sm">
+                    <b>Nom</b>
+                    <input class="form-control" type="text" name="nom"> 
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                      <b>Email</b>
+                    <input class="form-control" type="text" name="email">  
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <b>Téléphone</b>
+                    <input class="form-control" type="text" name="tel">
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <b>Message</b>
+                    <input class="form-control" type="text" name="message">
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                       <input  id="optionRadio1" type="radio" name="exposant">
+                    <b >Demande de changement en compte exposant</b> 
+                    <br>
+                        <input  id="optionRadio2" type="radio" name="bug">
+                    <b >Bug/problème</b>
+                    <br>
+                        <input  id="optionRadio3" type="radio" name="question">
+                    <b >Question</b>
+                    <br>
+                        <input  id="optionRadio4" type="radio" name="autre">
+                    <b >Autre</b> 
+                    </div>
+                        <input class="button-leweb" type="submit" name="contactSubmit" value="Envoyer le Mail">
+                </form>
+            </div>
+		</div>
+	</div>
+</section>
 
 <?php
 $content = ob_get_clean();
