@@ -32,13 +32,14 @@ function createEvent($eventData)
         $eventStarting = $eventData['addStarting'];
         $eventEnding = $eventData['addEnding'];
         $eventLocation = $eventData['addLocation'];
-        $eventDescription = $eventData['description'];
-        $eventImage = $eventData['image'];
+        $eventDescription = $eventData['addDescription'];
+        $eventImage = $eventData['addImage'];
 
 
     require_once "model/model.php";
     registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $eventImage);
 
+    require "view/home.php";
 }
 
 

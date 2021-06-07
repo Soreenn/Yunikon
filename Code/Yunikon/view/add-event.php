@@ -33,31 +33,31 @@ $currentPage = "#home";
 						<div class="form-group form-group-sm">
 							<label for="name"></label>
 							<b>Nom</b>
-							<input class="form-control" type="text" name="addName" id="addName">
+							<input class="form-control" type="text" name="addName" id="addName" required>
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Donnez un nom à votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">
 							<label for="startingDate"></label>
 							<b>Date de début</b>
-							<input class="form-control" type="text" name="addStarting" id="addStarting">
+							<input class="form-control" type="date" name="addStarting" id="addStarting" required>
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">quand débutera votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">
 							<label for="endingDate"></label>
 							<b>Date de fin</b>
-							<input class="form-control" type="text" name="addEnding" id="addEnding">
+							<input class="form-control" type="date" name="addEnding" id="addEnding" required>
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Quand se terminera votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">
 							<label for="location"></label>
 							<b>Lieu</b>
-							<input class="form-control" type="text" name="addLocation" id="addLocation">
+							<input class="form-control" type="text" name="addLocation" id="addLocation" required>
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Où aura lieu votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">
 							<label for="description"></label>
-							<b>Desciprtion</b>
-							<input class="form-control" type="password" name="addDescription" id="addDescription">
+							<b>Description</b>
+							<textarea class="form-control" type="text" name="addDescription" id="addDescription"></textarea> 
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Décrivez brievement votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">

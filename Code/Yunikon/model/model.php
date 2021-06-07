@@ -58,12 +58,11 @@ function getUserExhibitor($userEmailAddress)
 
 function registerEvent($name, $starting, $ending, $location, $description, $image){
 
-    $result = false;
-    $strSeparator = '\'';
+
     $register = "INSERT INTO events (name, startingDate, endingDate, location, description, image) VALUES ('$name', '$starting', '$ending', '$location', '$description', '$image')";
 
     require_once 'dbConnector.php';
-    $queryResult = executeQuerySelect($loginQuery);
+    $queryResult = executeQuerySelect($register);
     
     return $queryResult;  
 }
