@@ -37,9 +37,15 @@ switch ($_SERVER["REQUEST_URI"]) {
     case "/event":
         event();
         break;
-        case "/buyTickets":
-            buyTickets();
-            break;
+    case "/add-event":
+        addEvent();
+        break;
+    case "/registerEvent":
+        createEvent($_POST);
+        break;        
+    case "/contact":
+        contact();
+        break;
     default:
         lost();
         break;

@@ -3,8 +3,8 @@ ob_start();
 $title = "Login";
 $currentPage = "#login";
 ?>
-<!-- HEADER -->
 
+<!-- HEADER -->
 <section id="pinceau">
     <div class="container">
         <div class="row text-center">
@@ -40,6 +40,7 @@ $currentPage = "#login";
     </div>
 </section>
 <!-- HEADER ENDS -->
+
 <div id="content-wrap">
     <section id="homeEvent">
         <div>
@@ -64,6 +65,7 @@ $currentPage = "#login";
         </div>
     </section>
 </div>
+
 <?php
 $content = ob_get_clean();
 require "view/gabarit.php";

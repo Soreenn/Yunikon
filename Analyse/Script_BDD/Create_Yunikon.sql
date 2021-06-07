@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `Yunikon`.`Users` (
   `phoneNumber` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
-  `exhibitor` VARCHAR(45) NOT NULL,
+  `exhibitor` VARCHAR(45)  DEFAULT 0 NOT NULL,
   `description` VARCHAR(255) NULL,
   `company` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),

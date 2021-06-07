@@ -23,6 +23,27 @@ function login()
     require "view/login.php";
 }
 
+
+function createEvent($eventData)
+{
+     //(isset($eventData['addName']) && isset($eventData['addStarting']) && isset($eventData['addEnding']) && isset($eventData['addLocation'])) {
+        //extract login parameters
+        $eventName = $eventData['addName'];
+        $eventStarting = $eventData['addStarting'];
+        $eventEnding = $eventData['addEnding'];
+        $eventLocation = $eventData['addLocation'];
+        $eventDescription = $eventData['addDescription'];
+        $eventImage = $eventData['addImage'];
+
+
+    require_once "model/model.php";
+    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $eventImage);
+
+    require "view/home.php";
+}
+
+
+
 function registerRequest($registerData)
 {
     if (isset($registerData['email']) && isset($registerData['password']) && isset($registerData['passwordConfirm'])) {
@@ -96,10 +117,19 @@ function logout()
     header("Location: /home");
 }
 
+function exhibitor(){
+require_once "./model/model.php";
+$res = getUserExhibitor(@$_SESSION['userEmailAddress']);
+return $res;
+}
+
 function event(){
     require "view/event.php";
 }
 
-function buyTickets(){
-    require "view/buyTickets.php";
+function addEvent(){
+    require "view/add-event.php";   
+}
+function contact(){
+    require "view/contact.php";
 }
