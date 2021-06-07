@@ -38,28 +38,21 @@ $currentPage = "#login";
     <div class="animation">
         <a class="arrow-down-animation" data-scroll href="#homeEvent"><i class="fa fa-angle-down"></i></a>
     </div>
-    </section>
+</section>
     <!-- HEADER ENDS -->
 
-    <div id="content-wrap">
-    <section id="homeEvent">
-        <div>
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/maxresdefault1.jpg">
+    <div>
+    <section id="puteuuuuh">
+        <div class="container">
+            <div class="row text-center">
+                <div>
+                    <div>  
+                        <h2>Historique</h2>
                     </div>
-                    <div class="col-md-4 col-md-offset-4">
-                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/unnamed.jpg">
+                    <br>
+                    <div class="col-md-8">
+                        <p>Créée en 2005 sur le campus de l’École polytechnique fédérale de Lausanne par la commission de l'AGEPoly PolyJapan (d’où son nom), la convention a accueilli à cette époque plus de 6 000 visiteurs. La convention quitte l'EPFL et déménage ensuite à Palexpo à Genève où elle a accueilli 8 000 visiteurs et à partir de 2007, elle emménage dans le Palais de Beaulieu à Lausanne, David Heim, le fondateur de Polymanga refusant d'intégrer le Salon du livre. Pour l'édition 2013, la convention quitte Lausanne et déménage à Montreux au 2m2c où elle atteindra les 35 000 visiteurs. En 2018, pour sa quatorzième édition, la convention a accueilli 41 000 personnes. </p>
                     </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Capture.jpg">
-                    </div>
-                     <div class="col-md-4 col-md-offset-4">
-                        <img class="banner" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/Fukumi-Convention-Stand-1024x769.jpg">
-                    </div>  
                 </div>
             </div>
         </div>
