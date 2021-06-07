@@ -37,6 +37,9 @@ switch ($_SERVER["REQUEST_URI"]) {
     case "/event":
         event();
         break;
+        case "/buyTickets":
+            buyTickets();
+            break;
     default:
         lost();
         break;

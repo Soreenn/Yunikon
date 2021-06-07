@@ -36,8 +36,12 @@ $currentPage = "#login";
     </div>
     <div class="animation">
         <a class="arrow-down-animation" data-scroll href="#homeEvent"><i class="fa fa-angle-down"></i></a>
-    </div>
-
+    </div>  
+    <div id="content-wrap">
+    <section id="homeEvent">
+    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HHhyHCzVdFHMSA" async> </script> </form>
+    </section>
+    <div<
 <?php
 $content = ob_get_clean();
 require "view/gabarit.php";

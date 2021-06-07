@@ -99,3 +99,7 @@ function logout()
 function event(){
     require "view/event.php";
 }
+
+function buyTickets(){
+    require "view/buyTickets.php";
+}
