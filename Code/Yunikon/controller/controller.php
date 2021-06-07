@@ -33,11 +33,21 @@ function createEvent($eventData)
         $eventEnding = $eventData['addEnding'];
         $eventLocation = $eventData['addLocation'];
         $eventDescription = $eventData['addDescription'];
-        $eventImage = $eventData['addImage'];
 
+
+        $file_name = $_FILES['addImage']['name'];
+        $file_tmp = $_FILES['addImage']['tmp_name'];
+        $extension = pathinfo($_FILES["addImage"]["name"], PATHINFO_EXTENSION);
+        if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
+            $name = "view/content/events/images/" .  date("d-m-y-H-i-s") . $file_name;
+            move_uploaded_file($file_tmp, $name);
+        } else {
+            header_remove();
+            header("Location: /home");
+        }
 
     require_once "model/model.php";
-    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $eventImage);
+    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $name);
 
     require "view/home.php";
 }

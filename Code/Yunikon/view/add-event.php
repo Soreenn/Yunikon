@@ -29,7 +29,7 @@ $currentPage = "#home";
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
 					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez votre evenement gratuitement</h1>
-					<form method="POST" action="/registerEvent">
+					<form method="POST" action="/registerEvent" enctype="multipart/form-data">
 						<div class="form-group form-group-sm">
 							<label for="name"></label>
 							<b>Nom</b>

@@ -1,0 +1,42 @@
+-- --------------------------------------------------------
+-- Hôte :                        127.0.0.1
+-- Version du serveur:           8.0.21 - MySQL Community Server - GPL
+-- SE du serveur:                Win64
+-- HeidiSQL Version:             11.0.0.5919
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Listage de la structure de la base pour mangapedia
+CREATE DATABASE IF NOT EXISTS `mangapedia` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `mangapedia`;
+
+-- Listage de la structure de la table mangapedia. users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `eMail` varchar(45) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `description` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `eMail_UNIQUE` (`eMail`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Listage des données de la table mangapedia.users : ~0 rows (environ)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `eMail`, `password`, `name`, `description`, `role`) VALUES
+	(1, 'gabriel.machado-pereira@cpnv.ch', '$2y$10$Vue3pgFqxd4cB5FgXsIaF...apElb9auB7ASjKbqkLgYL4uQLotxS', 'Soren', NULL, '1'),
+	(2, 'onichichi@hentai.ch', '$2y$10$ZM9pfpw90he2192lWEeRhOkUPsiRHNf9TBbbY2Zkq3fh/EID40bI6', 'DarkHentaiLover', NULL, '0'),
+	(3, 'luke.cornaz@icloud.com', '$2y$10$gFLCQkJEqnTfWO0nyiroZ.eyPKWVcNBJQXh.NqSHh6DA0C/Z5DReO', 'Denki', NULL, '0'),
+	(4, 'loik.meylan@cpnv.ch', '$2y$10$6qcHXwHL0wvivlCgdc/AZeKukhts038Cqch4k9pcCF4.hy0LDKRui', 'Beusis', NULL, '0');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
