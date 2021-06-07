@@ -43,6 +43,9 @@ switch ($_SERVER["REQUEST_URI"]) {
     case "/registerEvent":
         createEvent($_POST);
         break;        
+    case "/contact":
+        contact();
+        break;
     default:
         lost();
         break;

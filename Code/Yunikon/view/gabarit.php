@@ -96,10 +96,14 @@ if (session_status() === PHP_SESSION_NONE) {
 								<a href="/login">Login</a>
 							</li>
 						<?php else : ?>
+
 							<li>
 								<a>Bienvenue <?= $_SESSION['firstname'] ?></a>
 							</li>
 						<?php endif; ?>
+						<li>
+							<a href="/contact">Contact</a>
+						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->

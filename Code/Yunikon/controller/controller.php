@@ -129,3 +129,6 @@ function event(){
 function addEvent(){
     require "view/add-event.php";   
 }
+function contact(){
+    require "view/contact.php";
+}
