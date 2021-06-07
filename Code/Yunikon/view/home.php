@@ -8,8 +8,8 @@ $currentPage = "#home";
 	<section id="header">
 		<div class="container">
 			<div class="row text-center">
-				<div class="col-md-8">
-					<img class="logo" src="/view/content/images/Logo/Small-logo.png">
+				<div class="col-md-8 mt-md-1">
+					<img class="logo col-sm-" src="/view/content/images/Logo/Small-logo.png">
 					<h1 class="white-text">L'univers Pop Culture</h1>
 					<h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
 					<br>
@@ -24,7 +24,7 @@ $currentPage = "#home";
 						<div class="hours white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>
-						</div>
+						</div>	
 						<div class="minutes white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>
@@ -46,7 +46,7 @@ $currentPage = "#home";
 	<section id="home">
 		<div class="container">
 			<div class="col-md-8 col-md-offset-2 row text-center">
-				<div style="margin-top: 13%">
+				<div style="margin-top: 18%">
 					<img class="" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" style="object-fit: contain; width: 100%;" src="/view/content/images/Yunikon_Banner.jpg">
 					<br>
 					<br>
