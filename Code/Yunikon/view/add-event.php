@@ -4,17 +4,34 @@ $title = "Home";
 $currentPage = "#home";
 ?>
 <!-- HEADER -->
-<div id="!content-wrap">
-	<section id="headerEvent">
+<div  id="!content-wrap">
+	<section id="header" style="background: url(view/content/images/44755.jpg) no-repeat center center;">
 		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-8">
+			<div class="row text-center ">
+				<div class="col-md-8 col-sm-6 ">
 					<img class="logo" src="/view/content/images/Logo/Small-logo.png">
 					<h1 class="white-text">Inscrivez votre propre evenement</h1>
-					<br>
-					<br>
-					<br>
-					<h2 class="white-text" id="headline">Communiquer à la comunauté pop culture l'arivée de votre evenement</h2>
+					<h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
+					<br><br><br>
+					<h1 class="white-text" id="headline">Communiquer à la comunauté pop culture l'arivée de votre evenement</h1>
+					<div class="countdown-1" data-countdown>
+						<div class="days white-text">
+							<span class="amount"></span>
+							<span class="labelTime"></span>
+						</div>
+						<div class="hours white-text">
+							<span class="amount"></span>
+							<span class="labelTime"></span>
+						</div>	
+						<div class="minutes white-text">
+							<span class="amount"></span>
+							<span class="labelTime"></span>
+						</div>
+						<div class="seconds white-text">
+							<span class="amount"></span>
+							<span class="labelTime"></span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -24,10 +41,10 @@ $currentPage = "#home";
 	</section>
 	<!-- HEADER ENDS -->
 
-	<section id="home">
+	<section id="home" style="margin-bottom:100px;">
 		<div class="container">
 			<div class="row text-center">
-				<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-8 col-sm-offset-2" style="margin-top:70px; "> 
 					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez votre evenement gratuitement</h1>
 					<form method="POST" action="/registerEvent" enctype="multipart/form-data">
 						<div class="form-group form-group-sm">

@@ -4,8 +4,8 @@ $title = "Register";
 $currentPage = "#register";
 ?>
 
-<section id="register">
-	<div class="container">
+<section id="!warp-content">
+	<div class="container ">
 		<div class="row text-center">
 			<div class="col-sm-8 col-sm-offset-2">
 				<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>

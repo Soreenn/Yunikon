@@ -3,7 +3,7 @@ ob_start();
 $title = "Login";
 $currentPage = "#login";
 ?>
-<div id="!content-wrap">
+<div id="content-wrap">
 	<section id="login">
 		<div class="container center_div">
 			<div class="row text-center">

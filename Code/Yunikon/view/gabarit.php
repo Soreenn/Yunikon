@@ -77,6 +77,9 @@ if (session_status() === PHP_SESSION_NONE) {
 							<li >
 								<a href="/eventList">Event list</a>
 							</li>
+							<li>
+								<a href="/contact">Contact</a>
+							</li>
 							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 								<//?php if ($exhibitor() == 1) : ?>
 									<li >
@@ -92,16 +95,13 @@ if (session_status() === PHP_SESSION_NONE) {
 									<a href="/logout">Logout</a>
 								</li>
 							<?php endif; ?>
-							<li>
-								<a href="/contact">Contact</a>
-							</li>
 							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 								<li>
 									<a href="/login">Login</a>
 								</li>
 							<?php else : ?>
 								<li>
-				   				<img src="view/content/images/user_icon.png" height="28" alt="">
+				   				<img src="view/content/images/user_icon.png" height="28" class="profil" alt="Account">
 								 </li>
 							<?php endif; ?>
 						</ul>

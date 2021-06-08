@@ -1,7 +1,7 @@
 <?php
 ob_start();
-$title = "Login";
-$currentPage = "#login";
+$title = "event";
+$currentPage = "#event";
 ?>
 <!-- HEADER -->
 <div  id="!content-wrap">
@@ -9,7 +9,7 @@ $currentPage = "#login";
 		<div class="container">
 			<div class="row text-center ">
 				<div class="col-md-8 col-sm-6 ">
-					<h2 class="white-text">Polymanga 2021</h1>
+					<h2 class="white-text bold">Polymanga 2021</h2>
 					<h3 class="white-text">16ème édition 2021 au 2M2C de Montreux</h3>
 					<br><br><br>
 					<h1 class="white-text" id="headline">Pop culture is good</h1>
