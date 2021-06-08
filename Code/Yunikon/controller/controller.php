@@ -143,3 +143,49 @@ function addEvent(){
 function contact(){
     require "view/contact.php";
 }
+
+function sendMail($infoMail){
+
+    if($infoMail['exposant'] == "on"){
+        $header = "Demande d'exposant";
+        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " souhaite convertir son compte pour devenir exposant sur Yunikon !";
+    }
+    else if($infoMail['bug'] == "on"){
+        $header = "Rapport bug";
+        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " créer un rapport de bug !";
+    }
+    else if($infoMail['question'] == "on"){
+        $header = "Question utilisateur";
+        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " souhaite poser une question auprès de Yunikon.";
+    }
+    else if($infoMail['autre'] == "on"){
+        $header = "Autre sujet";
+        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " est là pour une autre raison que celles notifiés.";
+    }
+
+        require_once "PHPMailer/PHPMailerAutoload.php";
+    
+        $mail = new PHPMailer();
+    
+        $mail->isSMTP();
+        $mail->CharSet = 'UTF-8';
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "yunikon.noreply@gmail.com";
+        $mail->Password = "";
+        $mail->Port = "587";
+        $mail->SMTPSecure = "tls";
+    
+        $mail->From = "yunikon.noreply@gmail.com";
+        $mail->FromName= "Yunikon - No Reply";
+        $mail->addAddress("gabriel.**");
+        $mail->addAddress("loik.**");
+        $mail->addAddress("cyprien.**");
+        $mail->Subject = ($header);
+        $mail->Body = $message . "<br><br>" . $infoMail['message'];
+        $mail->IsHTML(true); 
+    
+        $mail->send();
+    
+        header("Location: /home");
+}

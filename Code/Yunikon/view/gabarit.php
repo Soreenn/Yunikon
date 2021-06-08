@@ -52,7 +52,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	</div>
 
 	<header class="sticky-top" data-spy="affix" data-offset-top="0">
-		<nav class=" navbar navbar-transparent">
+		<nav class=" navbar navbar-inverse">
 
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
