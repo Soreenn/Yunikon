@@ -6,7 +6,7 @@ $currentPage = "#login";
 
 <!-- HEADER -->
 <div id="!content-wrap">
-    <section id="cancerDeLaProstate">
+    <section id="headerContact">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-8">

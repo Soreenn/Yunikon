@@ -128,10 +128,20 @@
 
 }
 
-#homeEvent {
+#eventDesc {
 	height: 100vh;
 	padding: 0px;
-	margin-right: 20em;
+}
+
+#homeEvent {
+	height: 100vh;
+}
+
+.text-center {
+	text-align: center;
+	padding-left: 200px;
+	padding-right: 200px;
+	
 }
 
 #register {
@@ -349,7 +359,7 @@ section {
 	text-decoration: none;
 }
 
-#pinceau {
+#headerEventList {
 	opacity: 95%;
 	background: url(../images/1335808.png) no-repeat center center;
 	background-size: cover;
@@ -357,7 +367,7 @@ section {
 	padding: 0px;
 }
 
-#pinceau .container {
+#headerEventList .container {
 	background: url(../images/body-bg1.png) repeat 0 0;
 	height: 100vh;
 	width: 100% !important;
@@ -365,7 +375,7 @@ section {
 	z-index: 998;
 }
 
-#pinceau .col-md-8 {
+#headerEventList .col-md-8 {
 	top: 20%;
 	right: 0;
 	bottom: 0;
@@ -377,11 +387,11 @@ section {
 	z-index: 999;
 }
 
-#pinceau .logo {
+#headerEventList .logo {
 	margin-bottom: 15px;
 }
 
-#pinceau .fa-angle-down {
+#headerEventList .fa-angle-down {
 	text-align: center;
 	font-size: 48px;
 	color: #fff;
@@ -391,7 +401,7 @@ section {
 	animation: leweb_fade_move_down 2s ease-in-out infinite;
    }
 
-   #traitre {
+   #headerEvent {
 	opacity: 95%;
 	background: url(../images/venez-feter-les-4-ans-de-gaijin-dash-au-festival-polymanga-2019-e8917c51__1920_1080__0-438-1280-849.jpg) no-repeat center center;
 	background-size: cover;
@@ -399,7 +409,7 @@ section {
 	padding: 0px;
 }
 
-#traitre .container {
+#headerEvent .container {
 	background: url(../images/body-bg1.png) repeat 0 0;
 	height: 100vh;
 	width: 100% !important;
@@ -407,7 +417,7 @@ section {
 	z-index: 998;
 }
 
-#traitre .col-md-8 {
+#headerEvent .col-md-8 {
 	top: 20%;
 	right: 0;
 	bottom: 0;
@@ -419,11 +429,11 @@ section {
 	z-index: 999;
 }
 
-#traitre .logo {
+#headerEvent .logo {
 	margin-bottom: 15px;
 }
 
-#traitre .fa-angle-down {
+#headerEvent .fa-angle-down {
 	text-align: center;
 	font-size: 48px;
 	color: #fff;
@@ -432,7 +442,7 @@ section {
 	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
 	animation: leweb_fade_move_down 2s ease-in-out infinite;
    }
-   #cancerDeLaProstate {
+   #headerContact {
 	opacity: 95%;
 	background: url(../images/wp5105065.jpg) no-repeat center center;
 	background-size: cover;
@@ -440,7 +450,7 @@ section {
 	padding: 0px;
 }
 
-#cancerDeLaProstate .container {
+#headerContact .container {
 	background: url(../images/body-bg1.png) repeat 0 0;
 	height: 100vh;
 	width: 100% !important;
@@ -448,7 +458,7 @@ section {
 	z-index: 998;
 }
 
-#cancerDeLaProstate .col-md-8 {
+#headerContact .col-md-8 {
 	top: 20%;
 	right: 0;
 	bottom: 0;
@@ -460,11 +470,11 @@ section {
 	z-index: 999;
 }
 
-#cancerDeLaProstate .logo {
+#headerContact .logo {
 	margin-bottom: 15px;
 }
 
-#cancerDeLaProstate .fa-angle-down {
+#headerContact .fa-angle-down {
 	text-align: center;
 	font-size: 48px;
 	color: #fff;
@@ -473,49 +483,6 @@ section {
 	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
 	animation: leweb_fade_move_down 2s ease-in-out infinite;
    }
-
-   #puteuuuuh {
-	opacity: 95%;
-	background: url(../images/wp5105065.jpg) no-repeat center center;
-	background-size: cover;
-	height: 100vh;
-	padding: 0px;
-}
-
-#puteuuuuh .container {
-	background: url(../images/body-bg1.png) repeat 0 0;
-	height: 100vh;
-	width: 100% !important;
-	padding: 0px;	
-	z-index: 998;
-}
-
-#puteuuuuh .col-md-8 {
-	top: 20%;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	position: absolute;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	z-index: 999;
-}
-
-#puteuuuuh .logo {
-	margin-bottom: 15px;
-}
-
-#puteuuuuh .fa-angle-down {
-	text-align: center;
-	font-size: 48px;
-	color: #fff;
-	
-	-webkit-animation: leweb_fade_move_down 2s ease-in-out infinite;
-	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
-	animation: leweb_fade_move_down 2s ease-in-out infinite;
-   }
-
 
 #header .fa-angle-down {
 	text-align: center;

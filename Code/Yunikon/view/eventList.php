@@ -5,7 +5,7 @@ $currentPage = "#login";
 ?>
 
 <!-- HEADER -->
-<section id="pinceau">
+<section id="headerEventList">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-8">
