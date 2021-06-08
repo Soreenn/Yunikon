@@ -390,6 +390,12 @@ hr{
 	
 }
 
+@media (max-width: 768px) {
+	.col-sm-6 {
+		margin-top:150px;
+	}
+}
+
 #logo {
 	position: absolute;
 	top: 15px;
@@ -399,7 +405,7 @@ hr{
 .navbar {
   margin-bottom: 0px;
   z-index: 1;
-  position: absolute;
+  position: fixed;
 
       top: 0px;
       width: 100%;

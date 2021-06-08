@@ -52,7 +52,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	</div>
 
 	<header class="sticky-top" data-spy="affix" data-offset-top="0">
-		<nav class="navbar navbar-inverse">
+		<nav class=" navbar navbar-transparent">
 
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -78,20 +78,20 @@ if (session_status() === PHP_SESSION_NONE) {
 								<a href="/eventList">Event list</a>
 							</li>
 							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
-								<//?php if (exhibitor() == 1) : ?>
+								<//?php if ($exhibitor() == 1) : ?>
 									<li >
 										<a href="/add-event"> +</a>
 									</li>
-								<?php endif; ?>
+								<//?php endif; ?>
 
 								<li>
 									<a href="/register">Register</a>
 								</li>
-							<//?php else : ?>
+							<?php else : ?>
 								<li>
 									<a href="/logout">Logout</a>
 								</li>
-							<//?php endif; ?>
+							<?php endif; ?>
 							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 								<li>
 									<a href="/login">Login</a>
