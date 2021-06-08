@@ -360,9 +360,8 @@ hr{
 
 .banner {
 	display: flex;
-	padding: 20px;
-	width: 700px;
-	height: 400px;
+	width: 500px;
+	height: 300px;
 	justify-content: center;
 	align-content: center;
 	align-items: center;
@@ -390,9 +389,15 @@ hr{
 	
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+	.col-sm-5 {
+		object-fit:contain; width: 100%
+	}
+}
+
+@media (max-width: 576px) {
 	.col-sm-6 {
-		margin-top:150px;
+		margin-top:150px;	
 	}
 }
 
@@ -713,16 +718,6 @@ section {
 #pinceau .logo {
 	margin-bottom: 15px;
 }
-
-#pinceau .fa-angle-down {
-	text-align: center;
-	font-size: 48px;
-	color: #fff;
-	
-	-webkit-animation: leweb_fade_move_down 2s ease-in-out infinite;
-	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
-	animation: leweb_fade_move_down 2s ease-in-out infinite;
-   }
 
    #traitre {
 	opacity: 95%;
