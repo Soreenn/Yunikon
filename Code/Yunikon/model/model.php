@@ -56,8 +56,8 @@ function getUserExhibitor($userEmailAddress)
     return $queryResult;
 }
 
-
 function registerEvent($name, $starting, $ending, $location, $description, $image){
+    
 
     $register = "INSERT INTO events (name, startingDate, endingDate, location, description, image) VALUES ('$name', '$starting', '$ending', '$location', '$description', '$image')";
 
