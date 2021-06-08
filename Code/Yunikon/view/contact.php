@@ -5,7 +5,7 @@ $currentPage = "#login";
 ?>
 <!-- HEADER -->
 <div id="!content-wrap">
-    <section id="header" style="background:url(view/content//images/wp5105065.jpg) no-repeat center center;">
+    <section id="header" style="background:url(view/content/images/wp5105065.jpg) no-repeat center center;">
         <div class="container">
             <div class="row text-center ">
                 <div class="col-md-8 col-sm-6 ">

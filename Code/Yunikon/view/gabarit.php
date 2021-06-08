@@ -51,8 +51,8 @@ if (session_status() === PHP_SESSION_NONE) {
 		</div>
 	</div>
 
-	<header class="sticky-top" data-spy="affix" data-offset-top="0">
-		<nav class=" navbar-inverse">
+	<header class="sticky-top" data-offset-top="0">
+		<nav class="navbar navbar-inverse">
 
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -92,17 +92,18 @@ if (session_status() === PHP_SESSION_NONE) {
 									<a href="/logout">Logout</a>
 								</li>
 							<?php endif; ?>
+							<li>
+								<a href="/contact">Contact</a>
+							</li>
 							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
 								<li>
 									<a href="/login">Login</a>
 								</li>
 							<?php else : ?>
+								<li>
 				   				<img src="view/content/images/user_icon.png" height="28" alt="">
-				 				</a>
+								 </li>
 							<?php endif; ?>
-							<li>
-								<a href="/contact">Contact</a>
-							</li>
 						</ul>
 				
 				</div><!-- /.navbar-collapse -->
