@@ -35,15 +35,15 @@ $currentPage = "#login";
                 </div>
             </div>
         </div>
-        <div class="animation">
-            <a class="arrow-down-animation" data-scroll href="#homeEvent"><i class="fa fa-angle-down"></i></a>
-        </div>
-    </section>
+		<div class="animation">
+			<a class="arrow-down-animation" data-scroll href="#register"><i class="fa fa-angle-down"></i></a>
+		</div>
+	</section>
     <!-- HEADER ENDS -->
     <section id="register">
         <div class="container">
             <div class="row text-center">
-                <div class="col-sm-8 col-sm-offset-2">
+                <div class="col-sm-8 col-sm-offset-2" style="margin-top:60px;">
                     <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>
                     <form method="POST" action="/sendMail">
                         <div class="form-group form-group-sm">
