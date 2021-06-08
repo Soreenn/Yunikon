@@ -52,7 +52,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	</div>
 
 	<header class="sticky-top" data-spy="affix" data-offset-top="0">
-		<nav class=" navbar navbar-transparent">
+		<nav class=" navbar-inverse">
 
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -97,10 +97,8 @@ if (session_status() === PHP_SESSION_NONE) {
 									<a href="/login">Login</a>
 								</li>
 							<?php else : ?>
-
-								<li">
-									<a>Bienvenue <?= $_SESSION['firstname'] ?></a>
-								</li>
+				   				<img src="view/content/images/user_icon.png" height="28" alt="">
+				 				</a>
 							<?php endif; ?>
 							<li>
 								<a href="/contact">Contact</a>

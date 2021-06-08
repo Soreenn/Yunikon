@@ -12,9 +12,7 @@ $currentPage = "#home";
 					<img class="logo" src="/view/content/images/Logo/Small-logo.png">
 					<h1 class="white-text">L'univers Pop Culture</h1>
 					<h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
-					<br>
-					<br>
-					<br>
+					<br><br><br>
 					<h1 class="white-text" id="headline">1ère édition Yunikon!</h1>
 					<div class="countdown-1" data-countdown>
 						<div class="days white-text">
@@ -46,7 +44,7 @@ $currentPage = "#home";
 	<section id="home">
 		<div class="container">
 			<div class="col-md-8 col-md-offset-2 row text-center">
-				<div style="margin-top: 18%">
+				<div style="margin-top: 20%">
 					<img class="" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" style="object-fit: contain; width: 100%;" src="/view/content/images/Yunikon_Banner.jpg">
 					<br>
 					<br>
@@ -64,8 +62,8 @@ $currentPage = "#home";
 	<!-- SUBSCRIBE -->
 	<section id="subscribe">
 	<div class="container">
-			<div class="col-md-8 col-md-offset-2 row text-center" style="width:100%;">
-				<div style="margin-top: 13%">
+			<div class="col-md-8  row text-center"  style="width:90%;margin-left:3%;">
+			<div style="margin-top: 13%">
 					<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Inscription a la Newsletter</h2>
 					<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Restez informés des nouvelles !</h5>
 					<!-- MAILCHIMP FORM -->
