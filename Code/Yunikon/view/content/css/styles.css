@@ -10,6 +10,7 @@
 	padding: 0px;
 }
 
+
 html,body,.wrapper{
     background: #f7f7f7;
 }
@@ -335,6 +336,7 @@ hr{
     }
 }*/
 
+
 #content-wrap {
 	max-width:100%;
 	min-height:100%;
@@ -451,12 +453,6 @@ hr{
 	height: 100vh;
 	padding: 0px;
 
-}
-
-#homeEvent {
-	height: 100vh;
-	padding: 0px;
-	margin-right: 20em;
 }
 
 #homeEventBuy {
@@ -680,48 +676,6 @@ section {
 	text-decoration: none;
 }
 
-#buyTickets {
-	opacity: 95%;
-	background: url(../images/739715.png) no-repeat center center;
-	background-size: cover;
-	height: 100vh;
-	padding: 0px;
-}
-
-#buyTickets .container {
-	background: url(../images/body-bg1.png) repeat 0 0;
-	height: 100vh;
-	width: 100% !important;
-	padding: 0px;	
-	z-index: 998;
-}
-
-#buyTickets .col-md-8 {
-	top: 20%;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	position: absolute;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	z-index: 999;
-}
-
-#buyTickets .logo {
-	margin-bottom: 15px;
-}
-
-#buyTickets .fa-angle-down {
-	text-align: center;
-	font-size: 48px;
-	color: #fff;
-	
-	-webkit-animation: leweb_fade_move_down 2s ease-in-out infinite;
-	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
-	animation: leweb_fade_move_down 2s ease-in-out infinite;
-   }
-
 #pinceau {
 	opacity: 95%;
 	background: url(../images/1335808.png) no-repeat center center;
@@ -838,6 +792,48 @@ section {
 }
 
 #cancerDeLaProstate .fa-angle-down {
+	text-align: center;
+	font-size: 48px;
+	color: #fff;
+	
+	-webkit-animation: leweb_fade_move_down 2s ease-in-out infinite;
+	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
+	animation: leweb_fade_move_down 2s ease-in-out infinite;
+   }
+
+   #puteuuuuh {
+	opacity: 95%;
+	background: url(../images/wp5105065.jpg) no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+	padding: 0px;
+}
+
+#puteuuuuh .container {
+	background: url(../images/body-bg1.png) repeat 0 0;
+	height: 100vh;
+	width: 100% !important;
+	padding: 0px;	
+	z-index: 998;
+}
+
+#puteuuuuh .col-md-8 {
+	top: 20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 999;
+}
+
+#puteuuuuh .logo {
+	margin-bottom: 15px;
+}
+
+#puteuuuuh .fa-angle-down {
 	text-align: center;
 	font-size: 48px;
 	color: #fff;
