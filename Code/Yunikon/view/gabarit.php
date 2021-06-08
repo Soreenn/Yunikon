@@ -52,7 +52,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	</div>
 
 	<header class="sticky-top" data-spy="affix" data-offset-top="0">
-		<nav class="navbar navbar-transparent">
+		<nav class=" navbar-inverse">
 
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -64,47 +64,47 @@ if (session_status() === PHP_SESSION_NONE) {
 						<span class="icon-bar"></span>
 					</button>
 				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/home">Home</a></li>
-						</li>
-						<?php if ($_SERVER["REQUEST_URI"] == "/" || $_SERVER["REQUEST_URI"] == "/home/") : ?>
-							<li><a data-scroll href="#subscribe">Newsletter</a></li>
-						<?php endif; ?>
-						</li>
-						<li>
-							<a href="/eventList">Event list</a>
-						</li>
-						<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
-							<?php if(exhibitor()==1) : ?>
-						<li>
-							<a href="/add-event"> +</a>
-						</li>
-						<?php endif ;?>
+			
+						<ul class="nav navbar-nav navbar-right">
+							<li ><a href="/home">Home</a></li>
+							</li>
+							<?php if ($_SERVER["REQUEST_URI"] == "/" || $_SERVER["REQUEST_URI"] == "/home/") : ?>
+								<li><a data-scroll href="#subscribe">Newsletter</a></li>
+							<?php endif; ?>
+							</li>
+							<li >
+								<a href="/eventList">Event list</a>
+							</li>
+							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
+								<//?php if ($exhibitor() == 1) : ?>
+									<li >
+										<a href="/add-event"> +</a>
+									</li>
+								<//?php endif; ?>
 
+								<li>
+									<a href="/register">Register</a>
+								</li>
+							<?php else : ?>
+								<li>
+									<a href="/logout">Logout</a>
+								</li>
+							<?php endif; ?>
+							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
+								<li>
+									<a href="/login">Login</a>
+								</li>
+							<?php else : ?>
+				   				<img src="view/content/images/user_icon.png" height="28" alt="">
+				 				</a>
+							<?php endif; ?>
 							<li>
-								<a href="/register">Register</a>
+								<a href="/contact">Contact</a>
 							</li>
-						<?php else : ?>
-							<li>
-								<a href="/logout">Logout</a>
-							</li>
-						<?php endif; ?>
-						<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
-							<li>
-								<a href="/login">Login</a>
-							</li>
-						<?php else : ?>
-
-							<li>
-								<a>Bienvenue <?= $_SESSION['firstname'] ?></a>
-							</li>
-						<?php endif; ?>
-						<li>
-							<a href="/contact">Contact</a>
-						</li>
-					</ul>
+						</ul>
+				
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
