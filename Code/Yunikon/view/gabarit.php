@@ -81,11 +81,11 @@ if (session_status() === PHP_SESSION_NONE) {
 								<a href="/contact">Contact</a>
 							</li>
 							<?php if (!isset($_SESSION['userEmailAddress'])) : ?>
-								<//?php if ($exhibitor() == 1) : ?>
+								<?php if ($_SESSION['exhibitor']==1) : ?>
 									<li >
 										<a href="/add-event"> +</a>
 									</li>
-								<//?php endif; ?>
+								<?php endif; ?>
 
 								<li>
 									<a href="/register">Register</a>

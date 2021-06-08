@@ -64,11 +64,12 @@ function registerRequest($registerData)
         $lastname = $registerData['lastname'];
         $phone = $registerData['phone'];
         $userPswConfirm = $registerData['passwordConfirm'];
+        $exhibitor = 0;
         //try to check if user/psw are matching with the database
         if ($userPsw == $userPswConfirm) {
             require_once "./model/model.php";
             if (RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone)) {
-                createSession($userEmailAddress, $firstname, $lastname);
+                createSession($userEmailAddress, $firstname, $lastname, $exhibitor);
                 $_GET['registerError'] = false;
                 header("Location: /home");
             } else { 
@@ -97,7 +98,8 @@ function loginRequest($loginData)
             $userInfo = getUserInfo($userEmailAddress);
             $firstname = $userInfo[0]['name'];
             $lastname = $userInfo[0]['lastname'];
-            createSession($userEmailAddress, $firstname, $lastname);
+            $exhibitor = $userInfo[0]['exhibitor'];
+            createSession($userEmailAddress, $firstname, $lastname, $exhibitor);
             $_GET['loginError'] = false;
             header("Location: /home");
         } else { //if the user/psw does not match, login form appears again
@@ -109,11 +111,12 @@ function loginRequest($loginData)
     }
 }
 
-function createSession($userEmailAddress, $firstname, $lastname)
+function createSession($userEmailAddress, $firstname, $lastname, $exhibitor)
 {
     $_SESSION['userEmailAddress'] = $userEmailAddress;
     $_SESSION['firstname'] = $firstname;
     $_SESSION['lastname'] = $lastname;
+    $_SESSION['exhibitor'] = $exhibitor;
 }
 
 function eventList(){
