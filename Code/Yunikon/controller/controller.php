@@ -136,6 +136,10 @@ $res = getUserExhibitor(@$_SESSION['userEmailAddress']);
 return $res;
 }
 
+function account(){
+    require "view/account.php";
+}
+
 function event(){
     require "view/event.php";
 }

@@ -100,7 +100,7 @@ if (session_status() === PHP_SESSION_NONE) {
 								</li>
 							<?php else : ?>
 								<li>
-				   				<img src="view/content/images/user_icon.png" height="28" class="profil" alt="Account">
+				   				<a href="/account"><img src="view/content/images/user_icon.png" height="27" alt="Account"></a>
 								 </li>
 							<?php endif; ?>
 						</ul>
