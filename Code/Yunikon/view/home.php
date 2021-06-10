@@ -5,13 +5,14 @@ $currentPage = "#home";
 ?>
 <!-- HEADER -->
 <div id="!content-wrap">
-	<section id="header">
-		<div class="container">
-			<div id="videoDiv" hidden>
-				<video id="video" loop autoplay style="height: 100vh; width: 100% !important;padding: 0px; z-index: 998;">
-					<source src="/view/content/images/dancin.mp4">
+<div id="videoDiv" hidden style="position: absolute;">
+				<video id="video" loop autoplay style="z-index: 998;">
+					<source style="object-fit: fill; " src="/view/content/images/dancin.mp4">
 				</video>
-			</div>
+				</div>
+	<section id="header">
+	
+		<div class="container">
 			<div class="row text-center">
 				<div class="col-md-8 col-sm-6 ">
 					<img id="logoSuperSecretFeature" class="logo" src="/view/content/images/Logo/Small-logo.png">
