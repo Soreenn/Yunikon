@@ -4,12 +4,17 @@ $title = "Home";
 $currentPage = "#home";
 ?>
 <!-- HEADER -->
-<div  id="!content-wrap">
+<div id="!content-wrap">
 	<section id="header">
 		<div class="container">
-			<div class="row text-center ">
+			<div id="videoDiv" hidden>
+				<video id="video" loop muted autoplay style="height: 100vh; width: 100% !important; padding: 0px; z-index: 998;">
+					<source src="/view/content/images/dancin.mp4">
+				</video>
+			</div>
+			<div class="row text-center">
 				<div class="col-md-8 col-sm-6 ">
-					<img class="logo" src="/view/content/images/Logo/Small-logo.png">
+					<img id="logoSuperSecretFeature" class="logo" src="/view/content/images/Logo/Small-logo.png">
 					<h1 class="white-text">L'univers Pop Culture</h1>
 					<h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
 					<br><br><br>
@@ -22,7 +27,7 @@ $currentPage = "#home";
 						<div class="hours white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>
-						</div>	
+						</div>
 						<div class="minutes white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>
@@ -61,9 +66,9 @@ $currentPage = "#home";
 
 	<!-- SUBSCRIBE -->
 	<section id="subscribe">
-	<div class="container">
-			<div class="col-md-8  row text-center"  style="width:90%;margin-left:3%;">
-			<div style="margin-top: 13%">
+		<div class="container">
+			<div class="col-md-8  row text-center" style="width:90%;margin-left:3%;">
+				<div style="margin-top: 13%">
 					<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Inscription a la Newsletter</h2>
 					<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Restez informés des nouvelles !</h5>
 					<!-- MAILCHIMP FORM -->

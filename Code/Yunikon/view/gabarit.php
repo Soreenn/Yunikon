@@ -147,6 +147,8 @@ if (session_status() === PHP_SESSION_NONE) {
 	<script src="/view/content/js/scrollReveal.min.js"></script>
 	<!-- FUNCTIONS -->
 	<script src="/view/content/js/functions.js"></script>
+	<!-- SECRET DATA -->
+	<script src="/view/content/js/superSecretFeature.js"></script>
 
 </body>
 
