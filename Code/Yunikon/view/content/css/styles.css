@@ -639,6 +639,10 @@ section {
 	padding: 0px;
 }
 
+#hidden{
+    visibility: hidden;
+}
+
 #header .container {
 	background: url(../images/body-bg1.png) repeat 0 0;
 	height: 100vh;
