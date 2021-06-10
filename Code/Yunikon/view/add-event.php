@@ -13,25 +13,7 @@ $currentPage = "#home";
 					<h1 class="white-text">Inscrivez votre propre evenement</h1>
 					<h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
 					<br><br><br>
-					<h1 class="white-text" id="headline">Communiquer à la comunauté pop culture l'arivée de votre evenement</h1>
-					<div class="countdown-1" data-countdown>
-						<div class="days white-text">
-							<span class="amount"></span>
-							<span class="labelTime"></span>
-						</div>
-						<div class="hours white-text">
-							<span class="amount"></span>
-							<span class="labelTime"></span>
-						</div>	
-						<div class="minutes white-text">
-							<span class="amount"></span>
-							<span class="labelTime"></span>
-						</div>
-						<div class="seconds white-text">
-							<span class="amount"></span>
-							<span class="labelTime"></span>
-						</div>
-					</div>
+					<h1 class="white-text" id="headline">Communiquer à la comunauté pop culture l'arivée de votre evenement</h1>	
 				</div>
 			</div>
 		</div>

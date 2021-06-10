@@ -49,6 +49,9 @@ switch ($_SERVER["REQUEST_URI"]) {
     case "/sendMail":
         sendMail($_POST);
         break;
+    case "/account":
+        account();
+        break;
     default:
         lost();
         break;
