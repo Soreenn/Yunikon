@@ -1,11 +1,11 @@
 <?php
 ob_start();
-$title = "Home";
-$currentPage = "#home";
+$title = "Add-event";
+$currentPage = "#Add-event";
 ?>
 <!-- HEADER -->
 <div  id="!content-wrap">
-	<section id="header" style="background: url(view/content/images/44755.jpg) no-repeat center center;">
+	<section id="header" style="background: url(view/content/images/21591.jpg) no-repeat center center;">
 		<div class="container">
 			<div class="row text-center ">
 				<div class="col-md-8 col-sm-6 ">

@@ -120,6 +120,8 @@ function createSession($userEmailAddress, $firstname, $lastname, $exhibitor)
 }
 
 function eventList(){
+    require_once "model/model.php";
+    $items = showEvent();
     require "view/eventList.php";
 }
 
@@ -140,8 +142,16 @@ function account(){
     require "view/account.php";
 }
 
-function event(){
-    require "view/event.php";
+function event($eventId){
+
+    require_once "model/model.php";
+    $eventData = getEventById($eventId);
+    if ($eventData == false) {
+        require "view/home.php";
+    }
+    else {
+                require "view/event.php";
+    }
 }
 
 function addEvent(){

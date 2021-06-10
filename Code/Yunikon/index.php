@@ -12,7 +12,7 @@ $uri = strtok($_SERVER["REQUEST_URI"], '?');
 // Remove ending /
 $uri = (strlen($uri) > 1) ? preg_replace("/\/$/", '', $uri) : $uri;
 
-switch ($_SERVER["REQUEST_URI"]) {
+switch ($uri) {
     case "/":
     case "/home":
         home();
@@ -35,7 +35,7 @@ switch ($_SERVER["REQUEST_URI"]) {
         logout();
         break;
     case "/event":
-        event();
+        event(@$_GET['id']);
         break;
     case "/add-event":
         addEvent();
@@ -50,7 +50,7 @@ switch ($_SERVER["REQUEST_URI"]) {
         sendMail($_POST);
         break;
     case "/account":
-        account();
+        account($_GET);
         break;
     default:
         lost();
