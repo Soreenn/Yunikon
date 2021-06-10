@@ -8,7 +8,7 @@ $currentPage = "#home";
 	<section id="header">
 		<div class="container">
 			<div id="videoDiv" hidden>
-				<video id="video" loop muted autoplay style="height: 100vh; width: 100% !important; padding: 0px; z-index: 998;">
+				<video id="video" loop autoplay style="height: 100vh; width: 100% !important;padding: 0px; z-index: 998;">
 					<source src="/view/content/images/dancin.mp4">
 				</video>
 			</div>
