@@ -5,11 +5,11 @@ $currentPage = "#event";
 ?>
 <!-- HEADER -->
 <div  id="!content-wrap">
-<section id="header" style="background: url(<?=$eventData['image']?>) no-repeat center center;">>
+<section id="header" style="background: url(<?=$eventData[0]['image']?>) no-repeat center center;">
 		<div class="container">
 			<div class="row text-center ">
 				<div class="col-md-8 col-sm-6 ">
-					<h2 class="white-text bold">Polymanga 2021</h2>
+					<h2 class="white-text bold"><?=$eventData[0]['name']?></h2>
 					<h3 class="white-text">16ème édition 2021 au 2M2C de Montreux</h3>
 					<br><br><br>
 					<h1 class="white-text" id="headline">Pop culture is good</h1>
@@ -35,7 +35,7 @@ $currentPage = "#event";
 			</div>
 		</div>
 		<div class="animation">
-			<a class="arrow-down-animation" data-scroll href="#home"><i class="fa fa-angle-down"></i></a>
+			<a class="arrow-down-animation" data-scroll href="#eventDesc"><i class="fa fa-angle-down"></i></a>
 		</div>
 	</section>
 <!-- HEADER ENDS -->

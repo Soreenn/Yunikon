@@ -1,12 +1,13 @@
 /**
  * 
  */
- var Countdown = function (options) {
+ var Countdown = function (options, $date) {
+  $date = "2021-06-21"
     this.options = {
       $elem: options.$elem || undefined,
       elemSelector: options.elemSelector || 'data-countdown',
       startDate: options.startDate || new Date(),
-      endDate: options.endDate || new Date('2021-06-21'),
+      endDate: options.endDate || new Date($date),
       leadingZero: options.leadingZero !== undefined ? options.leadingZero : true,
       setCssProperties: options.setCssProperties !== undefined ? options.setCssProperties : true,
       separateDigits: options.separateDigits !== undefined ? options.separateDigits : true,

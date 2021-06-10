@@ -150,7 +150,7 @@ function event($eventId){
         require "view/home.php";
     }
     else {
-                require "view/event.php";
+        require "view/event.php";
     }
 }
 
