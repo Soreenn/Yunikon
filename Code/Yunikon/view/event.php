@@ -5,7 +5,7 @@ $currentPage = "#event";
 ?>
 <!-- HEADER -->
 <div  id="!content-wrap">
-	<section id="header">
+<section id="header" style="background: url(<?=$eventData['image']?>) no-repeat center center;">>
 		<div class="container">
 			<div class="row text-center ">
 				<div class="col-md-8 col-sm-6 ">

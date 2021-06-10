@@ -32,6 +32,17 @@ function isLoginCorrect($userEmailAddress, $userPsw)
     return $result;
 }
 
+function showEvent(){
+
+    $eventQuery = 'SELECT * FROM events';
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($eventQuery);
+    
+    return $queryResult;
+}
+
+
 function getUserInfo($userEmailAddress)
 {
     $result = false;
@@ -65,4 +76,15 @@ function registerEvent($name, $starting, $ending, $location, $description, $imag
     $queryResult = executeQuerySelect($register);
     
     return $queryResult;  
+}
+
+function getEventById($id){
+
+    $strSeparator = '\'';
+    $eventQuery = 'SELECT * FROM events WHERE id = '. $id;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($eventQuery);
+    
+    return $queryResult;
 }
