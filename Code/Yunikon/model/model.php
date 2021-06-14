@@ -78,6 +78,7 @@ function registerEvent($name, $starting, $ending, $location, $description, $imag
     return $queryResult;  
 }
 
+<<<<<<< Updated upstream
 function getEventById($id){
 
     $strSeparator = '\'';
@@ -88,3 +89,5 @@ function getEventById($id){
     
     return $queryResult;
 }
+=======
+>>>>>>> Stashed changes

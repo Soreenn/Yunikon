@@ -695,8 +695,84 @@ section {
 	text-decoration: none;
 }
 
+<<<<<<< Updated upstream
 
 
+=======
+#headerEventList {
+	opacity: 95%;
+	background: url(../images/1335808.png) no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+	padding: 0px;
+}
+
+#headerEventList .container {
+	background: url(../images/body-bg1.png) repeat 0 0;
+	height: 100vh;
+	width: 100% !important;
+	padding: 0px;	
+	z-index: 998;
+}
+
+#headerEventList .col-md-8 {
+	top: 20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 999;
+}
+
+#headerEventList .logo {
+	margin-bottom: 15px;
+}
+
+   #headerContact {
+	opacity: 95%;
+	background: url(../images/wp5105065.jpg) no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+	padding: 0px;
+}
+
+#headerContact .container {
+	background: url(../images/body-bg1.png) repeat 0 0;
+	height: 100vh;
+	width: 100% !important;
+	padding: 0px;	
+	z-index: 998;
+}
+
+#headerContact .col-md-8 {
+	top: 20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 999;
+}
+
+#headerContact .logo {
+	margin-bottom: 15px;
+}
+
+#headerContact .fa-angle-down {
+	text-align: center;
+	font-size: 48px;
+	color: #fff;
+	
+	-webkit-animation: leweb_fade_move_down 2s ease-in-out infinite;
+	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
+	animation: leweb_fade_move_down 2s ease-in-out infinite;
+   }
+>>>>>>> Stashed changes
 
 #header .fa-angle-down {
 	text-align: center;
