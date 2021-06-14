@@ -1,14 +1,13 @@
 <?php
 ob_start();
-$title = "Login";
-$currentPage = "#login";
+$title = "Mot de passe oublié";
 ?>
 <div id="content-wrap">
 	<section id="login">
 		<div class="container center_div">
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Connectez-vous à l'espace client !</h1>
+					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Assistance de mot de passe oublié</h1>
 					<form method="POST" action="/getToken">
 					<div class="form-group form-group-lg">
 							<label for="email"></label>
@@ -42,9 +41,7 @@ $currentPage = "#login";
 							<input class="form-control" type="password" name="newPasswordConfirm" id="newPasswordConfirm">
 						</div>
 						<input type="reset" value="Effacer" class="button-leweb">
-						<input type="submit" value="Connexion" class="button-leweb">
-						<br>
-						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Pas encore de compte ? <a href="/register">Créez un compte !</a></small>
+						<input type="submit" value="Changer" class="button-leweb">
 					</form>
 				</div>
 			</div>
