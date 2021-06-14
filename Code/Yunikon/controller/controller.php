@@ -121,6 +121,15 @@ function createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $ph
     $_SESSION['phoneNumber'] = $phone;
 }
 
+function sessionId(){
+
+    $userEmailAddress = $_SESSION['userEmailAddress'];
+    require_once "model/model.php";
+    $userInfo = getUserInfo($userEmailAddress);
+    $userId = $userInfo[0]['id'];
+    return $userId;
+}
+
 function eventList()
 {
     require_once "model/model.php";
@@ -241,25 +250,52 @@ function getToken($userInfo)
     header("Location: /forgotPassword");
 }
 
-function forgotPassword(){
+function forgotPassword()
+{
     require "view/forgot_password.php";
 }
 
-function changeRequest($changeData){
+function changeRequest($changeData)
+{
 
-    if (isset($changeData['email'])){
-        $email = $changeData['email'];
+    $userEmail = $_SESSION['userEmailAddress'];
+    $userPsw = $changeData['password'];
+    //check if password is the same as the account's email one
+    require_once "model/model.php";
+    if (isLoginCorrect($userEmail, $userPsw)) {
+        //set email
+        if (isset($changeData['email']) || $changeData['email'] == "") {
+            $email = $changeData['email'];
+        } else {
+            $email = $_SESSION['userEmailAddress'];
+        }
+        //set phone
+        if (isset($changeData['phone'])) {
+            $phone = $changeData['phone'];
+        } else {
+            $phone = $_SESSION['phone'];
+        }
+        //set password
+        if (isset($changeData['newPassword'])) {
+            if (strcmp($changeData['newPassword'], $changeData['passwordConfirm']) == 0) {
+                $psw = $changeData['newPassword'];
+            } else {
+                $psw = $changeData['password'];
+            }
+        } else {
+            $psw = $changeData['password'];
+        }
+        $id = sessionId();
+        echo "'$email, $phone, $psw, $id'";
+        //changeUsersInfos($email, $phone, $psw, $id);
     }else{
-        $email = $_SESSION['userEmailAddress'];
+        echo "Le mot de passe actuel est erroné.";
     }
-    if (isset($changeData['phone'])){
-        $phone = $changeData['phone'];
-    }else{
-        $phone = $_SESSION['phone'];
-    }
+    require "view/home.php";
 }
 
-function forgotPasswordRequest($userInfo){
+function forgotPasswordRequest($userInfo)
+{
     if (isset($userInfo['email']) && isset($userInfo['newPassword']) && isset($userInfo['newPasswordConfirm']) && isset($userInfo['token'])) {
         //extract login parameters
         $userPsw = $userInfo['newPassword'];
@@ -283,7 +319,8 @@ function forgotPasswordRequest($userInfo){
     }
 }
 
-function changeRegister(){
+function changeRegister()
+{
 
     require "view/Change-infos.php";
 }

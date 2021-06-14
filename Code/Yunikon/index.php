@@ -24,7 +24,7 @@ switch ($uri) {
         changeRegister();
         break;
     case "/changeRequest":
-        changeRequest($_POST);
+        changeRequest(@$_POST);
         break;
     case "/login":
         login();

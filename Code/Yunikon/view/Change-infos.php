@@ -35,7 +35,7 @@ $currentPage = "#Re-register";
                             <div class="form-group form-group-sm">
                                 <label for="newPassword"></label>
                                 <b style="margin-right:55px;">Nouveau mot de passe</b>
-                                <input class="form-control" type="password" name="passwordConfirm" id="passwordConfirm">
+                                <input class="form-control" type="password" name="newPassword" id="passwordConfirm">
                             </div>
                             <div class="form-group form-group-sm">
                                 <label for="passwordConfirm"></label>

@@ -102,3 +102,11 @@ function updatePsw($userInfo){
     return $updateResult;
 }
 
+
+function changeUsersInfos($mail, $phone, $psw, $id){
+    $newPasswordHash = password_hash($psw, PASSWORD_DEFAULT);
+    $update = "UPDATE users SET password = '$newPasswordHash',  phoneNumber = '$phone', eMail = '$mail' WHERE id = '$id'";
+    require_once 'dbconnector.php';
+    $updateResult = executeQueryIUD($update);
+    return $updateResult;
+}
