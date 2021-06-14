@@ -206,3 +206,29 @@ function sendMail($infoMail){
     
         header("Location: /home");
 }
+
+function forgotPassword(){
+    require "view/forgot_password.php";
+}
+
+function forgotPasswordRequest($userInfo){
+    if (isset($userInfo['email']) && isset($userInfo['newPassword']) && isset($userInfo['newPasswordConfirm']) && isset($userInfo['token'])) {
+        //extract login parameters
+        $userPsw = $userInfo['newPassword'];
+        $userPswConfirm = $userInfo['newPasswordConfirm'];
+        //try to check if user/psw are matching with the database
+        if ($userPsw == $userPswConfirm) {
+            require_once "./model/model.php";
+            $reply = getTokens($userInfo);
+            if($reply == 'TRUE'){
+                updatePsw($userInfo);
+                header("Location: /login");
+            }
+        } else {
+            $_GET['registerError'] = true;
+            header("Location: /register");
+        }
+    } else { //the user does not yet fill the form
+        header("Location: /register");
+    }
+}

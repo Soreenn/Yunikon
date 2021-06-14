@@ -52,6 +52,12 @@ switch ($uri) {
     case "/account":
         account($_GET);
         break;
+    case "/forgotPasswordRequest":
+        forgotPasswordRequest($_POST);
+        break;
+    case "/forgotPassword":
+        forgotPassword();
+        break;
     default:
         lost();
         break;
