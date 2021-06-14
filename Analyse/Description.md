@@ -9,7 +9,7 @@ Le principe de Yunikon est de réunir plusieurs conventions et dates sur un site
 - Japan Tours Festival (FR)
 - Paris Manga (FR)
 
-Yunikon portera elle même aussi sa propore édition de convention du nom de Yunikon qui est un événement annuel, le thème de la Pop-culture englobe le domaine du jeu-vidéo et de la culture Japonaise touchant spécifiquement le domaine des mangas et animés.
+Yunikon portera elle même aussi sa propre édition de convention du nom de Yunikon qui est un événement annuel, le thème de la Pop-culture englobe le domaine du jeu-vidéo et de la culture Japonaise touchant spécifiquement le domaine des mangas et animés.
 
 Les achats de billets pour les éditions Yunikon seront disponible sur le site sous inscription, une version PDF du ticket sera donnée pour par la suite pouvoir l'amener au guichet le jour de la convention.
 
