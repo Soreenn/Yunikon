@@ -1,8 +1,7 @@
 /**
  * 
  */
- var Countdown = function (options, $date) {
-  $date = "2021-06-21"
+ var Countdown = function (options, $date = "2021-06-21") {
     this.options = {
       $elem: options.$elem || undefined,
       elemSelector: options.elemSelector || 'data-countdown',

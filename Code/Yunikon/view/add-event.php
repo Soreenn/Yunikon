@@ -56,7 +56,7 @@ $currentPage = "#Add-event";
 						<div class="form-group form-group-sm">
 							<label for="description"></label>
 							<b>Description</b>
-							<textarea class="form-control" type="text" name="addDescription" id="addDescription"></textarea> 
+							<textarea  maxlength="255" class="form-control" type="text" name="addDescription" id="addDescription"></textarea> 
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Décrivez brievement votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">

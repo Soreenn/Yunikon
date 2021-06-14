@@ -37,7 +37,7 @@ $currentPage = "#eventList";
             </div>
         </div>
         <div class="animation">
-            <a class="arrow-down-animation" data-scroll href="#home"><i class="fa fa-angle-down"></i></a>
+            <a class="arrow-down-animation" data-scroll href="#homeEvent"><i class="fa fa-angle-down"></i></a>
         </div>
     </section>
     <!-- HEADER ENDS -->

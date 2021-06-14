@@ -407,6 +407,23 @@ hr{
 	}
 }
 
+@media (max-width: 576px){
+	.description{
+        text-align:justify;
+        padding-right: 15%;
+        padding-left: 15%;
+	}
+}
+
+@media (min-width: 768px){
+	.description{
+		text-align:center;
+        text-justify: inter-word;
+        padding-right: 25%;
+        padding-left: 25%;
+	}
+}
+
 @media (min-width: 768px){
     .accbtn{
         margin-top:25%
