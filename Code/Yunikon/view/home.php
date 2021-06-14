@@ -1,7 +1,6 @@
 <?php
 ob_start();
 $title = "Home";
-$currentPage = "#home";
 ?>
 <!-- HEADER -->
 <div id="!content-wrap">
