@@ -80,8 +80,7 @@ function registerEvent($name, $starting, $ending, $location, $description, $imag
     return $queryResult;
 }
 
-function getEventById($id)
-{
+function getEventById($id){
 
     $strSeparator = '\'';
     $eventQuery = 'SELECT * FROM events WHERE id = ' . $id;
@@ -144,3 +143,4 @@ function updatePsw($userInfo){
     $updateResult = executeQueryIUD($update);
     return $updateResult;
 }
+

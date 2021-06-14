@@ -48,16 +48,16 @@ $currentPage = "#Contacte";
                             <input class="form-control" type="text" name="message">
                         </div>
                                 <div class="form-group form-group-sm" style="text-align:left;">
-                                    <input id="optionRadio1" type="radio" name="exposant">
+                                    <input id="optionRadio1" type="radio" name="sujet" value="Demande de changement en compte exposant">
                                     <b>Demande de changement en compte exposant</b>
                                     <br>
-                                    <input id="optionRadio2" type="radio" name="bug">
+                                    <input id="optionRadio2" type="radio" name="sujet" value="Bug/problème">
                                     <b>Bug/problème</b>
                                     <br>
-                                    <input id="optionRadio3" type="radio" name="question">
+                                    <input id="optionRadio3" type="radio" name="sujet" value="Question">
                                     <b>Question</b>
                                     <br>
-                                    <input id="optionRadio4" type="radio" name="autre">
+                                    <input id="optionRadio4" type="radio" name="sujet" value="Autre">
                                     <b>Autre</b>
                                 </div>
                         <input class="button-leweb" type="submit" name="contactSubmit" value="Envoyer le Mail">
