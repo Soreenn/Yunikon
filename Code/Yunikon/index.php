@@ -58,6 +58,9 @@ switch ($uri) {
     case "/forgotPassword":
         forgotPassword();
         break;
+    case "/getToken":
+        getToken($_POST);
+        break;
     default:
         lost();
         break;

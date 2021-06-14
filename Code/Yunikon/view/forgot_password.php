@@ -9,6 +9,17 @@ $currentPage = "#login";
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
 					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Connectez-vous à l'espace client !</h1>
+					<form method="POST" action="/getToken">
+					<div class="form-group form-group-lg">
+							<label for="email"></label>
+							<b>Email</b>
+							<input class="form-control" type="text" name="email" id="email">
+						</div>
+						<input type="reset" value="Effacer" class="button-leweb">
+						<input type="submit" value="Get token" class="button-leweb">
+						<br>
+						<br>
+					</form>
 					<form method="POST" action="/forgotPasswordRequest">
 					<div class="form-group form-group-lg">
 							<label for="token"></label>
