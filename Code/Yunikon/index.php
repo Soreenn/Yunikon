@@ -20,6 +20,9 @@ switch ($uri) {
     case "/register":
         register();
         break;
+    case "/changeRegister":
+        changeRegister();
+        break;
     case "/login":
         login();
         break;
