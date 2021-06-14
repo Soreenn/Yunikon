@@ -245,8 +245,21 @@ function forgotPassword(){
     require "view/forgot_password.php";
 }
 
-function forgotPasswordRequest($userInfo)
-{
+function changeRequest($changeData){
+
+    if (isset($changeData['email'])){
+        $email = $changeData['email'];
+    }else{
+        $email = $_SESSION['userEmailAddress'];
+    }
+    if (isset($changeData['phone'])){
+        $phone = $changeData['phone'];
+    }else{
+        $phone = $_SESSION['phone'];
+    }
+}
+
+function forgotPasswordRequest($userInfo){
     if (isset($userInfo['email']) && isset($userInfo['newPassword']) && isset($userInfo['newPasswordConfirm']) && isset($userInfo['token'])) {
         //extract login parameters
         $userPsw = $userInfo['newPassword'];

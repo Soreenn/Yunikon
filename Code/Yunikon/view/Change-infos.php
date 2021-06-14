@@ -9,7 +9,7 @@ $currentPage = "#Re-register";
         <div class="row text-center">
             <div class="col-sm-8 col-sm-offset-2">
                 <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Corrigez vos informations</h1>
-                <form method="POST" action="/registerRequest">
+                <form method="POST" action="/changeRequest">
                     <div class="form-group form-group-sm">
                         <br>
                         <div class="form-group form-group-sm">
@@ -30,7 +30,7 @@ $currentPage = "#Re-register";
                             <input class="form-control" type="password" name="password" id="password">
                             <small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Vous devez entrer votre mot de passe pour confirmer les modifications.</small>
                         </div>
-                        <p class="bold" style="float:left;background-color:white;margin-left:10px;">Facultatif</p>
+                        <p class="bold" style="float:left;background-color:white;margin-left:10px;margin-left:10px;">Facultatif</p>
                         <div style="border-style:solid ;border-radius: 30px; padding:10px;margin-top:24px; border-color:MediumSlateBlue;">
                             <div class="form-group form-group-sm">
                                 <label for="newPassword"></label>

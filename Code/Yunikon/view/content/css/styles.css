@@ -695,10 +695,8 @@ section {
 	text-decoration: none;
 }
 
-<<<<<<< Updated upstream
 
 
-=======
 #headerEventList {
 	opacity: 95%;
 	background: url(../images/1335808.png) no-repeat center center;
@@ -772,7 +770,6 @@ section {
 	-moz-animation: leweb_fade_move_down 2s ease-in-out infinite;
 	animation: leweb_fade_move_down 2s ease-in-out infinite;
    }
->>>>>>> Stashed changes
 
 #header .fa-angle-down {
 	text-align: center;
