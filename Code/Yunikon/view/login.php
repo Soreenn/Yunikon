@@ -4,8 +4,8 @@ $title = "Login";
 $currentPage = "#login";
 ?>
 <div id="content-wrap">
-	<section id="login">
-		<div class="container center_div">
+	<section>
+		<div class="container">
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
 					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Connectez-vous à l'espace client !</h1>

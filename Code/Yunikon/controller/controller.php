@@ -69,7 +69,7 @@ function registerRequest($registerData)
         if ($userPsw == $userPswConfirm) {
             require_once "./model/model.php";
             if (RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone)) {
-                createSession($userEmailAddress, $firstname, $lastname, $exhibitor);
+                createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
                 $_GET['registerError'] = false;
                 header("Location: /home");
             } else { 
@@ -99,7 +99,8 @@ function loginRequest($loginData)
             $firstname = $userInfo[0]['name'];
             $lastname = $userInfo[0]['lastname'];
             $exhibitor = $userInfo[0]['exhibitor'];
-            createSession($userEmailAddress, $firstname, $lastname, $exhibitor);
+            $phone = $userInfo[0]['phoneNumber'];
+            createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
             $_GET['loginError'] = false;
             header("Location: /home");
         } else { //if the user/psw does not match, login form appears again
@@ -111,12 +112,13 @@ function loginRequest($loginData)
     }
 }
 
-function createSession($userEmailAddress, $firstname, $lastname, $exhibitor)
+function createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone)
 {
     $_SESSION['userEmailAddress'] = $userEmailAddress;
     $_SESSION['firstname'] = $firstname;
     $_SESSION['lastname'] = $lastname;
     $_SESSION['exhibitor'] = $exhibitor;
+    $_SESSION['phoneNumber'] = $phone;
 }
 
 function eventList(){
@@ -207,6 +209,7 @@ function sendMail($infoMail){
         header("Location: /home");
 }
 
+
 function forgotPassword(){
     require "view/forgot_password.php";
 }
@@ -231,4 +234,9 @@ function forgotPasswordRequest($userInfo){
     } else { //the user does not yet fill the form
         header("Location: /register");
     }
+
+function changeRegister(){
+
+    require "view/Change-infos.php";
+
 }

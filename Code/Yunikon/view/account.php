@@ -24,7 +24,7 @@ $currentPage = "#account";
                             <h3 class="white-text">Non</h3>
                         <?php endif; ?>
                         <div class="col-md-8 accBtn" style="text-align:center;">
-                            <a href=""><button class="button-leweb">Mes informations sont éronnées</button></a>
+                            <a href="/changeRegister"><button class="button-leweb">Mes informations sont éronnées</button></a>
                             <figcaption style="color:lightgray;font-size:smaller;">Utilisez ce bouton pour : Changer vos informations si elle ne sont pas/plus valide. Changer de mot de passe.</figcaption>
                         </div>
                     </div>
