@@ -234,9 +234,9 @@ function forgotPasswordRequest($userInfo){
     } else { //the user does not yet fill the form
         header("Location: /register");
     }
+}
 
 function changeRegister(){
 
     require "view/Change-infos.php";
-
 }
