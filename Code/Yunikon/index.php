@@ -31,6 +31,7 @@ switch ($uri) {
         break;
     case "/registerRequest":
         registerRequest($_POST);
+        break;
     case "/eventList":
         eventList();
         break;

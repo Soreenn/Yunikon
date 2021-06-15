@@ -13,12 +13,16 @@ $title = "Mot de passe oublié";
 							<label for="email"></label>
 							<b>Email</b>
 							<input class="form-control" type="text" name="email" id="email">
+							<div class="text-danger">
+								<?= $errorToken ?>
+							</div>
 						</div>
 						<input type="reset" value="Effacer" class="button-leweb">
 						<input type="submit" value="Get token" class="button-leweb">
 						<br>
 						<br>
 					</form>
+					
 					<form method="POST" action="/forgotPasswordRequest">
 					<div class="form-group form-group-lg">
 							<label for="token"></label>
@@ -39,6 +43,9 @@ $title = "Mot de passe oublié";
 							<label for="newPasswordConfirm"></label>
 							<b>Confirmer nouveau mot de passe</b>
 							<input class="form-control" type="password" name="newPasswordConfirm" id="newPasswordConfirm">
+							<div class="text-danger">
+								<?= $errorForgot ?>
+							</div>
 						</div>
 						<input type="reset" value="Effacer" class="button-leweb">
 						<input type="submit" value="Changer" class="button-leweb">

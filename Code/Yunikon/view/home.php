@@ -23,7 +23,7 @@ $title = "Home";
 						<div class="days white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>
-						</div>
+						</div>	
 						<div class="hours white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>

@@ -19,9 +19,14 @@ $currentPage = "#login";
 							<label for="password"></label>
 							<b>Mot de passe</b>
 							<input class="form-control" type="password" name="password" id="password">
+							<div class="text-danger">
+								<?= $errorLogin ?>
+							</div>
 						</div>
 						<input type="reset" value="Effacer" class="button-leweb">
 						<input type="submit" value="Connexion" class="button-leweb">
+						<br>
+						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Mot de passe oublié ? <a href="/forgotPassword">Restaurer</a></small>
 						<br>
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Pas encore de compte ? <a href="/register">Créez un compte !</a></small>
 					</form>

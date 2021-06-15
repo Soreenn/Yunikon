@@ -11,6 +11,7 @@ function home()
 
 function register()
 {
+    $errorRegister = "";
     require "view/register.php";
 }
 
@@ -20,6 +21,7 @@ function lost()
 
 function login()
 {
+    $errorLogin = "";
     require "view/login.php";
 }
 
@@ -56,7 +58,8 @@ function createEvent($eventData)
 
 function registerRequest($registerData)
 {
-    if (isset($registerData['email']) && isset($registerData['password']) && isset($registerData['passwordConfirm'])) {
+    $errorRegister = "";
+    if (!empty($registerData['email']) && !empty($registerData['password']) && !empty($registerData['passwordConfirm'])) {
         //extract login parameters
         $userEmailAddress = $registerData['email'];
         $userPsw = $registerData['password'];
@@ -73,22 +76,24 @@ function registerRequest($registerData)
                 $_GET['registerError'] = false;
                 header("Location: /home");
             } else {
-                $_GET['registerError'] = true;
-                header("Location: /register");
+                $errorRegister = "Oups... Il y a un problème chez nous...";
+                require "view/register.php";
             }
         } else {
-            $_GET['registerError'] = true;
-            header("Location: /register");
+            $errorRegister = "Oups... Les mots de passe ne correspondent pas";
+            require "view/register.php";
         }
     } else { //the user does not yet fill the form
-        header("Location: /register");
+        $errorRegister = "Oups... Veillez à remplir le formulaire";
+        require "view/register.php";
     }
 }
 
 function loginRequest($loginData)
 {
+    $errorLogin = "";
     //if a login request was submitted
-    if (isset($loginData['email']) && isset($loginData['password'])) {
+    if ($loginData['email'] !== "" && $loginData['password'] !== "") {
         //extract login parameters
         $userEmailAddress = $loginData['email'];
         $userPsw = $loginData['password'];
@@ -101,14 +106,14 @@ function loginRequest($loginData)
             $exhibitor = $userInfo[0]['exhibitor'];
             $phone = $userInfo[0]['phoneNumber'];
             createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
-            $_GET['loginError'] = false;
             header("Location: /home");
         } else { //if the user/psw does not match, login form appears again
-            $_GET['loginError'] = true;
-            header("Location: /login");
+            $errorLogin = "Oups... Vos identifiants semblent incorrectes";
+            require "view/login.php";
         }
     } else { //the user does not yet fill the form
-        header("Location: /login");
+        $errorLogin = "Oups... Veillez à remplir le formulaire";
+        require "view/login.php";
     }
 }
 
@@ -214,53 +219,66 @@ function sendMail($infoMail)
 
 function getToken($userInfo)
 {
-    $_SESSION['token'] = uniqid();
+    $errorForgot = "";
+    $errorToken = "";
+    if (!empty($userInfo['email'])) {
+        $_SESSION['token'] = uniqid();
 
-    require_once "PHPMailer/PHPMailerAutoload.php";
+        require_once "PHPMailer/PHPMailerAutoload.php";
 
-    $mail = new PHPMailer();
+        $mail = new PHPMailer();
 
-    $mail->isSMTP();
-    $mail->CharSet = 'UTF-8';
-    $mail->Host = "smtp.gmail.com";
-    $mail->SMTPAuth = true;
-    $mail->Username = "yunikon.noreply@gmail.com";
-    $mail->Password = "Yuyuninikoko";
-    $mail->Port = "587";
-    $mail->SMTPSecure = "tls";
+        $mail->isSMTP();
+        $mail->CharSet = 'UTF-8';
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "yunikon.noreply@gmail.com";
+        $mail->Password = "Yuyuninikoko";
+        $mail->Port = "587";
+        $mail->SMTPSecure = "tls";
 
-    $mail->From = "yunikon.noreply@gmail.com";
-    $mail->FromName = "Yunikon - No Reply";
-    $mail->addAddress($userInfo['email']);
-    $mail->Subject = "Password forgot";
-    $mail->Body = "Your current Token is " . $_SESSION['token'];
-    $mail->IsHTML(true);
+        $mail->From = "yunikon.noreply@gmail.com";
+        $mail->FromName = "Yunikon - No Reply";
+        $mail->addAddress($userInfo['email']);
+        $mail->Subject = "Password forgot";
+        $mail->Body = "Your current Token is " . $_SESSION['token'];
+        $mail->IsHTML(true);
 
-    $mail->send();
-
-    header("Location: /forgotPassword");
+        $mail->send();
+        header("Location: /forgotPassword");
+    } else {
+        $errorToken = "Oups... Veillez à remplir le formulaire";
+        require "view/forgot_password.php";
+    }
 }
 
-function forgotPassword(){
+function forgotPassword()
+{
+    $errorToken = "";
+    $errorForgot = "";
     require "view/forgot_password.php";
 }
 
-function changeRequest($changeData){
+function changeRequest($changeData)
+{
 
-    if (isset($changeData['email'])){
+    if (isset($changeData['email'])) {
         $email = $changeData['email'];
-    }else{
+    } else {
         $email = $_SESSION['userEmailAddress'];
     }
-    if (isset($changeData['phone'])){
+    if (isset($changeData['phone'])) {
         $phone = $changeData['phone'];
-    }else{
+    } else {
         $phone = $_SESSION['phone'];
     }
 }
 
-function forgotPasswordRequest($userInfo){
-    if (isset($userInfo['email']) && isset($userInfo['newPassword']) && isset($userInfo['newPasswordConfirm']) && isset($userInfo['token'])) {
+function forgotPasswordRequest($userInfo)
+{
+    $errorToken = "";
+    $errorForgot = "";
+    if (!empty($userInfo['email']) && !empty($userInfo['newPassword']) && !empty($userInfo['newPasswordConfirm']) && !empty($userInfo['token'])) {
         //extract login parameters
         $userPsw = $userInfo['newPassword'];
         $userPswConfirm = $userInfo['newPasswordConfirm'];
@@ -271,19 +289,21 @@ function forgotPasswordRequest($userInfo){
                 updatePsw($userInfo);
                 header("Location: /login");
             } else {
-                $_GET['registerError'] = true;
-                header("Location: /forgotPassword");
+                $errorForgot = "Oups... Le token n'est pas correcte";
+                require "view/forgot_password.php";
             }
         } else {
-            $_GET['registerError'] = true;
-            header("Location: /forgotPassword");
+            $errorForgot = "Oups... Les mots de passe ne correspondent pas";
+            require "view/forgot_password.php";
         }
     } else { //the user does not yet fill the form
-        header("Location: /forgotPassword");
+        $errorForgot = "Oups... Veillez à remplir le formulaire";
+        require "view/forgot_password.php";
     }
 }
 
-function changeRegister(){
+function changeRegister()
+{
 
     require "view/Change-infos.php";
 }

@@ -10,6 +10,9 @@ $currentPage = "#register";
 			<div class="col-sm-8 col-sm-offset-2">
 				<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>
 				<form method="POST" action="/registerRequest">
+				<div class="text-danger">
+								<?= $errorRegister ?>
+							</div>
 					<div class="form-group form-group-sm">
 						<label for="lastname"></label>
 						<b>Nom</b>
