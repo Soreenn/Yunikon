@@ -19,7 +19,7 @@ $title = "Home";
 					<h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
 					<br><br><br>
 					<h1 class="white-text" id="headline">1ère édition Yunikon!</h1>
-					<div class="countdown-1" data-countdown>
+					<div id ="countdown" class="countdown-1" data-countdown data-target=<?=$nextEvent[0]['next_event']?>>
 						<div class="days white-text">
 							<span class="amount"></span>
 							<span class="labelTime"></span>

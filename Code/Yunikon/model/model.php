@@ -43,9 +43,19 @@ function showEvent()
     return $queryResult;
 }
 
+function getNextEvent(){
+    //get the date of the next event 
+    $loginQuery = 'SELECT MIN(startingDate) AS next_event  FROM events WHERE startingDate > CURRENT_DATE';
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+
+    return $queryResult;
+}
+
 function getUserInfoByPhone($phone)
 {
-    $result = false;
+
     $strSeparator = '\'';
     $loginQuery = 'SELECT * FROM users WHERE phoneNumber = ' . $strSeparator . $phone . $strSeparator;
 

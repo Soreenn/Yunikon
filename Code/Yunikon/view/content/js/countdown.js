@@ -1,12 +1,13 @@
 /**
  * 
  */
- var Countdown = function (options, $date = "2021-06-21") {
+ var Countdown = function (options, date) {
+   let targetDate = countdown.dataset.target
     this.options = {
       $elem: options.$elem || undefined,
       elemSelector: options.elemSelector || 'data-countdown',
       startDate: options.startDate || new Date(),
-      endDate: options.endDate || new Date($date),
+      endDate: options.endDate || new Date(targetDate),
       leadingZero: options.leadingZero !== undefined ? options.leadingZero : true,
       setCssProperties: options.setCssProperties !== undefined ? options.setCssProperties : true,
       separateDigits: options.separateDigits !== undefined ? options.separateDigits : true,

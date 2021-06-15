@@ -6,6 +6,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 function home()
 {
+    require_once "model/model.php"; 
+    $nextEvent = getNextEvent();
     require "view/home.php";
 }
 
@@ -51,7 +53,7 @@ function createEvent($eventData)
     require_once "model/model.php";
     registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $name);
 
-    require "view/home.php";
+    home();
 }
 
 
@@ -139,6 +141,7 @@ function sessionId()
 function eventList()
 {
     require_once "model/model.php";
+    $nextEvent = getNextEvent();
     $items = showEvent();
     require "view/eventList.php";
 }
@@ -168,7 +171,7 @@ function event($eventId)
     require_once "model/model.php";
     $eventData = getEventById($eventId);
     if ($eventData == false) {
-        require "view/home.php";
+        home();
     } else {
         require "view/event.php";
     }
@@ -288,7 +291,7 @@ function changeRequest($changeData)
         //check if email is already used
         $checking = getUserInfo($email);
         if (!empty($checking) && strcmp($email, $_SESSION['userEmailAddress']) !== 0) {
-            $errorMsg = "L'email que vous souhaitez utilisé est déjà occupé pas un autre compte";
+            $errorMsg = "L'email que vous souhaitez utilisé est déjà occupé par un autre compte";
         } else {
             //set phone
             if (empty($changeData['phone'])) {
@@ -299,7 +302,7 @@ function changeRequest($changeData)
             //check if phone is already used
             $checking = getUserInfoByPhone($phone);
             if (!empty($checking)&& strcmp($phone, $_SESSION['phoneNumber']) !== 0) {
-                $errorMsg = "Le numéro de tel que vous souhaitez utilisé est déjà occupé pas un autre compte";
+                $errorMsg = "Le numéro de tel que vous souhaitez utilisé est déjà occupé par un autre compte";
             } else {
                 //set password
                 if (!empty($changeData['newPassword'])) {
