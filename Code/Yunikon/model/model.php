@@ -43,6 +43,17 @@ function showEvent()
     return $queryResult;
 }
 
+function getUserInfoByPhone($phone)
+{
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT * FROM users WHERE phoneNumber = ' . $strSeparator . $phone . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+
+    return $queryResult;
+}
 
 function getUserInfo($userEmailAddress)
 {

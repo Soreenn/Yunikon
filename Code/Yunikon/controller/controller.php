@@ -121,7 +121,8 @@ function createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $ph
     $_SESSION['phoneNumber'] = $phone;
 }
 
-function sessionId(){
+function sessionId()
+{
 
     $userEmailAddress = $_SESSION['userEmailAddress'];
     require_once "model/model.php";
@@ -258,40 +259,57 @@ function forgotPassword()
 function changeRequest($changeData)
 {
 
+    $errorMsg = "";
+    $successMsg = "";
     $userEmail = $_SESSION['userEmailAddress'];
     $userPsw = $changeData['password'];
     //check if password is the same as the account's email one
     require_once "model/model.php";
     if (isLoginCorrect($userEmail, $userPsw)) {
         //set email
-        if (isset($changeData['email']) || $changeData['email'] == "") {
-            $email = $changeData['email'];
-        } else {
+        if (empty($changeData['email'])) {
             $email = $_SESSION['userEmailAddress'];
-        }
-        //set phone
-        if (isset($changeData['phone'])) {
-            $phone = $changeData['phone'];
         } else {
-            $phone = $_SESSION['phone'];
+            $email = $changeData['email'];
         }
-        //set password
-        if (isset($changeData['newPassword'])) {
-            if (strcmp($changeData['newPassword'], $changeData['passwordConfirm']) == 0) {
-                $psw = $changeData['newPassword'];
+        //check if email is already used
+        $checking = getUserInfo($email);
+        if (!empty($checking) && strcmp($email, $_SESSION['userEmailAddress']) !== 0) {
+            $errorMsg = "L'email que vous souhaitez utilisé est déjà occupé pas un autre compte";
+        } else {
+            //set phone
+            if (empty($changeData['phone'])) {
+                $phone = $_SESSION['phoneNumber'];
             } else {
-                $psw = $changeData['password'];
+                $phone = $changeData['phone'];
             }
-        } else {
-            $psw = $changeData['password'];
+            //check if phone is already used
+            $checking = getUserInfoByPhone($phone);
+            if (!empty($checking)&& strcmp($phone, $_SESSION['phoneNumber']) !== 0) {
+                $errorMsg = "Le numéro de tel que vous souhaitez utilisé est déjà occupé pas un autre compte";
+            } else {
+                //set password
+                if (!empty($changeData['newPassword'])) {
+                    if (strcmp($changeData['newPassword'], $changeData['passwordConfirm']) == 0) {
+                        $psw = $changeData['newPassword'];
+                    } else {
+                        $psw = $changeData['password'];
+                        $errorMsg = "Le nouveau mot de passe à mal été tapé";
+                    }
+                } else {
+                    $psw = $changeData['password'];
+                }
+                $id = sessionId();
+                echo "'$email, $phone, $psw, $id'";
+                //changeUsersInfos($email, $phone, $psw, $id);
+                $successMsg = "Les informations ont bien été changées";
+            }
         }
-        $id = sessionId();
-        echo "'$email, $phone, $psw, $id'";
-        //changeUsersInfos($email, $phone, $psw, $id);
-    }else{
-        echo "Le mot de passe actuel est erroné.";
+    } else {
+        $errorMsg = "Le mot de passe actuel est erroné.";
     }
-    require "view/home.php";
+
+    require "view/Change-infos.php";
 }
 
 function forgotPasswordRequest($userInfo)
@@ -321,6 +339,7 @@ function forgotPasswordRequest($userInfo)
 
 function changeRegister()
 {
-
+    $errorMsg = "";
+    $successMsg = "";
     require "view/Change-infos.php";
 }
