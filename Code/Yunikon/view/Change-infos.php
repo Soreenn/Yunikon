@@ -8,6 +8,8 @@ $currentPage = "#Re-register";
     <div class="container ">
         <div class="row text-center">
             <div class="col-sm-8 col-sm-offset-2">
+            <p style="background-color:LightCoral;color:Maroon;"><b><?=$errorMsg?></b></p>
+            <p style="background-color:LightGreen;color:ForestGreen;"><b><?=$successMsg?></b></p>
                 <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Corrigez vos informations</h1>
                 <form method="POST" action="/changeRequest">
                     <div class="form-group form-group-sm">
@@ -15,7 +17,7 @@ $currentPage = "#Re-register";
                         <div class="form-group form-group-sm">
                             <label for="email"></label>
                             <b>Nouvel email</b>
-                            <input class="form-control" type="text" name="email" id="email" placeholder="actuel : <?= $_SESSION['userEmailAddress'] ?>">
+                            <input class="form-control" type="text" name="email" id="email" placeholder="actuel : <?= $_SESSION['userEmailAddress'] ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             <small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre email restera privé.</small>
                         </div>
                         <div class="form-group form-group-sm">
@@ -27,7 +29,7 @@ $currentPage = "#Re-register";
                         <div class="form-group form-group-sm">
                             <label for="password"></label>
                             <b>Mot de passe actuel</b>
-                            <input class="form-control" type="password" name="password" id="password">
+                            <input class="form-control" type="password" name="password" id="password" required>
                             <small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Vous devez entrer votre mot de passe pour confirmer les modifications.</small>
                         </div>
                         <p class="bold" style="float:left;background-color:white;margin-left:10px;margin-left:10px;">Facultatif</p>
@@ -35,7 +37,7 @@ $currentPage = "#Re-register";
                             <div class="form-group form-group-sm">
                                 <label for="newPassword"></label>
                                 <b style="margin-right:55px;">Nouveau mot de passe</b>
-                                <input class="form-control" type="password" name="passwordConfirm" id="passwordConfirm">
+                                <input class="form-control" type="password" name="newPassword" id="passwordConfirm">
                             </div>
                             <div class="form-group form-group-sm">
                                 <label for="passwordConfirm"></label>

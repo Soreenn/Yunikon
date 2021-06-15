@@ -43,6 +43,17 @@ function showEvent()
     return $queryResult;
 }
 
+function getUserInfoByPhone($phone)
+{
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT * FROM users WHERE phoneNumber = ' . $strSeparator . $phone . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+
+    return $queryResult;
+}
 
 function getUserInfo($userEmailAddress)
 {
@@ -102,3 +113,11 @@ function updatePsw($userInfo){
     return $updateResult;
 }
 
+
+function changeUsersInfos($mail, $phone, $psw, $id){
+    $newPasswordHash = password_hash($psw, PASSWORD_DEFAULT);
+    $update = "UPDATE users SET password = '$newPasswordHash',  phoneNumber = '$phone', eMail = '$mail' WHERE id = '$id'";
+    require_once 'dbconnector.php';
+    $updateResult = executeQueryIUD($update);
+    return $updateResult;
+}
