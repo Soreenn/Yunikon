@@ -272,15 +272,6 @@ function forgotPassword()
 function changeRequest($changeData)
 {
 
-    if (isset($changeData['email'])) {
-        $email = $changeData['email'];
-    } else {
-        $email = $_SESSION['userEmailAddress'];
-    }
-    if (isset($changeData['phone'])) {
-        $phone = $changeData['phone'];
-    } else {
-        $phone = $_SESSION['phone'];
     $errorMsg = "";
     $successMsg = "";
     $userEmail = $_SESSION['userEmailAddress'];
@@ -339,7 +330,6 @@ function forgotPasswordRequest($userInfo)
     $errorToken = "";
     $errorForgot = "";
     if (!empty($userInfo['email']) && !empty($userInfo['newPassword']) && !empty($userInfo['newPasswordConfirm']) && !empty($userInfo['token'])) {
-    if (isset($userInfo['email']) && isset($userInfo['newPassword']) && isset($userInfo['newPasswordConfirm']) && isset($userInfo['token'])) {
         //extract login parameters
         $userPsw = $userInfo['newPassword'];
         $userPswConfirm = $userInfo['newPasswordConfirm'];
@@ -365,7 +355,6 @@ function forgotPasswordRequest($userInfo)
 
 function changeRegister()
 {
-
     $errorMsg = "";
     $successMsg = "";
     require "view/Change-infos.php";
