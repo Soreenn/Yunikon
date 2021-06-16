@@ -11,7 +11,7 @@ $currentPage = "#register";
 				<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>
 				<form method="POST" action="/registerRequest">
 				<div class="text-danger">
-								<?= $errorRegister ?>
+								<?=$errorRegister ?>
 							</div>
 					<div class="form-group form-group-sm">
 						<label for="lastname"></label>
@@ -34,7 +34,7 @@ $currentPage = "#register";
 					<div class="form-group form-group-sm">
 						<label for="phone"></label>
 						<b>Téléphone</b>
-						<input class="form-control" type="number" name="phone" id="phone">
+						<input class="form-control" type="number" name="phone" id="phone" Required>
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre numéro restera privé.</small>
 					</div>
 					<div class="form-group form-group-sm">

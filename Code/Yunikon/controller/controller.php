@@ -60,6 +60,8 @@ function createEvent($eventData)
 
 function registerRequest($registerData)
 {
+    echo $registerData['lastname'],",",$registerData['firstname'],",",$registerData['email'],",",$registerData['password'],",",$registerData['passwordConfirm'], ",",$registerData['phone'];
+
     $errorRegister = "";
     if (!empty($registerData['email']) && !empty($registerData['password']) && !empty($registerData['passwordConfirm'])) {
         //extract login parameters
@@ -73,6 +75,7 @@ function registerRequest($registerData)
         //try to check if user/psw are matching with the database
         if ($userPsw == $userPswConfirm) {
             require_once "./model/model.php";
+            echo " ///",$userEmailAddress, $userPsw, $firstname, $lastname, $phone;
             if (RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone)) {
                 createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
                 $_GET['registerError'] = false;

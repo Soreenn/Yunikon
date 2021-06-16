@@ -22,55 +22,21 @@ insert into Events (id, name, startingDate, endingDate, location, description) v
 insert into Events (id, name, startingDate, endingDate, location, description) values (15, 'Little Inc', '2022-02-12', '2023-06-28', 'Yelizovo', 'Passenger on bus injured in collision w unsp mv in traf');
 
 -- Users
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (1, 'efewkes0@webeden.co.uk', 'AA9MfbNk44M0', '6716536846', 'Esther', 'Fewkes', 0, 'Toxicology-peritoneum', 'Aufderhar-Marks');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (2, 'amantione1@bigcartel.com', 'tEVmlNR3H', '6013144413', 'Agnola', 'Mantione', 1, 'Thyroid vessel ligation', 'Anderson, Hammes and Cummings');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (3, 'kleele2@hud.gov', 'h5hRnA', '3786981316', 'Kinna', 'Leele', 1, 'Arterial pressure monit', 'Schuppe-Heaney');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (4, 'epudge3@dion.ne.jp', 'xLURldUC4', '2778304007', 'Erskine', 'Pudge', 0, 'Omt with indirect forces', 'Lynch, Muller and Kihn');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (5, 'mmarjanovic4@aboutads.info', 'fDEKCu', '4092679240', 'Moore', 'Marjanovic', 1, 'Destruct esophag les NEC', 'Lemke-Hayes');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (6, 'swaadenburg5@cnet.com', 'lrjhRR', '6988898901', 'Sullivan', 'Waadenburg', 1, 'Nasal sept grft-epistax', 'Schinner-Schmitt');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (7, 'valldritt6@discuz.net', 'AxLfNL51YK', '7448678386', 'Vanya', 'Alldritt', 0, 'Episiotomy', 'Denesik and Sons');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (8, 'dsmylie7@xing.com', 'shnzqmGb', '6284037486', 'Dru', 'Smylie', 1, 'Renal operation NEC', 'Leannon Inc');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (9, 'eschneider8@pbs.org', 'WJNNHSk', '6625473558', 'Esmeralda', 'Schneider', 0, 'Ureteral meatotomy', 'Schumm, Gusikowski and Goodwin');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (10, 'rwhorf9@ted.com', 'uzbhhQTu', '9449183880', 'Ruthann', 'Whorf', 1, 'Semin ves dx proced NEC', 'Schuster Inc');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (11, 'wbungeya@umn.edu', 'dvOh8jbHTUY', '1647405762', 'Witty', 'Bungey', 1, 'Biopsy of diaphragm', 'Greenholt-Block');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (12, 'hlubbockb@qq.com', 'C02rLEGzOjxq', '1643142666', 'Heloise', 'Lubbock', 1, 'Vag hysterectomy NEC/NOS', 'Weber, DuBuque and Botsford');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (13, 'qamysc@macromedia.com', 'scSstd1gWw5g', '7943978742', 'Quintus', 'Amys', 0, 'Parasitology-bili/pancr', 'Welch-Bradtke');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (14, 'cholsteind@nasa.gov', 'GjuDOeEJtQe', '6101586226', 'Catharina', 'Holstein', 0, 'Mammography NEC', 'Krajcik, Gulgowski and Adams');
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor, description, company) values (15, 'ashoosmithe@nba.com', 'tWSZmf', '2082348514', 'Annabel', 'Shoosmith', 1, 'Hand plastic op NEC', 'Medhurst, Wisozk and Leuschke');
-
-
--- Stands
-insert into stands (id, U_Number, size, description, Event_id) values (1, 1, 11, 'Oral cavity dx proc NEC', 4);
-insert into stands (id, U_Number, size, description, Event_id) values (2, 2, 10, 'Oth metacarp/carp incis', 10);
-insert into stands (id, U_Number, size, description, Event_id) values (3, 3, 18, 'Intra-ab bowel manip NOS', 2);
-insert into stands (id, U_Number, size, description, Event_id) values (4, 4, 19, 'Imp epiretinal prosth', 9);
-insert into stands (id, U_Number, size, description, Event_id) values (5, 5, 14, 'Joint biopsy NEC', 4);
-insert into stands (id, U_Number, size, description, Event_id) values (6, 6, 15, 'Arbovirus enceph vaccin', 10);
-insert into stands (id, U_Number, size, description, Event_id) values (7, 7, 10, 'Sex transformat op NEC', 12);
-insert into stands (id, U_Number, size, description, Event_id) values (8, 8, 17, 'Parathyroid scan', 7);
-insert into stands (id, U_Number, size, description, Event_id) values (9, 9, 21, 'Penile biopsy', 9);
-insert into stands (id, U_Number, size, description, Event_id) values (10, 10, 15, 'Cardiac mapping', 9);
-insert into stands (id, U_Number, size, description, Event_id) values (11, 11, 21, 'Remov other genit device', 10);
-insert into stands (id, U_Number, size, description, Event_id) values (12, 12, 11, 'Excis cul-de-sac lesion', 3);
-insert into stands (id, U_Number, size, description, Event_id) values (13, 13, 10, 'Repair vess w tis patch', 3);
-insert into stands (id, U_Number, size, description, Event_id) values (14, 14, 9, 'Pack ext auditory canal', 11);
-insert into stands (id, U_Number, size, description, Event_id) values (15, 15, 22, 'Remov abdomen device NEC', 3);
-insert into stands (id, U_Number, size, description, Event_id) values (16, 16, 15, 'Excision of wrist NEC', 9);
-insert into stands (id, U_Number, size, description, Event_id) values (17, 17, 21, 'Contr mammary ductogram', 15);
-insert into stands (id, U_Number, size, description, Event_id) values (18, 18, 17, 'Triad knee repair', 9);
-insert into stands (id, U_Number, size, description, Event_id) values (19, 19, 16, 'Open uterine biopsy', 6);
-insert into stands (id, U_Number, size, description, Event_id) values (20, 20, 14, 'Thoracic spine x-ray NEC', 11);
-insert into stands (id, U_Number, size, description, Event_id) values (21, 21, 19, 'Other destru pancrea les', 14);
-insert into stands (id, U_Number, size, description, Event_id) values (22, 22, 15, 'Reopen laminectomy site', 5);
-insert into stands (id, U_Number, size, description, Event_id) values (23, 23, 18, 'Cardiotomy', 12);
-insert into stands (id, U_Number, size, description, Event_id) values (24, 24, 19, 'Retrograde pyelogram', 1);
-insert into stands (id, U_Number, size, description, Event_id) values (25, 25, 18, 'Conjunctivoplasty NEC', 3);
-insert into stands (id, U_Number, size, description, Event_id) values (26, 26, 17, 'Remove ureteral ligature', 6);
-insert into stands (id, U_Number, size, description, Event_id) values (27, 27, 21, 'Lap unilat oophorectomy', 3);
-insert into stands (id, U_Number, size, description, Event_id) values (28, 28, 14, 'Thoraco robotic ast proc', 3);
-insert into stands (id, U_Number, size, description, Event_id) values (29, 29, 17, 'Tot brch extrac w forcep', 2);
-insert into stands (id, U_Number, size, description, Event_id) values (30, 30, 16, 'Cl fx reduc-metatar/tar', 14);
-
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (1, 'efewkes0@webeden.co.uk', 'AA9MfbNk44M0', '6716536846', 'Esther', 'Fewkes', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (2, 'amantione1@bigcartel.com', 'tEVmlNR3H', '6013144413', 'Agnola', 'Mantione', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (3, 'kleele2@hud.gov', 'h5hRnA', '3786981316', 'Kinna', 'Leele', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (4, 'epudge3@dion.ne.jp', 'xLURldUC4', '2778304007', 'Erskine', 'Pudge', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (5, 'mmarjanovic4@aboutads.info', 'fDEKCu', '4092679240', 'Moore', 'Marjanovic', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (6, 'swaadenburg5@cnet.com', 'lrjhRR', '6988898901', 'Sullivan', 'Waadenburg', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (7, 'valldritt6@discuz.net', 'AxLfNL51YK', '7448678386', 'Vanya', 'Alldritt', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (8, 'dsmylie7@xing.com', 'shnzqmGb', '6284037486', 'Dru', 'Smylie', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (9, 'eschneider8@pbs.org', 'WJNNHSk', '6625473558', 'Esmeralda', 'Schneider', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (10, 'rwhorf9@ted.com', 'uzbhhQTu', '9449183880', 'Ruthann', 'Whorf', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (11, 'wbungeya@umn.edu', 'dvOh8jbHTUY', '1647405762', 'Witty', 'Bungey', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (12, 'hlubbockb@qq.com', 'C02rLEGzOjxq', '1643142666', 'Heloise', 'Lubbock', 1);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (13, 'qamysc@macromedia.com', 'scSstd1gWw5g', '7943978742', 'Quintus', 'Amys', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (14, 'cholsteind@nasa.gov', 'GjuDOeEJtQe', '6101586226', 'Catharina', 'Holstein', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (15, 'ashoosmithe@nba.com', 'tWSZmf', '2082348514', 'Annabel', 'Shoosmith', 1);
 
 
 -- Tickets
@@ -89,20 +55,3 @@ insert into Tickets (id, U_Number, startingDate, endingDate, price, description,
 insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, Users_id) values (13, 13, '2020-11-26', '2020-08-25', 25, 'Anoxic brain damage', 13, 13);
 insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, Users_id) values (14, 14, '2020-06-20', '2022-01-11', 10, 'Ob surg compl NEC-unspec', 14, 14);
 insert into Tickets (id, U_Number, startingDate, endingDate, price, description, Event_id, Users_id) values (15, 15, '2020-11-19', '2020-10-06', 8, 'Abdmnal pain rt lwr quad', 15, 15);
-
--- Exhibitors_reserve_Stands
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (1, 1, '2021-04-28', '2022-05-09', 1, 1);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (2, 2, '2020-08-29', '2021-03-26', 2, 2);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (3, 3, '2021-01-10', '2020-05-21', 3, 3);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (4, 4, '2021-04-14', '2021-10-24', 4, 4);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (5, 5, '2020-08-07', '2022-04-12', 5, 5);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (6, 6, '2020-11-13', '2020-09-11', 6, 6);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (7, 7, '2020-10-29', '2022-04-07', 7, 7);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (8, 8, '2020-09-11', '2021-04-29', 8, 8);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (9, 9, '2020-05-24', '2021-11-01', 9, 9);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (10, 10, '2020-08-03', '2022-02-06', 10, 10);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (11, 11, '2020-07-28', '2021-03-31', 11, 11);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (12, 12, '2020-10-22', '2021-09-16', 12, 12);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (13, 13, '2020-07-25', '2020-10-17', 13, 13);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (14, 14, '2020-07-08', '2020-07-31', 14, 14);
-insert into Exhibitors_reserve_Stands (id, U_Number, startingDate, endingDate, Users_id, Stand_id) values (15, 15, '2020-05-28', '2022-03-29', 15, 15);
