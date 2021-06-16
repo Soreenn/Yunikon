@@ -5,7 +5,7 @@ $currentPage = "#Add-event";
 ?>
 <!-- HEADER -->
 <div  id="!content-wrap">
-	<section id="header" style="background: url(view/content/images/21591.jpg) no-repeat center center;">
+	<section id="header" style="background: url(view/content/images/Tickets.jpg) no-repeat center center;">
 		<div class="container">
 			<div class="row text-center ">
 				<div class="col-md-8 col-sm-6 ">
@@ -64,6 +64,18 @@ $currentPage = "#Add-event";
 							<b>image</b>
 							<input class="form-control" type="file" name="addImage" id="addImage">
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Donnez une image qui présentera votre événement</small>
+						</div>
+						<div class="form-group form-group-sm">
+							<label for="name"></label>
+							<b>Nombre de tickets</b>
+							<input class="form-control" type="number" name="addName" id="addName" required>
+							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Combien de tickets voulez-vous vendre</small>
+						</div>
+						<div class="form-group form-group-sm">
+							<label for="startingDate"></label>
+							<b>Prix des tickets</b>
+							<input class="form-control" type="number" name="addStarting" id="addStarting" required>
+							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">quel prix auront vos tickets (en CHF)</small>
 						</div>
 						<input type="submit" value="Créer l'événement" class="button-leweb">
 					</form>
