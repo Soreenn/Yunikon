@@ -66,15 +66,15 @@ $currentPage = "#Add-event";
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Donnez une image qui présentera votre événement</small>
 						</div>
 						<div class="form-group form-group-sm">
-							<label for="name"></label>
+							<label for="tickets"></label>
 							<b>Nombre de tickets</b>
-							<input class="form-control" type="number" name="addName" id="addName" required>
+							<input class="form-control" type="number" name="ticketsNumber" id="ticketsNumber" required>
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Combien de tickets voulez-vous vendre</small>
 						</div>
 						<div class="form-group form-group-sm">
 							<label for="startingDate"></label>
 							<b>Prix des tickets</b>
-							<input class="form-control" type="number" name="addStarting" id="addStarting" required>
+							<input class="form-control" type="number" name="ticketsPrice" id="ticketsPrice" required>
 							<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">quel prix auront vos tickets (en CHF)</small>
 						</div>
 						<input type="submit" value="Créer l'événement" class="button-leweb">

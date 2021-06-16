@@ -38,6 +38,8 @@ function createEvent($eventData)
     $eventLocation = $eventData['addLocation'];
     $eventDescription = $eventData['addDescription'];
 
+    $ticketNumber = $eventData['ticketsNumber'];
+    $ticketPrice = $eventData['ticketsPrice'];
 
     $file_name = $_FILES['addImage']['name'];
     $file_tmp = $_FILES['addImage']['tmp_name'];
