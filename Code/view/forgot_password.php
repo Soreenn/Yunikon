@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "Mot de passe oublié";
+$title = "Forgot password";
 ?>
 <div id="content-wrap">
 	<section id="login">
