@@ -28,6 +28,7 @@ function executeQueryIUD($query)
 
 function DBConnexion()
 {
+    //connect to the db
     $tempDbConnexion = null;
 
     $sqlDriver = 'mysql';
@@ -36,7 +37,7 @@ function DBConnexion()
     $charset = 'utf8';
     $dbName = 'yunikon';
     $userName = 'Yunikon';
-    $userPwd = ''; // Votre mot de passe hein // j'te fais pas assez confiance pour te donnez mon mot de passe
+    $userPwd = ''; 
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try {
