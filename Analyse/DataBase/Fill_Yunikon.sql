@@ -6,7 +6,7 @@
 
 -- Users
 insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (1, 'a@a.a', '$2y$10$x1wUVLfLn04XThqvyLtlFugQVBybFyl17By8ColH2Eu7GXGGc3.1q', '123', 'a', 'a', 1);
-insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (2, 'b@b.b', '$2y$10$Be3CBqSfdPmy/7vF2FwBGORZPSamT9idT347zVBF2u35cNQlU0wZK', '321', 'b', 'b', 0);
+insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (2, 'b@b.b', '$2y$10$Be3CBqSfdPmy/7vF2FwBGORZPSamT9idT347zVBF2u35cNQlU0wZK', '321', 'b', 'b', 0); 	
 
 -- Events
 insert into Events (id, name, startingDate, endingDate, location, description, image, Users_id) values (1, 'Polymanga', '2019-04-19', '2019-04-22', '2M2C Montreux', 'Polymanga est une convention qui se consacre le temps d\'un week-end à la culture japonaise, aux mangas, aux animes et aux jeux vidéo. Un programme de divertissements pour petits et grands, un véritable plongeon dans la culture pop nippone !', 'view/content/events/images/Polymanga.png', 1);
