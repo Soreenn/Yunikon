@@ -56,7 +56,7 @@ $currentPage = "#eventList";
                                         <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/noPhoto.png">
                                     <?php endif; ?>
                                     <b>
-                                        <figcaption><?= $row['name'] ?></figcaption>
+                                        <figcaption><?=htmlspecialchars($row['name'])?></figcaption>
                                     </b>
                                 </a>
                             </div>

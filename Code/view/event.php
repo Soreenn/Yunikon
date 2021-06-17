@@ -13,7 +13,7 @@ $currentPage = "#event";
 	<div class="container">
 		<div class="row text-center ">
 			<div class="col-md-8 col-sm-6 ">
-				<h2 class="white-text bold"><?= $eventData[0]['name'] ?></h2>
+				<h2 class="white-text bold"><?=htmlspecialchars($eventData[0]['name'])?></h2>
 				<h3 class="white-text"></h3>
 				<br><br><br>
 				<?php if ($eventData[0]['startingDate'] < $date) : ?>
@@ -79,7 +79,7 @@ $currentPage = "#event";
 				<br>
 				<div class="description">
 					<div>
-						<p><?= $eventData[0]['description'] ?> </p>
+						<p><?=htmlspecialchars($eventData[0]['description'])?> </p>
 					</div>
 				</div>
 			<?php endif ?>
@@ -93,7 +93,7 @@ $currentPage = "#event";
 				<h2>Lieu</h2>
 			</div>
 			<div>
-				<p><?= $eventData[0]['location'] ?></p>
+				<p><?=htmlspecialchars($eventData[0]['location'])?></p>
 				<br>
 			</div>
 			<div>

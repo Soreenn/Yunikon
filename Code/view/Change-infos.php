@@ -17,13 +17,13 @@ $currentPage = "#Re-register";
                         <div class="form-group form-group-sm">
                             <label for="email"></label>
                             <b>Nouvel email</b>
-                            <input class="form-control" type="email" name="email" id="email" placeholder="actuel : <?= $_SESSION['userEmailAddress'] ?>">
+                            <input class="form-control" type="email" name="email" id="email" placeholder="actuel : <?=htmlspecialchars($_SESSION['userEmailAddress'])?>">
                             <small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre email restera privé.</small>
                         </div>
                         <div class="form-group form-group-sm">
                             <label for="phone"></label>
                             <b>Nouveau téléphone</b>
-                            <input class="form-control" type="number" name="phone" id="phone" placeholder="actuel : <?= $_SESSION['phoneNumber'] ?>">
+                            <input class="form-control" type="number" name="phone" id="phone" placeholder="actuel : <?=htmlspecialchars($_SESSION['phoneNumber'])?>">
                             <small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre numéro restera privé.</small>
                         </div>
                         <div class="form-group form-group-sm">
