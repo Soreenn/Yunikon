@@ -6,7 +6,7 @@ function RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone
     $userHashPsw = password_hash("$userPsw", PASSWORD_DEFAULT);
     $register = "INSERT INTO users (eMail, password, phoneNumber, name, lastname) VALUES ('$userEmailAddress', '$userHashPsw', '$phone', '$firstname', '$lastname')";
     require_once 'dbconnector.php';
-    echo $register;
+    
     $registerResult = executeQueryIUD($register);
     return $registerResult;
 }
@@ -31,6 +31,26 @@ function isLoginCorrect($userEmailAddress, $userPsw)
     }
 
     return $result;
+}
+
+function ticketsRemaining(){
+
+    $eventQuery = 'SELECT * FROM tickets WHERE Users_id IS NULL';
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($eventQuery);
+
+    return $queryResult;
+}
+
+function registerTicket($price, $eventId){
+
+    $register = "INSERT INTO tickets (price, Event_id) VALUES ('$price', '$eventId')";
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($register);
+
+    return $queryResult;
 }
 
 function showEvent()
@@ -102,9 +122,19 @@ function registerEvent($name, $starting, $ending, $location, $description, $imag
     return $queryResult;
 }
 
-function getEventById($id){
+function getEventId($name){
 
     $strSeparator = '\'';
+    $eventQuery = 'SELECT * FROM events WHERE name LIKE ' . $strSeparator . $name . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($eventQuery);
+
+    return $queryResult;
+}
+
+function getEventById($id){
+
     $eventQuery = 'SELECT * FROM events WHERE id = ' . $id;
 
     require_once 'dbConnector.php';

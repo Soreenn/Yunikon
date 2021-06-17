@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 function home()
 {
-    require_once "model/model.php"; 
+    require_once "model/model.php";
     $nextEvent = getNextEvent();
     require "view/home.php";
 }
@@ -54,6 +54,12 @@ function createEvent($eventData)
 
     require_once "model/model.php";
     registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $name);
+    $eventInfos = getEventId($eventName);
+    $eventId = $eventInfos[0]['id'];
+
+    for ($i = 0; $i < $ticketNumber; $i++) {
+        registerTicket($ticketPrice, $eventId);
+    }
 
     home();
 }
@@ -62,7 +68,7 @@ function createEvent($eventData)
 
 function registerRequest($registerData)
 {
-    echo $registerData['lastname'],",",$registerData['firstname'],",",$registerData['email'],",",$registerData['password'],",",$registerData['passwordConfirm'], ",",$registerData['phone'];
+    echo $registerData['lastname'], ",", $registerData['firstname'], ",", $registerData['email'], ",", $registerData['password'], ",", $registerData['passwordConfirm'], ",", $registerData['phone'];
 
     $errorRegister = "";
     if (!empty($registerData['email']) && !empty($registerData['password']) && !empty($registerData['passwordConfirm'])) {
@@ -77,7 +83,7 @@ function registerRequest($registerData)
         //try to check if user/psw are matching with the database
         if ($userPsw == $userPswConfirm) {
             require_once "./model/model.php";
-            echo " ///",$userEmailAddress, $userPsw, $firstname, $lastname, $phone;
+            echo " ///", $userEmailAddress, $userPsw, $firstname, $lastname, $phone;
             if (RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone)) {
                 createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
                 $_GET['registerError'] = false;
@@ -174,6 +180,9 @@ function event($eventId)
 {
 
     require_once "model/model.php";
+    //count the number of reaminings tickets
+    $tickets = ticketsRemaining();
+
     $eventData = getEventById($eventId);
     if ($eventData == false) {
         home();
@@ -306,7 +315,7 @@ function changeRequest($changeData)
             }
             //check if phone is already used
             $checking = getUserInfoByPhone($phone);
-            if (!empty($checking)&& strcmp($phone, $_SESSION['phoneNumber']) !== 0) {
+            if (!empty($checking) && strcmp($phone, $_SESSION['phoneNumber']) !== 0) {
                 $errorMsg = "Le numéro de tel que vous souhaitez utilisé est déjà occupé par un autre compte";
             } else {
                 //set password
