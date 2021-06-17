@@ -19,31 +19,31 @@ $currentPage = "#event";
 						<?php $date = date("Y,m,d");
 						if ($eventData[0]['startingDate'] < $date) : ?>
 							<?php if ($eventData[0]['endingDate'] < $date) : ?>
-								<h2 class="white-text" id="headline">L'evenement s'est terminé le <?= $eventData[0]['endingDate'];?></h2>
-								<?php else : ?>
-								<h2 class="white-text" id="headline">L'evenement est en cours et se terminera le <?= $eventData[0]['endingDate'];?></h2>
-								<div id="countdown" class="countdown-1" data-countdown data-target=<?=$eventData[0]['endingDate']?>>
-								<div class="days white-text">
-									<span class="amount"></span>
-									<span class="labelTime"></span>
+								<h2 class="white-text" id="headline">L'evenement s'est terminé le <?= $eventData[0]['endingDate']; ?></h2>
+							<?php else : ?>
+								<h2 class="white-text" id="headline">L'evenement est en cours et se terminera le <?= $eventData[0]['endingDate']; ?></h2>
+								<div id="countdown" class="countdown-1" data-countdown data-target=<?= $eventData[0]['endingDate'] ?>>
+									<div class="days white-text">
+										<span class="amount"></span>
+										<span class="labelTime"></span>
+									</div>
+									<div class="hours white-text">
+										<span class="amount"></span>
+										<span class="labelTime"></span>
+									</div>
+									<div class="minutes white-text">
+										<span class="amount"></span>
+										<span class="labelTime"></span>
+									</div>
+									<div class="seconds white-text">
+										<span class="amount"></span>
+										<span class="labelTime"></span>
+									</div>
 								</div>
-								<div class="hours white-text">
-									<span class="amount"></span>
-									<span class="labelTime"></span>
-								</div>
-								<div class="minutes white-text">
-									<span class="amount"></span>
-									<span class="labelTime"></span>
-								</div>
-								<div class="seconds white-text">
-									<span class="amount"></span>
-									<span class="labelTime"></span>
-								</div>
-							</div>
-							<?php endif ; ?>
+							<?php endif; ?>
 						<?php else : ?>
-							<h2 class="white-text" id="headline">L'evenement commencera le <?= $eventData[0]['startingDate'];?></h2>
-							<div id="countdown" class="countdown-1" data-countdown data-target=<?=$eventData[0]['startingDate']?>>
+							<h2 class="white-text" id="headline">L'evenement commencera le <?= $eventData[0]['startingDate']; ?></h2>
+							<div id="countdown" class="countdown-1" data-countdown data-target=<?= $eventData[0]['startingDate'] ?>>
 								<div class="days white-text">
 									<span class="amount"></span>
 									<span class="labelTime"></span>
@@ -98,10 +98,29 @@ $currentPage = "#event";
 						<br>
 					</div>
 					<div>
-						<p>Il reste <?= $remaining?> tickets </p>
-						<?php if ($remaining > 0) :?>
-						<button class="button-leweb"> Acheter mon ticket </button>
-						<?php endif ;?>
+						<p class="bold">Il reste <?= $remaining ?> tickets </p>
+						<?php if ($remaining > 0) : ?>
+							<!-- <button class="button-leweb"> Acheter mon ticket </button> -->
+
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+								<input type="hidden" name="cmd" value="_xclick">
+								<input type="hidden" name="business" value="Cyprien04@hotmail.com">
+								<input type="hidden" name="lc" value="CH">
+								<input type="hidden" name="item_name" value="Ticket">
+								<input type="hidden" name="amount" value=<?=$price?>>
+								<input type="hidden" name="currency_code" value="CHF">
+								<input type="hidden" name="button_subtype" value="services">
+								<input type="hidden" name="no_note" value="0">
+								<input type="hidden" name="tax_rate" value="0.000">
+								<input type="hidden" name="shipping" value="0.00">
+								<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+								<input type="image" src="https://www.paypalobjects.com/fr_FR/CH/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form>
+
+							<figcaption style="font-size:80%;">Acheter avec paypal</figcaption>
+
+						<?php endif; ?>
 					</div>
 				</div>
 			</section>

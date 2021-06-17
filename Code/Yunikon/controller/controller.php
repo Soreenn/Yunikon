@@ -188,6 +188,7 @@ function event($eventId)
         $remaining ++;
     }
 
+    $price = $tickets[0]['price'];
     $eventData = getEventById($eventId);
     if ($eventData == false) {
         home();
