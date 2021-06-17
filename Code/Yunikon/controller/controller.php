@@ -181,6 +181,14 @@ function account()
     require "view/account.php";
 }
 
+function deleteEvent($eventId){
+
+    require_once "model/model.php";
+    delEvent($eventId);
+
+    account();
+}
+
 function event($eventId)
 {
 

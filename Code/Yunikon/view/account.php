@@ -49,7 +49,9 @@ $currentPage = "#account";
                                         <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/noPhoto.png">
                                     <?php endif; ?>
                                     <b>
+                                    <a  href="/delEvent?id=<?=$row['id']?>" style="float:left;"> <img src="/view/content/images/Trash.png" height="27"></a>
                                         <figcaption><?= $row['name'] ?></figcaption>
+                                        
                                     </b>
                                 </a>
                             </div>

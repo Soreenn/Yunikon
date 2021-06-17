@@ -173,3 +173,14 @@ function changeUsersInfos($mail, $phone, $psw, $id){
     $updateResult = executeQueryIUD($update);
     return $updateResult;
 }
+
+function delEvent($eventId){
+
+    $register = "DELETE FROM events WHERE id = " . $eventId;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($register);
+
+    return $queryResult;
+    
+}

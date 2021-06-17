@@ -68,8 +68,11 @@ switch ($uri) {
     case "/getToken":
         getToken($_POST);
         break;
-        case "/getToken":
+    case "/getToken":
         getToken($_POST);
+        break;
+    case "/delEvent":
+        deleteEvent(@$_GET['id']);
         break;
     default:
         lost();
