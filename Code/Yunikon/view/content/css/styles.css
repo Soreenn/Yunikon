@@ -804,6 +804,16 @@ section {
 
 }
 
+/* LOST */
+#lost {
+	opacity: 95%;
+	background: url(/view/content/images/logo/404.png) no-repeat fixed center center / cover rgba(0, 0, 0, 0);
+	background-size: cover;
+	height: 100vh;
+	padding: 0px;
+
+}
+
 /* ABOUT */
 
 #about i {

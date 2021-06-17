@@ -6,19 +6,24 @@ if (session_status() === PHP_SESSION_NONE) {
 
 function home()
 {
+    //get date of the next event
     require_once "model/model.php";
     $nextEvent = getNextEvent();
+
+    //go to the home page
     require "view/home.php";
 }
 
 function register()
 {
+    //go to the register page
     $errorRegister = "";
     require "view/register.php";
 }
 
 function lost()
 {
+    require "view/Lost.php";
 }
 
 function login()
