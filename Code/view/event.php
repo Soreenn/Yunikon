@@ -104,8 +104,7 @@ $currentPage = "#event";
 					<p class="bold">Il reste <?= $remaining ?> tickets </p>
 					<?php if ($remaining > 0) : ?>
 						<!-- <button class="button-leweb"> Acheter mon ticket </button> -->
-
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<form action=" https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_xclick">
 							<input type="hidden" name="business" value="Cyprien04@hotmail.com">
 							<input type="hidden" name="lc" value="CH">
@@ -123,6 +122,8 @@ $currentPage = "#event";
 
 						<figcaption style="font-size:80%;">Acheter avec paypal</figcaption>
 
+						<!--this button is for decrement the ticekts because i can't test it with the paypal button
+						because of the tax in every payment	--> <a href="/decrementTickets?id=<?=$eventData[0]['id']?>">Decrement</a>  
 					<?php endif; ?>
 				<?php endif; ?>
 			</div>

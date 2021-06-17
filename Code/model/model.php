@@ -33,6 +33,21 @@ function isLoginCorrect($userEmailAddress, $userPsw)
     return $result;
 }
 
+function decrement($eventId, $userId){
+    //return tickets without owner, with the lower id and identified by event id    
+    $eventQuery = 'SELECT * FROM tickets WHERE id = (SELECT MIN(id) FROM tickets WHERE Users_id IS NULL AND Event_id =' . $eventId . ')';
+    require_once 'dbConnector.php';
+    $remainsTicket = executeQuerySelect($eventQuery);
+
+    $remainsTicketId = $remainsTicket[0]['id'];
+    $strSeparator = '\'';
+    //Use the lower id of remaining tickets to identified it and write the current user's id to give him the ticket
+    $updateTicket = 'UPDATE tickets SET Users_id = ' . $strSeparator . $userId . $strSeparator .' WHERE id = ' . $strSeparator . $remainsTicketId . $strSeparator;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($updateTicket);
+}
+
 function ticketsRemaining($eventId){
     //return every tickets without owner
     $eventQuery = 'SELECT * FROM tickets WHERE Users_id IS NULL  AND event_id =' . $eventId;

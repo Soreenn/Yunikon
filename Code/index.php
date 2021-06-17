@@ -74,6 +74,9 @@ switch ($uri) {
     case "/delEvent":
         deleteEvent(@$_GET['id']);
         break;
+    case "/decrementTickets":
+        decrementTickets(@$_GET['id']);
+        break;
     default:
         lost();
         break;

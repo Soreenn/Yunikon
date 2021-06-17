@@ -21,6 +21,15 @@ function register()
     require "view/register.php";
 }
 
+function decrementTickets($eventId){
+    //decrement ticket when user buy one
+    require_once "model/model.php";
+    $userDatas = getUserInfo($_SESSION['userEmailAddress']);
+    $userId = $userDatas[0]['id'];
+    decrement($eventId, $userId);
+    event($eventId);
+}
+
 function lost()
 {
     //go to the error 404 page
