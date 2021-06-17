@@ -54,6 +54,7 @@ switch ($uri) {
         contact();
         break;
     case "/sendMail":
+        echo "Je passe dans lindex";
         sendMail($_POST);
         break;
     case "/account":

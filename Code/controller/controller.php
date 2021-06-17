@@ -254,19 +254,28 @@ function contact()
 
 function sendMail($infoMail)
 {
+    echo "ENVOIE MAIL";
     //create and send an email
-    if ($infoMail['exposant'] == "on") {
+    if ($infoMail['subject'] == "exhibitor") {
+
         $header = "Demande d'exposant";
-        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " souhaite convertir son compte pour devenir exposant sur Yunikon !";
-    } else if ($infoMail['bug'] == "on") {
+        $message = $_SESSION['userEmailAddress'] . " - " . $_SESSION['name'] . " souhaite convertir son compte pour devenir exposant sur Yunikon !";
+        echo $message;
+    } else if ($infoMail['subject'] == "bug") {
+
         $header = "Rapport bug";
-        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " créer un rapport de bug !";
-    } else if ($infoMail['question'] == "on") {
+        $message = $_SESSION['userEmailAddress'] . " - " . $_SESSION['name'] . " créer un rapport de bug !";
+    } else if ($infoMail['subject'] == "question") {
+ 
         $header = "Question utilisateur";
-        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " souhaite poser une question auprès de Yunikon.";
-    } else if ($infoMail['autre'] == "on") {
+        $message = $_SESSION['userEmailAddress'] . " - " . $_SESSION['name'] . " souhaite poser une question auprès de Yunikon.";
+    } else if ($infoMail['subject'] == "other") {
+
         $header = "Autre sujet";
-        $message = $_SESSION['userEmailAddress'] . " - " . $infoMail['nom'] . " est là pour une autre raison que celles notifiés.";
+        $message = $_SESSION['userEmailAddress'] . " - " . $_SESSION['name'] . " est là pour une autre raison que celles notifiés.";
+    } else {
+        $header = "ALERT BUG";
+        $message = "Un soucis a été rencontré avec le message de " . $_SESSION['userEmailAddress'];
     }
 
     require_once "PHPMailer/PHPMailerAutoload.php";
@@ -286,6 +295,7 @@ function sendMail($infoMail)
     $mail->FromName = "Yunikon - No Reply";
     $mail->addAddress("gabriel.**");
     $mail->addAddress("loik.**");
+    $mail->addAddress("cyprien.**");
     $mail->addAddress("cyprien.**");
     $mail->Subject = ($header);
     $mail->Body = $message . "<br><br>" . $infoMail['message'];

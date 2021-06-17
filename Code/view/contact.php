@@ -26,38 +26,23 @@ $currentPage = "#Contacte";
         <div class="container">
             <div class="row text-center">
                 <div class="col-sm-8 col-sm-offset-2" style="margin-top:60px;">
-                    <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Inscrivez-vous à Yunikon gratuitement !</h1>
+                    <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Besoin d'aide, contactez nous !</h1>
                     <form method="POST" action="/sendMail">
-                        <div class="form-group form-group-sm">
-                            <b>Nom</b>
-                            <input class="form-control" type="text" name="nom">
-                        </div>
-
-                        <div class="form-group form-group-sm">
-                            <b>Email</b>
-                            <input class="form-control" type="text" name="email">
-                        </div>
-
-                        <div class="form-group form-group-sm">
-                            <b>Téléphone</b>
-                            <input class="form-control" type="text" name="tel">
-                        </div>
-
                         <div class="form-group form-group-sm">
                             <b>Message</b>
                             <input class="form-control" type="text" name="message">
                         </div>
                                 <div class="form-group form-group-sm" style="text-align:left;">
-                                    <input id="optionRadio1" type="radio" name="sujet" value="Demande de changement en compte exposant">
+                                    <input id="optionRadio1" type="radio" name="subject" value="exhibitor">
                                     <b>Demande de changement en compte exposant</b>
                                     <br>
-                                    <input id="optionRadio2" type="radio" name="sujet" value="Bug/problème">
+                                    <input id="optionRadio2" type="radio" name="subject" value="bug">
                                     <b>Bug/problème</b>
                                     <br>
-                                    <input id="optionRadio3" type="radio" name="sujet" value="Question">
+                                    <input id="optionRadio3" type="radio" name="subject" value="question">
                                     <b>Question</b>
                                     <br>
-                                    <input id="optionRadio4" type="radio" name="sujet" value="Autre">
+                                    <input id="optionRadio4" type="radio" name="subject" value="other">
                                     <b>Autre</b>
                                 </div>
                         <input class="button-leweb" type="submit" name="contactSubmit" value="Envoyer le Mail">
