@@ -98,28 +98,33 @@ $currentPage = "#event";
 						<br>
 					</div>
 					<div>
-						<p class="bold">Il reste <?= $remaining ?> tickets </p>
-						<?php if ($remaining > 0) : ?>
-							<!-- <button class="button-leweb"> Acheter mon ticket </button> -->
+						<?php if ($eventData[0]['endingDate'] < $date) : ?>
+							<h2 class="white-text" id="headline">Les tickets ne sont plus en vente</h2>
+						<?php else : ?>
 
-							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-								<input type="hidden" name="cmd" value="_xclick">
-								<input type="hidden" name="business" value="Cyprien04@hotmail.com">
-								<input type="hidden" name="lc" value="CH">
-								<input type="hidden" name="item_name" value="Ticket">
-								<input type="hidden" name="amount" value=<?=$price?>>
-								<input type="hidden" name="currency_code" value="CHF">
-								<input type="hidden" name="button_subtype" value="services">
-								<input type="hidden" name="no_note" value="0">
-								<input type="hidden" name="tax_rate" value="0.000">
-								<input type="hidden" name="shipping" value="0.00">
-								<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
-								<input type="image" src="https://www.paypalobjects.com/fr_FR/CH/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-							</form>
+							<p class="bold">Il reste <?= $remaining ?> tickets </p>
+							<?php if ($remaining > 0) : ?>
+								<!-- <button class="button-leweb"> Acheter mon ticket </button> -->
 
-							<figcaption style="font-size:80%;">Acheter avec paypal</figcaption>
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_xclick">
+									<input type="hidden" name="business" value="Cyprien04@hotmail.com">
+									<input type="hidden" name="lc" value="CH">
+									<input type="hidden" name="item_name" value="Ticket">
+									<input type="hidden" name="amount" value=<?= $price ?>>
+									<input type="hidden" name="currency_code" value="CHF">
+									<input type="hidden" name="button_subtype" value="services">
+									<input type="hidden" name="no_note" value="0">
+									<input type="hidden" name="tax_rate" value="0.000">
+									<input type="hidden" name="shipping" value="0.00">
+									<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+									<input type="image" src="https://www.paypalobjects.com/fr_FR/CH/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+									<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
 
+								<figcaption style="font-size:80%;">Acheter avec paypal</figcaption>
+
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				</div>
