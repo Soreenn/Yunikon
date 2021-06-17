@@ -97,6 +97,12 @@ $currentPage = "#event";
 						<p><?= $eventData[0]['location'] ?></p>
 						<br>
 					</div>
+					<div>
+						<p>Il reste <?= $remaining?> tickets </p>
+						<?php if ($remaining > 0) :?>
+						<button class="button-leweb"> Acheter mon ticket </button>
+						<?php endif ;?>
+					</div>
 				</div>
 			</section>
 			<?php

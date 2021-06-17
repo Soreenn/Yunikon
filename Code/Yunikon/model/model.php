@@ -33,9 +33,9 @@ function isLoginCorrect($userEmailAddress, $userPsw)
     return $result;
 }
 
-function ticketsRemaining(){
+function ticketsRemaining($eventId){
 
-    $eventQuery = 'SELECT * FROM tickets WHERE Users_id IS NULL';
+    $eventQuery = 'SELECT * FROM tickets WHERE Users_id IS NULL  AND event_id =' . $eventId;
 
     require_once 'dbConnector.php';
     $queryResult = executeQuerySelect($eventQuery);

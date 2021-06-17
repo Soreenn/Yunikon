@@ -181,7 +181,12 @@ function event($eventId)
 
     require_once "model/model.php";
     //count the number of reaminings tickets
-    $tickets = ticketsRemaining();
+    $tickets = ticketsRemaining($eventId);
+    $remaining = 0;
+
+    foreach ($tickets as $count){
+        $remaining ++;
+    }
 
     $eventData = getEventById($eventId);
     if ($eventData == false) {
