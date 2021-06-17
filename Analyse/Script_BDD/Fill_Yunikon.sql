@@ -4,15 +4,14 @@
 
 -- Script to fill the DB
 
--- Events
-insert into Events (id, name, startingDate, endingDate, location, description) values (1, 'Polymanga', '2019-04-19', '2019-04-22', '2M2C Montreux', 'Polymanga est une convention qui se consacre le temps d\'un week-end à la culture japonaise, aux mangas, aux animes et aux jeux vidéo. Un programme de divertissements pour petits et grands, un véritable plongeon dans la culture pop nippone !');
-insert into Events (id, name, startingDate, endingDate, location, description) values (2, 'Japan Impact', '2021-06-15', '2021-06-29', 'EPFL', 'Japan Impact est une convention dédiée à la culture japonaise qui se déroule tous les ans sur un week-end à l\'École polytechnique fédérale de Lausanne.');
-insert into Events (id, name, startingDate, endingDate, location, description) values (3, 'Japan Expo', '2022-07-14', '2022-07-17', 'Paris', 'Japan Expo est LE rendez-vous des amoureux du Japon et de sa culture, du manga aux arts martiaux, du jeu vidéo au folklore nippon. un évènement incontournable pour tous ceux qui s’intéressent à la culture japonaise.');
-
 -- Users
 insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (1, 'a@a.a', '$2y$10$x1wUVLfLn04XThqvyLtlFugQVBybFyl17By8ColH2Eu7GXGGc3.1q', '123', 'a', 'a', 1);
 insert into Users (id, eMail, password, phoneNumber, name, lastName, exhibitor) values (2, 'b@b.b', '$2y$10$Be3CBqSfdPmy/7vF2FwBGORZPSamT9idT347zVBF2u35cNQlU0wZK', '321', 'b', 'b', 0);
 
+-- Events
+insert into Events (id, name, startingDate, endingDate, location, description, image, Users_id) values (1, 'Polymanga', '2019-04-19', '2019-04-22', '2M2C Montreux', 'Polymanga est une convention qui se consacre le temps d\'un week-end à la culture japonaise, aux mangas, aux animes et aux jeux vidéo. Un programme de divertissements pour petits et grands, un véritable plongeon dans la culture pop nippone !', 'view/content/events/images/Polymanga.png', 1);
+insert into Events (id, name, startingDate, endingDate, location, description, image, Users_id) values (2, 'Japan Impact', '2021-06-15', '2021-06-29', 'EPFL', 'Japan Impact est une convention dédiée à la culture japonaise qui se déroule tous les ans sur un week-end à l\'École polytechnique fédérale de Lausanne.', 'view/content/events/images/Japan_Impact.png', 1);
+insert into Events (id, name, startingDate, endingDate, location, description, image, Users_id) values (3, 'Japan Expo', '2022-07-14', '2022-07-17', 'Paris', 'Japan Expo est LE rendez-vous des amoureux du Japon et de sa culture, du manga aux arts martiaux, du jeu vidéo au folklore nippon. un évènement incontournable pour tous ceux qui s’intéressent à la culture japonaise.', 'view/content/events/images/japan-expo.jpg', 1);
 
 -- Tickets
 insert into Tickets (id, price, Event_id) values (1, 15, 1);

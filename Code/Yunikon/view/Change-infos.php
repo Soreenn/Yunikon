@@ -17,7 +17,7 @@ $currentPage = "#Re-register";
                         <div class="form-group form-group-sm">
                             <label for="email"></label>
                             <b>Nouvel email</b>
-                            <input class="form-control" type="text" name="email" id="email" placeholder="actuel : <?= $_SESSION['userEmailAddress'] ?>">
+                            <input class="form-control" type="email" name="email" id="email" placeholder="actuel : <?= $_SESSION['userEmailAddress'] ?>">
                             <small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre email restera privé.</small>
                         </div>
                         <div class="form-group form-group-sm">

@@ -28,7 +28,7 @@ $currentPage = "#register";
 					<div class="form-group form-group-sm">
 						<label for="email"></label>
 						<b>Email</b>
-						<input class="form-control" type="text" name="email" id="email">
+						<input class="form-control" type="email" name="email" id="email">
 						<small data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Votre email restera privé.</small>
 					</div>
 					<div class="form-group form-group-sm">

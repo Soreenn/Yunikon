@@ -173,6 +173,11 @@ function exhibitor()
 
 function account()
 {
+    require_once "model/model.php";
+    $user = getUserInfoByPhone($_SESSION['phoneNumber']);
+    $userId = $user[0]['id'];
+
+    $items = getEventByUserId($userId);
     require "view/account.php";
 }
 
@@ -187,6 +192,8 @@ function event($eventId)
     foreach ($tickets as $count){
         $remaining ++;
     }
+    
+    $date = date("Y-m-d");
 
     $price = $tickets[0]['price'];
     $eventData = getEventById($eventId);

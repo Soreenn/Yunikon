@@ -32,6 +32,34 @@ $currentPage = "#account";
             </div>
         </div>
     </section>
+    <div id="content-wrap">
+        <section id="homeEvent">
+            <div>
+                <?php if ($_SESSION['exhibitor'] == 1) : ?>
+                <h2>Vos evenements</h2>
+                <?php endif ;?>
+                <div class="container">
+                    <div class="row text-center">
+                        <?php foreach ($items as $row) : ?>
+                            <div class="col-md-4">
+                                <a href="/event?id=<?=$row['id']?>">
+                                    <?php if ($row['image']) : ?>
+                                        <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="<?=$row['image']?>">
+                                    <?php else : ?>
+                                        <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/noPhoto.png">
+                                    <?php endif; ?>
+                                    <b>
+                                        <figcaption><?= $row['name'] ?></figcaption>
+                                    </b>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
     <?php
     $content = ob_get_clean();
     require "view/gabarit.php";

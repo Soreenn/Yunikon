@@ -113,8 +113,9 @@ function getUserExhibitor($userEmailAddress)
 function registerEvent($name, $starting, $ending, $location, $description, $image)
 {
 
-
-    $register = "INSERT INTO events (name, startingDate, endingDate, location, description, image) VALUES ('$name', '$starting', '$ending', '$location', '$description', '$image')";
+    $user = getUserInfo($_SESSION['userEmailAddress']);
+    $userId = $user[0]['id'];
+    $register = "INSERT INTO events (name, startingDate, endingDate, location, description, image, Users_id) VALUES ('$name', '$starting', '$ending', '$location', '$description', '$image', '$userId')";
 
     require_once 'dbConnector.php';
     $queryResult = executeQuerySelect($register);
@@ -136,6 +137,16 @@ function getEventId($name){
 function getEventById($id){
 
     $eventQuery = 'SELECT * FROM events WHERE id = ' . $id;
+
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($eventQuery);
+
+    return $queryResult;
+}
+
+function getEventByUserId($id){
+
+    $eventQuery = 'SELECT * FROM events WHERE Users_id = ' . $id;
 
     require_once 'dbConnector.php';
     $queryResult = executeQuerySelect($eventQuery);
