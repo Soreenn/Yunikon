@@ -27,7 +27,11 @@ $currentPage = "#Contacte";
             <div class="row text-center">
                 <div class="col-sm-8 col-sm-offset-2" style="margin-top:60px;">
                     <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Besoin d'aide, contactez nous !</h1>
-                    <form method="POST" action="/sendMail">
+                    <?php if(isset($_SESSION['userEmailAddress'])) : ?>
+                        <form method="POST" action="/sendMail">
+                    <?php else :?> 
+                        <form method="POST" action="/login">
+                    <?php endif;?>
                         <div class="form-group form-group-sm">
                             <b>Message</b>
                             <input class="form-control" type="text" name="message">

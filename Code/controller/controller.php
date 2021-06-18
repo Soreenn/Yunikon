@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -293,10 +293,10 @@ function sendMail($infoMail)
 
     $mail->From = "yunikon.noreply@gmail.com";
     $mail->FromName = "Yunikon - No Reply";
-    $mail->addAddress("gabriel.**");
-    $mail->addAddress("loik.**");
-    $mail->addAddress("cyprien.**");
-    $mail->addAddress("cyprien.**");
+    $mail->addAddress("gabriel.machado-pereira@cpnv.ch");
+    $mail->addAddress("loik.meylan@cpnv.ch");
+    $mail->addAddress("cyprien.jaquier@cpnv.ch");
+    $mail->addAddress("yoann.bonzon@cpnv.ch");
     $mail->Subject = ($header);
     $mail->Body = $message . "<br><br>" . $infoMail['message'];
     $mail->IsHTML(true);
