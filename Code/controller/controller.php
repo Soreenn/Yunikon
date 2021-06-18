@@ -441,3 +441,9 @@ function changeRegister()
     $successMsg = "";
     require "view/Change-infos.php";
 }
+
+function subNewsLetter(){
+    //function to subscribe to the newsletter
+    require_once "model/model.php";
+    subscribe();
+}

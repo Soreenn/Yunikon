@@ -192,3 +192,9 @@ function delEvent($eventId){
     return $queryResult;
     
 }
+
+function subscribe(){
+    //function to subscribe user to the newsletter
+    $update = "UPDATE users SET newsLetter = '1' WHERE eMail = " . $_SESSION['userEmailAddress'];
+    //'UPDATE tickets SET Users_id = ' . $strSeparator . $userId . $strSeparator .' WHERE id = ' . $strSeparator . $remainsTicketId . $strSeparator;
+}

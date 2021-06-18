@@ -78,6 +78,9 @@ switch ($uri) {
     case "/decrementTickets":
         decrementTickets(@$_GET['id']);
         break;
+    case "/subNewsLetter":
+        subNewsLetter();
+        break;
     default:
         lost();
         break;
