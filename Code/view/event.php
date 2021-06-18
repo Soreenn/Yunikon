@@ -122,8 +122,10 @@ $currentPage = "#event";
 
 						<figcaption style="font-size:80%;">Acheter avec paypal</figcaption>
 
+						<?php if(isset($_SESSION['userEmailAddress'])) : ?>
 						<!--this button is for decrement the ticekts because i can't test it with the paypal button
 						because of the tax in every payment	--> <a href="/decrementTickets?id=<?=$eventData[0]['id']?>">Decrement</a>  
+                    	<?php endif;?>
 					<?php endif; ?>
 				<?php endif; ?>
 			</div>
