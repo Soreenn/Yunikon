@@ -85,7 +85,7 @@ function createEvent($eventData)
     //send mail to the newsletter
     sendEventNewsletter($eventName, $imageName, $eventId);
     //go to the home page
-    home();
+        home();
 }
 
 

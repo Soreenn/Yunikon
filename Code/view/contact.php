@@ -1,7 +1,7 @@
 <?php
 ob_start();
-$title = "Contacte";
-$currentPage = "#Contacte";
+$title = "Contact";
+$currentPage = "#Contact";
 ?>
 <!-- HEADER -->
 <div id="!content-wrap">

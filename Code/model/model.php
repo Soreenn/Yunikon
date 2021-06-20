@@ -58,8 +58,13 @@ function ticketsRemaining($eventId){
 }
 
 function registerTicket($price, $eventId){
+        //check biggest U_number
+        $check = "SELECT MAX(u_number) FROM tickets";
+        require_once 'dbConnector.php';
+        $queryResult = executeQuerySelect($check);
+        $u_number = $queryResult[0][0] + 1;
     //create tickets in db
-    $register = "INSERT INTO tickets (price, Event_id) VALUES ('$price', '$eventId')";
+    $register = "INSERT INTO tickets (price, Event_id, u_number) VALUES ('$price', '$eventId', '$u_number')";
     require_once 'dbConnector.php';
     $queryResult = executeQueryIUD($register);
 
