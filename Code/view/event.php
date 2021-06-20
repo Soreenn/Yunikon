@@ -6,7 +6,7 @@ $currentPage = "#event";
 <!-- HEADER -->
 <div id="!content-wrap">
 	<?php if ($eventData[0]['image'] != "") : ?>
-		<section id="header" style="background: url(<?= $eventData[0]['image'] ?>) no-repeat center center;">
+		<section id="header" style="background-image: url(<?= $eventData[0]['image'] ?>);">
 		<?php else : ?>
 			<section id="header" style="background: url(view/content/images/envent_base.jpg) no-repeat center center;">
 	<?php endif ?>

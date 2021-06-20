@@ -190,11 +190,24 @@ function delEvent($eventId){
     $queryResult = executeQueryIUD($register);
 
     return $queryResult;
-    
 }
 
 function subscribe(){
     //function to subscribe user to the newsletter
-    $update = "UPDATE users SET newsLetter = '1' WHERE eMail = " . $_SESSION['userEmailAddress'];
-    //'UPDATE tickets SET Users_id = ' . $strSeparator . $userId . $strSeparator .' WHERE id = ' . $strSeparator . $remainsTicketId . $strSeparator;
+    $strSeparator = '\'';
+    $update = 'UPDATE users SET newsLetter = "1" WHERE eMail LIKE '. $strSeparator . $_SESSION['userEmailAddress']. $strSeparator;
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($update);
+
+    return $queryResult;
+}
+
+function unSubscribe(){
+    //function to subscribe user to the newsletter
+    $strSeparator = '\'';
+    $update = 'UPDATE users SET newsLetter = "0" WHERE eMail LIKE '. $strSeparator . $_SESSION['userEmailAddress']. $strSeparator;
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($update);
+
+    return $queryResult;
 }

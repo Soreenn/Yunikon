@@ -63,8 +63,8 @@ function createEvent($eventData)
     $file_tmp = $_FILES['addImage']['tmp_name'];
     $extension = pathinfo($_FILES["addImage"]["name"], PATHINFO_EXTENSION);
     if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
-        $name = "view/content/events/images/" .  date("d-m-y-H-i-s") . $file_name;
-        move_uploaded_file($file_tmp, $name);
+        $imageName = "view/content/events/images/" .  date("d-m-y-H-i-s") . $file_name;
+        move_uploaded_file($file_tmp, $imageName);
     } else {
         header_remove();
         header("Location: /home");
@@ -72,7 +72,8 @@ function createEvent($eventData)
 
     //add event to the db
     require_once "model/model.php";
-    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $name);
+    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $imageName);
+
 
     //get event id
     $eventInfos = getEventId($eventName);
@@ -81,6 +82,8 @@ function createEvent($eventData)
     for ($i = 0; $i < $ticketNumber; $i++) {
         registerTicket($ticketPrice, $eventId);
     }
+    //send mail to the newsletter
+    sendEventNewsletter($eventName, $imageName, $eventId);
     //go to the home page
     home();
 }
@@ -287,7 +290,7 @@ function sendMail($infoMail)
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username = "yunikon.noreply@gmail.com";
-    $mail->Password = "";
+    $mail->Password = "Yuyuninikoko";
     $mail->Port = "587";
     $mail->SMTPSecure = "tls";
 
@@ -446,4 +449,47 @@ function subNewsLetter(){
     //function to subscribe to the newsletter
     require_once "model/model.php";
     subscribe();
+    header_remove();
+    header("Location: /home");
+}
+
+function unSubNewsLetter(){
+    //function to subscribe to the newsletter
+    require_once "model/model.php";
+    unSubscribe();
+    header_remove();
+    header("Location: /home");
+}
+
+function sendEventNewsletter($eventName, $imageName, $eventId){
+       //Send an email when a new event is register
+    //encode image to base 64
+    $img = file_get_contents($imageName);
+    $img64 = base64_encode($img);
+ 
+    require_once "PHPMailer/PHPMailerAutoload.php";
+    //set mailer datas
+    $mail = new PHPMailer();
+
+    $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "yunikon.noreply@gmail.com";
+    $mail->Password = "Yuyuninikoko";
+    $mail->Port = "587";
+    $mail->SMTPSecure = "tls";
+
+    $mail->From = "yunikon.noreply@gmail.com";
+    $mail->FromName = "Yunikon - No Reply";
+    $mail->addAddress("cyprien.jaquier@cpnv.ch");
+    $mail->Subject = ("Un nouvel événement vous attends!");
+    $mail->Body = "L'événement $eventName vient d'être ajouter à la liste. n'hésitez pas à consulter la page : <br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/unSubNewsLetter\">Me désinscrire de la newsletter</a>";
+    $mail->IsHTML(true);
+
+    $mail->send();
+
+    header("Location: /home");
 }
