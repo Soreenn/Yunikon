@@ -466,10 +466,15 @@ function sendEventNewsletter($eventName, $imageName, $eventId){
     //encode image to base 64
     $img = file_get_contents($imageName);
     $img64 = base64_encode($img);
- 
+    
+    require_once "model/model.php";
+    $userSub = checkSub();
+
+
     require_once "PHPMailer/PHPMailerAutoload.php";
     //set mailer datas
     $mail = new PHPMailer();
+
 
     $mail->isSMTP();
     $mail->CharSet = 'UTF-8';
@@ -482,7 +487,11 @@ function sendEventNewsletter($eventName, $imageName, $eventId){
 
     $mail->From = "yunikon.noreply@gmail.com";
     $mail->FromName = "Yunikon - No Reply";
-    $mail->addAddress("cyprien.jaquier@cpnv.ch");
+
+    foreach ($userSub as $row){
+        $mail->addAddress($row['eMail']);
+    }
+
     $mail->Subject = ("Un nouvel événement vous attends!");
     $mail->Body = "L'événement $eventName vient d'être ajouter à la liste. n'hésitez pas à consulter la page : <br><br>
                    <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>
@@ -491,5 +500,5 @@ function sendEventNewsletter($eventName, $imageName, $eventId){
 
     $mail->send();
 
-    header("Location: /home");
+    //header("Location: /home");
 }

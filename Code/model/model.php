@@ -203,11 +203,20 @@ function subscribe(){
 }
 
 function unSubscribe(){
-    //function to subscribe user to the newsletter
+    //function to unsubscribe user to the newsletter
     $strSeparator = '\'';
     $update = 'UPDATE users SET newsLetter = "0" WHERE eMail LIKE '. $strSeparator . $_SESSION['userEmailAddress']. $strSeparator;
     require_once 'dbConnector.php';
     $queryResult = executeQueryIUD($update);
+
+    return $queryResult;
+}
+
+function checkSub(){
+    //function to get every users subscribing the newsletter
+    $check = 'SELECT * FROM users WHERE newsLetter = "1"';
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($check);
 
     return $queryResult;
 }
