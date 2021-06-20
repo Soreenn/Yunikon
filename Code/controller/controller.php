@@ -23,11 +23,24 @@ function register()
 
 function decrementTickets($eventId){
     //decrement ticket when user buy one
+    $userMail = $_SESSION['userEmailAddress'];
     require_once "model/model.php";
-    $userDatas = getUserInfo($_SESSION['userEmailAddress']);
+    $userDatas = getUserInfo($userMail);
     $userId = $userDatas[0]['id'];
-    decrement($eventId, $userId);
-    event($eventId);
+
+    //get info of the event by id
+    require_once "model/model.php";
+    $eventData = getEventById($eventId);
+
+    $img = $eventData[0]['image'];
+    $name = $eventData[0]['name'];
+
+    //send email with the last ticket buyed
+    require_once "model/model.php";
+    $buyedID = decrement($eventId, $userId);
+
+    mailBuy($buyedID, $img, $name, $userMail, $eventId);
+    //event($eventId);
 }
 
 function lost()
@@ -63,8 +76,8 @@ function createEvent($eventData)
     $file_tmp = $_FILES['addImage']['tmp_name'];
     $extension = pathinfo($_FILES["addImage"]["name"], PATHINFO_EXTENSION);
     if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' | $extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || $extension == 'GIF') {
-        $name = "view/content/events/images/" .  date("d-m-y-H-i-s") . $file_name;
-        move_uploaded_file($file_tmp, $name);
+        $imageName = "view/content/events/images/" .  date("d-m-y-H-i-s") . $file_name;
+        move_uploaded_file($file_tmp, $imageName);
     } else {
         header_remove();
         header("Location: /home");
@@ -72,7 +85,8 @@ function createEvent($eventData)
 
     //add event to the db
     require_once "model/model.php";
-    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $name);
+    registerEvent($eventName, $eventStarting, $eventEnding, $eventLocation, $eventDescription, $imageName);
+
 
     //get event id
     $eventInfos = getEventId($eventName);
@@ -81,8 +95,10 @@ function createEvent($eventData)
     for ($i = 0; $i < $ticketNumber; $i++) {
         registerTicket($ticketPrice, $eventId);
     }
+    //send mail to the newsletter
+    sendEventNewsletter($eventName, $imageName, $eventId);
     //go to the home page
-    home();
+        home();
 }
 
 
@@ -103,7 +119,6 @@ function registerRequest($registerData)
         //try to check if user/psw are matching with the database
         if ($userPsw == $userPswConfirm) {
             require_once "./model/model.php";
-            echo " ///", $userEmailAddress, $userPsw, $firstname, $lastname, $phone;
             if (RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone)) {
                 createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
                 $_GET['registerError'] = false;
@@ -203,8 +218,13 @@ function account()
     $user = getUserInfoByPhone($_SESSION['phoneNumber']);
     $userId = $user[0]['id'];
 
-    //go to the account page
+    //get usersticket/events
+    $tickets = getTicketsInfos($userId);
     $items = getEventByUserId($userId);
+    
+        
+    
+    //go to the account page
     require "view/account.php";
 }
 
@@ -254,13 +274,11 @@ function contact()
 
 function sendMail($infoMail)
 {
-    echo "ENVOIE MAIL";
     //create and send an email
     if ($infoMail['subject'] == "exhibitor") {
 
         $header = "Demande d'exposant";
         $message = $_SESSION['userEmailAddress'] . " - " . $_SESSION['name'] . " souhaite convertir son compte pour devenir exposant sur Yunikon !";
-        echo $message;
     } else if ($infoMail['subject'] == "bug") {
 
         $header = "Rapport bug";
@@ -287,7 +305,7 @@ function sendMail($infoMail)
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username = "yunikon.noreply@gmail.com";
-    $mail->Password = "";
+    $mail->Password = "Yuyuninikoko";
     $mail->Port = "587";
     $mail->SMTPSecure = "tls";
 
@@ -394,7 +412,6 @@ function changeRequest($changeData)
                     $psw = $changeData['password'];
                 }
                 $id = sessionId();
-                echo "'$email, $phone, $psw, $id'";
                 //changeUsersInfos($email, $phone, $psw, $id);
                 $successMsg = "Les informations ont bien été changées";
             }
@@ -446,4 +463,94 @@ function subNewsLetter(){
     //function to subscribe to the newsletter
     require_once "model/model.php";
     subscribe();
+    header_remove();
+    header("Location: /home");
+}
+
+function unSubNewsLetter(){
+    //function to subscribe to the newsletter
+    require_once "model/model.php";
+    unSubscribe();
+    header_remove();
+    header("Location: /home");
+}
+
+function sendEventNewsletter($eventName, $imageName, $eventId){
+       //Send an email when a new event is register
+    //encode image to base 64
+    $img = file_get_contents($imageName);
+    $img64 = base64_encode($img);
+    
+    require_once "model/model.php";
+    $userSub = checkSub();
+
+
+    require_once "PHPMailer/PHPMailerAutoload.php";
+    //set mailer datas
+    $mail = new PHPMailer();
+
+
+    $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "yunikon.noreply@gmail.com";
+    $mail->Password = "Yuyuninikoko";
+    $mail->Port = "587";
+    $mail->SMTPSecure = "tls";
+
+    $mail->From = "yunikon.noreply@gmail.com";
+    $mail->FromName = "Yunikon - No Reply";
+
+    foreach ($userSub as $row){
+        $mail->addAddress($row['eMail']);
+    }
+
+    $mail->Subject = ("Un nouvel événement vous attends!");
+    $mail->Body = "L'événement $eventName vient d'être ajouter à la liste. n'hésitez pas à consulter la page : <br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img style=\"object-fit: contain; width: 1/3;\" src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/unSubNewsLetter\">Me désinscrire de la newsletter</a>";
+    $mail->IsHTML(true);
+
+    $mail->send();
+
+    header("Location: /home");
+}
+
+function mailBuy($buyedId, $imageName, $name, $userMail, $eventId){
+
+           //Send an email when a new event is register
+    //encode image to base 64
+    $img = file_get_contents($imageName);
+    $img64 = base64_encode($img);
+    
+    require_once "model/model.php";
+    $userSub = checkSub();
+
+
+    require_once "PHPMailer/PHPMailerAutoload.php";
+    //set mailer datas
+    $mail = new PHPMailer();
+
+
+    $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "yunikon.noreply@gmail.com";
+    $mail->Password = "Yuyuninikoko";
+    $mail->Port = "587";
+    $mail->SMTPSecure = "tls";
+
+    $mail->From = "yunikon.noreply@gmail.com";
+    $mail->FromName = "Yunikon - No Reply";
+    $mail->addAddress($userMail);
+    $mail->Subject = ("Un nouvel événement vous attends!");
+    $mail->Body = "Merci !<br> Vous venez d'acheter un ticket pour aller a l'événement $name. <br><br> Votre ticket : $buyedId <br><br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>";
+    $mail->IsHTML(true);
+
+    $mail->send();
+
+    header("Location: /home");
 }

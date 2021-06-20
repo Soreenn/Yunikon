@@ -46,6 +46,8 @@ function decrement($eventId, $userId){
 
     require_once 'dbConnector.php';
     $queryResult = executeQueryIUD($updateTicket);
+
+    return $remainsTicketId;
 }
 
 function ticketsRemaining($eventId){
@@ -58,8 +60,13 @@ function ticketsRemaining($eventId){
 }
 
 function registerTicket($price, $eventId){
+        //check biggest U_number
+        $check = "SELECT MAX(u_number) FROM tickets";
+        require_once 'dbConnector.php';
+        $queryResult = executeQuerySelect($check);
+        $u_number = $queryResult[0][0] + 1;
     //create tickets in db
-    $register = "INSERT INTO tickets (price, Event_id) VALUES ('$price', '$eventId')";
+    $register = "INSERT INTO tickets (price, Event_id, u_number) VALUES ('$price', '$eventId', '$u_number')";
     require_once 'dbConnector.php';
     $queryResult = executeQueryIUD($register);
 
@@ -190,11 +197,42 @@ function delEvent($eventId){
     $queryResult = executeQueryIUD($register);
 
     return $queryResult;
-    
 }
 
 function subscribe(){
     //function to subscribe user to the newsletter
-    $update = "UPDATE users SET newsLetter = '1' WHERE eMail = " . $_SESSION['userEmailAddress'];
-    //'UPDATE tickets SET Users_id = ' . $strSeparator . $userId . $strSeparator .' WHERE id = ' . $strSeparator . $remainsTicketId . $strSeparator;
+    $strSeparator = '\'';
+    $update = 'UPDATE users SET newsLetter = "1" WHERE eMail LIKE '. $strSeparator . $_SESSION['userEmailAddress']. $strSeparator;
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($update);
+
+    return $queryResult;
+}
+
+function unSubscribe(){
+    //function to unsubscribe user to the newsletter
+    $strSeparator = '\'';
+    $update = 'UPDATE users SET newsLetter = "0" WHERE eMail LIKE '. $strSeparator . $_SESSION['userEmailAddress']. $strSeparator;
+    require_once 'dbConnector.php';
+    $queryResult = executeQueryIUD($update);
+
+    return $queryResult;
+}
+
+function checkSub(){
+    //function to get every users subscribing the newsletter
+    $check = 'SELECT * FROM users WHERE newsLetter = "1"';
+    require_once 'dbConnector.php';
+    $queryResult = executeQuerySelect($check);
+
+    return $queryResult;
+}
+
+function getTicketsInfos($userId){
+     //return the datas of tickets identified by the user id
+     $eventQuery = 'SELECT * FROM tickets WHERE Users_id = ' . $userId;
+     require_once 'dbConnector.php';
+     $queryResult = executeQuerySelect($eventQuery);
+ 
+     return $queryResult;
 }

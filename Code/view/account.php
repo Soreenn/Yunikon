@@ -56,6 +56,26 @@ $currentPage = "#account";
                                 </a>
                             </div>
                         <?php endforeach; ?>
+
+                        <?php if (!empty($tickets)) : ?>
+                <h2>Vos Tickets</h2>
+                <?php endif ;?>
+                <div class="container">
+                    <div class="row text-center">
+                        <?php foreach ($tickets as $row) : $events = getEventById($row[0]['Event_id']) ;?>
+                            <div class="col-md-4">
+                                <a href="/event?id=<?=$items['id']?>">
+                                    <?php if ($items['image']) : ?>
+                                        <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="<?=$items['image']?>">
+                                    <?php else : ?>
+                                        <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/noPhoto.png">
+                                    <?php endif; ?>
+                                    <b>
+                                        <figcaption>Ticket : <?=htmlspecialchars($row['u_number'])?></figcaption>
+                                    </b>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

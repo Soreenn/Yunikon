@@ -1,7 +1,7 @@
 <?php
 ob_start();
-$title = "Contacte";
-$currentPage = "#Contacte";
+$title = "Contact";
+$currentPage = "#Contact";
 ?>
 <!-- HEADER -->
 <div id="!content-wrap">
@@ -11,9 +11,7 @@ $currentPage = "#Contacte";
                 <div class="col-md-8 col-sm-6 ">
                     <img class="logo" src="/view/content/images/Logo/Small-logo.png">
                     <h1 class="white-text">L'univers Pop Culture</h1>
-                    <h3 class="white-text">1ère édition 2021 au 2M2C de Montreux</h3>
                     <br><br><br>
-                    <h1 class="white-text" id="headline">1ère édition Yunikon!</h1>
                 </div>
             </div>
         </div>

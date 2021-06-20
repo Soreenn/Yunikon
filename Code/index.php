@@ -81,6 +81,9 @@ switch ($uri) {
     case "/subNewsLetter":
         subNewsLetter();
         break;
+    case "/unSubNewsLetter":
+        unSubNewsLetter();
+        break;
     default:
         lost();
         break;
