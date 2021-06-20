@@ -10,7 +10,7 @@ $currentPage = "#Contact";
             <div class="row text-center ">
                 <div class="col-md-8 col-sm-6 ">
                     <img class="logo" src="/view/content/images/Logo/Small-logo.png">
-                    <h1 class="white-text">L'univers Pop Culture</h1>
+                    <h2 class="white-text">L'univers Pop Culture</h2>
                     <br><br><br>
                 </div>
             </div>
@@ -24,7 +24,7 @@ $currentPage = "#Contact";
         <div class="container">
             <div class="row text-center">
                 <div class="col-sm-8 col-sm-offset-2" style="margin-top:60px;">
-                    <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Besoin d'aide, contactez nous !</h1>
+                    <h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Besoin d'aide, contactez nous !</h2>
                     <?php if(isset($_SESSION['userEmailAddress'])) : ?>
                         <form method="POST" action="/sendMail">
                     <?php else :?> 

@@ -7,7 +7,7 @@ $title = "Forgot password";
 		<div class="container center_div">
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Assistance de mot de passe oublié</h1>
+					<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Assistance de mot de passe oublié</h2>
 					<form method="POST" action="/getToken">
 					<div class="form-group form-group-lg">
 							<label for="email"></label>

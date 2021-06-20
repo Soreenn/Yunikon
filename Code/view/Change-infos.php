@@ -10,7 +10,7 @@ $currentPage = "#Re-register";
             <div class="col-sm-8 col-sm-offset-2">
             <p style="background-color:LightCoral;color:Maroon;"><b><?=$errorMsg?></b></p>
             <p style="background-color:LightGreen;color:ForestGreen;"><b><?=$successMsg?></b></p>
-                <h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Corrigez vos informations</h1>
+                <h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Corrigez vos informations</h2>
                 <form method="POST" action="/changeRequest">
                     <div class="form-group form-group-sm">
                         <br>

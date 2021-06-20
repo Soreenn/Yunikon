@@ -15,7 +15,7 @@ $title = "Home";
 			<div class="row text-center">
 				<div class="col-md-8 col-sm-6 ">
 					<img id="logoSuperSecretFeature" class="logo" src="/view/content/images/Logo/Small-logo.png">
-					<h1 class="white-text">L'univers Pop Culture</h1>
+					<h2 class="white-text">L'univers Pop Culture</h2>
 					<br><br><br>
 					<div id ="countdown" class="countdown-1" data-countdown data-target=<?=$nextEvent[0]['next_event']?>>
 						<div class="days white-text">
@@ -51,7 +51,7 @@ $title = "Home";
 					<img class="" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" style="object-fit: contain; width: 100%;" src="/view/content/images/Yunikon_Banner.jpg">
 					<br>
 					<br>
-					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Ouverture de la 1ère édition de Yunikon !</h1>
+					<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Ouverture de la 1ère édition de Yunikon !</h2>
 					<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset">Inscriptions ouvertes dès maintenant</h5>
 					<br>
 					<a href="/register"><button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="button-leweb">Je m'incris dès maintenant !</button></a>

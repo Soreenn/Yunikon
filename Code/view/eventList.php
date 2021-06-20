@@ -11,7 +11,7 @@ $currentPage = "#eventList";
             <div class="row text-center ">
                 <div class="col-md-8 col-sm-6 ">
                     <img class="logo" src="/view/content/images/Logo/Small-logo.png">
-                    <h1 class="white-text">L'univers Pop Culture</h1>
+                    <h2 class="white-text">L'univers Pop Culture</h2>
                     <br><br><br>
                     <div id ="countdown" class="countdown-1" data-countdown data-target=<?=$nextEvent[0]['next_event']?>>
                         <div class="days white-text">

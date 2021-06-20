@@ -8,7 +8,7 @@ $currentPage = "#login";
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h1 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Connectez-vous à l'espace client !</h1>
+					<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset">Connectez-vous à l'espace client !</h2>
 					<form method="POST" action="/loginRequest">
 						<div class="form-group form-group-lg">
 							<label for="email"></label>

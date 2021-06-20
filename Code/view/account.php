@@ -10,7 +10,7 @@ $currentPage = "#account";
             <div class="row text-center ">
                 <div class="col-md-8 col-sm-6 ">
                     <img class="logo" src="/view/content/images/Logo/Small-logo.png">
-                    <h1 class="white-text"><b>Bonjour</b> <?=htmlspecialchars($_SESSION['firstname'])?></h1>
+                    <h2 class="white-text"><b>Bonjour</b> <?=htmlspecialchars($_SESSION['firstname'])?></h2>
                     <br><br><br>
                     <div style="width:50%;float:left;text-align:right;padding-right:10px;;">
                         <h3 class="white-text"><b>Mail : </b></h3>
