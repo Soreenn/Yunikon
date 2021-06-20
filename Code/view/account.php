@@ -62,11 +62,11 @@ $currentPage = "#account";
                 <?php endif ;?>
                 <div class="container">
                     <div class="row text-center">
-                        <?php foreach ($tickets as $row) : $events = getEventById($row[0]['Event_id']) ;?>
+                        <?php foreach ($tickets as $row) :$event = getEventById($tickets[0]['Event_id']) ;?>
                             <div class="col-md-4">
-                                <a href="/event?id=<?=$items['id']?>">
-                                    <?php if ($items['image']) : ?>
-                                        <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="<?=$items['image']?>">
+                                <a href="/event?id=<?=$event[0]['id']?>">
+                                    <?php if ($event[0]['image']) : ?>
+                                        <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="<?=$event[0]['image']?>">
                                     <?php else : ?>
                                         <img class="banner" style="object-fit:contain; width: 100%" data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" src="/view/content/images/noPhoto.png">
                                     <?php endif; ?>

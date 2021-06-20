@@ -221,11 +221,11 @@ function account()
     //get usersticket/events
     $tickets = getTicketsInfos($userId);
     $items = getEventByUserId($userId);
-    
-        
+    echo $tickets[0]['Event_id'];
+    echo $event[0]['image'];
     
     //go to the account page
-    require "view/account.php";
+   require "view/account.php";
 }
 
 function deleteEvent($eventId){
