@@ -227,3 +227,12 @@ function checkSub(){
 
     return $queryResult;
 }
+
+function getTicketsInfos($userId){
+     //return the datas of tickets identified by the user id
+     $eventQuery = 'SELECT * FROM tickets WHERE Users_id = ' . $userId;
+     require_once 'dbConnector.php';
+     $queryResult = executeQuerySelect($eventQuery);
+ 
+     return $queryResult;
+}

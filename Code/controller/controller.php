@@ -35,13 +35,11 @@ function decrementTickets($eventId){
     $img = $eventData[0]['image'];
     $name = $eventData[0]['name'];
 
-    echo $img . $name;
     //send email with the last ticket buyed
     require_once "model/model.php";
     $buyedID = decrement($eventId, $userId);
 
     mailBuy($buyedID, $img, $name, $userMail, $eventId);
-    echo $buyedID;
     //event($eventId);
 }
 
@@ -121,7 +119,6 @@ function registerRequest($registerData)
         //try to check if user/psw are matching with the database
         if ($userPsw == $userPswConfirm) {
             require_once "./model/model.php";
-            echo " ///", $userEmailAddress, $userPsw, $firstname, $lastname, $phone;
             if (RegisterUser($userEmailAddress, $userPsw, $firstname, $lastname, $phone)) {
                 createSession($userEmailAddress, $firstname, $lastname, $exhibitor, $phone);
                 $_GET['registerError'] = false;
@@ -221,8 +218,13 @@ function account()
     $user = getUserInfoByPhone($_SESSION['phoneNumber']);
     $userId = $user[0]['id'];
 
-    //go to the account page
+    //get usersticket/events
+    $tickets = getTicketsInfos($userId);
     $items = getEventByUserId($userId);
+    
+        
+    
+    //go to the account page
     require "view/account.php";
 }
 
@@ -272,13 +274,11 @@ function contact()
 
 function sendMail($infoMail)
 {
-    echo "ENVOIE MAIL";
     //create and send an email
     if ($infoMail['subject'] == "exhibitor") {
 
         $header = "Demande d'exposant";
         $message = $_SESSION['userEmailAddress'] . " - " . $_SESSION['name'] . " souhaite convertir son compte pour devenir exposant sur Yunikon !";
-        echo $message;
     } else if ($infoMail['subject'] == "bug") {
 
         $header = "Rapport bug";
@@ -412,7 +412,6 @@ function changeRequest($changeData)
                     $psw = $changeData['password'];
                 }
                 $id = sessionId();
-                echo "'$email, $phone, $psw, $id'";
                 //changeUsersInfos($email, $phone, $psw, $id);
                 $successMsg = "Les informations ont bien été changées";
             }
@@ -553,5 +552,5 @@ function mailBuy($buyedId, $imageName, $name, $userMail, $eventId){
 
     $mail->send();
 
-    //header("Location: /home");
+    header("Location: /home");
 }
