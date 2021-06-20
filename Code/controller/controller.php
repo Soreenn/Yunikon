@@ -23,11 +23,26 @@ function register()
 
 function decrementTickets($eventId){
     //decrement ticket when user buy one
+    $userMail = $_SESSION['userEmailAddress'];
     require_once "model/model.php";
-    $userDatas = getUserInfo($_SESSION['userEmailAddress']);
+    $userDatas = getUserInfo($userMail);
     $userId = $userDatas[0]['id'];
-    decrement($eventId, $userId);
-    event($eventId);
+
+    //get info of the event by id
+    require_once "model/model.php";
+    $eventData = getEventById($eventId);
+
+    $img = $eventData[0]['image'];
+    $name = $eventData[0]['name'];
+
+    echo $img . $name;
+    //send email with the last ticket buyed
+    require_once "model/model.php";
+    $buyedID = decrement($eventId, $userId);
+
+    mailBuy($buyedID, $img, $name, $userMail, $eventId);
+    echo $buyedID;
+    //event($eventId);
 }
 
 function lost()
@@ -494,8 +509,46 @@ function sendEventNewsletter($eventName, $imageName, $eventId){
 
     $mail->Subject = ("Un nouvel événement vous attends!");
     $mail->Body = "L'événement $eventName vient d'être ajouter à la liste. n'hésitez pas à consulter la page : <br><br>
-                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img style=\"object-fit: contain; width: 1/3;\" src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>
                    <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/unSubNewsLetter\">Me désinscrire de la newsletter</a>";
+    $mail->IsHTML(true);
+
+    $mail->send();
+
+    header("Location: /home");
+}
+
+function mailBuy($buyedId, $imageName, $name, $userMail, $eventId){
+
+           //Send an email when a new event is register
+    //encode image to base 64
+    $img = file_get_contents($imageName);
+    $img64 = base64_encode($img);
+    
+    require_once "model/model.php";
+    $userSub = checkSub();
+
+
+    require_once "PHPMailer/PHPMailerAutoload.php";
+    //set mailer datas
+    $mail = new PHPMailer();
+
+
+    $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "yunikon.noreply@gmail.com";
+    $mail->Password = "Yuyuninikoko";
+    $mail->Port = "587";
+    $mail->SMTPSecure = "tls";
+
+    $mail->From = "yunikon.noreply@gmail.com";
+    $mail->FromName = "Yunikon - No Reply";
+    $mail->addAddress($userMail);
+    $mail->Subject = ("Un nouvel événement vous attends!");
+    $mail->Body = "Merci !<br> Vous venez d'acheter un ticket pour aller a l'événement $name. <br><br> Votre ticket : $buyedId <br><br><br>
+                   <a href=\"http://" . $_SERVER["HTTP_HOST"] ."/event?id=$eventId\"><img src=\"data:image/png;base64,$img64\" alt=\"clickez ici\"></a> <br><br>";
     $mail->IsHTML(true);
 
     $mail->send();

@@ -46,6 +46,8 @@ function decrement($eventId, $userId){
 
     require_once 'dbConnector.php';
     $queryResult = executeQueryIUD($updateTicket);
+
+    return $remainsTicketId;
 }
 
 function ticketsRemaining($eventId){
